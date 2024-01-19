@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            .message {
+                position: absolute;
+                top: 2em;
+                font-family: sans-serif;
+                text-align: center;
+            }
+            .flag-of-Norway {
+                width: 28.6em;
+                height: 20.8em;
+                position: relative;
+            }
+            .top-left-corner,
+            .bottom-left-corner {
+                position: absolute;
+                left: 0;
+                width: 7.8em;
+                height: 7.8em;
+                background: #bc0204;
+                border-style: solid;
+                border-color: #ffffff;
+            }
+            .top-left-corner {
+                top: 0;
+                border-width: 0 1.3em 1.3em 0;
+                box-shadow: 1.3em 1.3em 0px 1.3em #001a5b;
+            }
+            .bottom-left-corner {
+                bottom: 0;
+                border-width: 1.3em 1.3em 0 0;
+                box-shadow: 1.3em -1.3em 0px 1.3em #001a5b;
+            }
+            .top-right-corner,
+            .bottom-right-corner {
+                position: absolute;
+                right: 0;
+                width: 15.6em;
+                height: 7.8em;
+                background: #bc0204;
+                border-style: solid;
+                border-color: #ffffff;
+            }
+            .top-right-corner {
+                top: 0;
+                border-width: 0 0 1.3em 1.3em;
+                box-shadow: -1.3em 1.3em 0px 1.3em #001a5b;
+            }
+            .bottom-right-corner {
+                bottom: 0;
+                border-width: 1.3em 0 0 1.3em;
+                box-shadow: -1.3em -1.3em 0 1.3em #001a5b;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="message">
+			Thanks for watching.
+            Don't forget to subscribe :)
+		</h1>
+        <div class="flag-of-Norway">
+            <div class="top-left-corner"></div>
+            <div class="top-right-corner"></div>
+            <div class="bottom-left-corner"></div>
+            <div class="bottom-right-corner"></div>
+        </div>
+    </body>
+</html>

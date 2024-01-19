@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0;
+			}
+			.mui-logo {
+				height: 10em;
+				width: 10em;
+				position: relative;
+			}
+			.left-m,
+			.middle-left-m,
+			.bottom-u {
+				position: absolute;
+				background: #00b0ff;
+			}
+			.middle-right-m,
+			.right-m,
+			.left-u,
+			.right-u,
+			.line-i,
+			.point-i {
+				position: absolute;
+				background: #0081cb;
+			}
+			.left-m {
+				height: 5.5em;
+				width: 1.8em;
+				transform: rotateX(30deg) rotateY(45deg);
+			}
+			.middle-left-m {
+				height: 1.8em;
+				width: 3.4em;
+				transform: rotateX(30deg) rotateY(45deg) translate(22px, 12px);
+			}
+			.middle-right-m {
+				height: 1.8em;
+				width: 3.4em;
+				transform: rotateX(30deg) rotateY(-45deg) translate(76px, 52px);
+			}
+			.right-m {
+				height: 5.5em;
+				width: 1.8em;
+				transform: rotateX(30deg) rotateY(-45deg) translate(134px, 55px);
+			}
+			.left-u {
+				height: 1.8em;
+				width: 3.4em;
+				transform: rotateX(30deg) rotateY(-45deg) translate(75px, 111px);
+			}
+			.bottom-u {
+				height: 1.8em;
+				width: 3.8em;
+				transform: rotateX(30deg) rotateY(45deg) translate(73px, 74px);
+			}
+			.right-u {
+				height: 1.8em;
+				width: 3.4em;
+				transform: rotateX(30deg) rotateY(-45deg)
+					translate(135px, 160px);
+			}
+			.line-i {
+				width: 1.8em;
+				height: 3.5em;
+				transform: rotateX(30deg) rotateY(-45deg)
+					translate(193px, 138px);
+			}
+			.point-i {
+				width: 1.8em;
+				height: 1.8em;
+				transform: rotateX(30deg) rotateY(-45deg) translate(193px, 85px);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="mui-logo">
+			<div class="left-m"></div>
+			<div class="middle-left-m"></div>
+			<div class="middle-right-m"></div>
+			<div class="right-m"></div>
+			<div class="left-u"></div>
+			<div class="bottom-u"></div>
+			<div class="right-u"></div>
+			<div class="line-i"></div>
+			<div class="point-i"></div>
+		</div>
+	</body>
+</html>

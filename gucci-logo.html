@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				margin: 0;
+			}
+			.container {
+				display: flex;
+				flex-direction: column;
+			}
+			.brandname {
+				font-size: 7rem;
+				font-weight: 500;
+				text-transform: uppercase;
+				text-align: center;
+				font-family: "EB Garamond", serif;
+			}
+			.circles {
+				display: flex;
+				position: relative;
+			}
+			.left-circle {
+				position: relative;
+				height: 250px;
+				width: 250px;
+				background: radial-gradient(
+					closest-side,
+					transparent 0%,
+					transparent 80%,
+					black 80%
+				);
+				border-radius: 50%;
+				transform: translateX(26%);
+			}
+			.left-g-line {
+				position: absolute;
+				height: 25px;
+				width: 40px;
+				background: black;
+				top: 55%;
+				right: 5%;
+			}
+			.right-circle {
+				position: relative;
+				height: 250px;
+				width: 250px;
+				background: radial-gradient(
+					closest-side,
+					transparent 0%,
+					transparent 80%,
+					black 80%
+				);
+				border-radius: 50%;
+				transform: translateX(-26%);
+			}
+			.right-g-line {
+				position: absolute;
+				height: 25px;
+				width: 40px;
+				background: black;
+				top: 55%;
+				left: 5%;
+			}
+			.rectangle {
+				position: absolute;
+				height: 45px;
+				width: 200px;
+				background: white;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -68%);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="brandname">gucci</div>
+			<div class="circles">
+				<div class="left-circle">
+					<div class="left-g-line"></div>
+				</div>
+				<div class="right-circle">
+					<div class="right-g-line"></div>
+				</div>
+				<div class="rectangle"></div>
+			</div>
+		</div>
+	</body>
+</html>

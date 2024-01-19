@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: #1c1c1e;
+				margin: 0;
+			}
+			.youtube-progress-bar {
+				display: flex;
+				gap: 0.7em;
+				align-items: center;
+				justify-content: center;
+			}
+			.triangle {
+				height: 0;
+				width: 0;
+				border-style: solid;
+				border-width: 0.8em 0 0.8em calc(0.86 * 2 * 0.8em);
+				border-color: transparent transparent transparent #fdfcfc;
+			}
+			.progress-bar {
+				background: #cdcdcd;
+				height: 0.3em;
+				width: 13em;
+				animation-name: end-loading;
+				animation-duration: 0.5s;
+				animation-delay: 0.5s;
+				animation-fill-mode: forwards;
+				animation-timing-function: linear;
+			}
+			.progress-bar-child {
+				height: 100%;
+				width: 0;
+				background: red;
+				animation-name: start-loading;
+				animation-duration: 0.5s;
+				animation-fill-mode: forwards;
+				animation-timing-function: linear;
+			}
+			@keyframes start-loading {
+				to {
+					width: 100%;
+				}
+			}
+			@keyframes end-loading {
+				to {
+					width: 0;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="youtube-progress-bar">
+			<div class="triangle"></div>
+			<div class="progress-bar">
+				<div class="progress-bar-child"></div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                display: flex;
+                height: 100vh;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+                background: gray;
+            }
+            .slack-logo {
+                height: 20em;
+                width: 20em;
+                border-radius: 50%;
+                background: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: 0.5em;
+            }
+            .line-1,
+            .line-2 {
+                display: flex;
+                gap: 0.5em;
+            }
+            .blue-part,
+            .green-part,
+            .red-part,
+            .yellow-part {
+                display: flex;
+                gap: 0.5em;
+            }
+            .blue-part > .rectangle,
+            .green-part > .rectangle,
+            .red-part > .rectangle,
+            .yellow-part > .rectangle {
+                border-radius: 50px;
+            }
+            .blue-part > .circle,
+            .green-part > .circle,
+            .red-part > .circle,
+            .yellow-part > .circle {
+                height: 3em;
+                width: 3em;
+            }
+            .blue-part {
+                flex-direction: column;
+                align-items: end;
+            }
+            .blue-part > .circle {
+                background: #33c6f0;
+                border-radius: 50% 50% 0 50%;
+            }
+            .blue-part > .rectangle {
+                height: 3em;
+                width: 6.5em;
+                background: #33c6f0;
+            }
+            .green-part {
+                align-items: end;
+            }
+            .green-part > .rectangle {
+                width: 3em;
+                height: 6.5em;
+                background: #2ab77e;
+            }
+            .green-part > .circle {
+                background: #2ab77e;
+                border-radius: 50% 50% 50% 0;
+            }
+            .red-part > .circle {
+                background: #e1185a;
+                border-radius: 50% 0 50% 50%;
+            }
+            .red-part > .rectangle {
+                width: 3em;
+                height: 6.5em;
+                background: #e1185a;
+            }
+            .yellow-part {
+                flex-direction: column;
+            }
+            .yellow-part > .rectangle {
+                height: 3em;
+                width: 6.5em;
+                background: #edb42a;
+            }
+            .yellow-part > .circle {
+                background: #edb42a;
+                border-radius: 0 50% 50% 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="slack-logo">
+            <div class="line-1">
+                <div class="blue-part">
+                    <div class="circle"></div>
+                    <div class="rectangle"></div>
+                </div>
+                <div class="green-part">
+                    <div class="rectangle"></div>
+                    <div class="circle"></div>
+                </div>
+            </div>
+            <div class="line-2">
+                <div class="red-part">
+                    <div class="circle"></div>
+                    <div class="rectangle"></div>
+                </div>
+                <div class="yellow-part">
+                    <div class="rectangle"></div>
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

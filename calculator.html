@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0;
+			}
+			.calculator {
+				height: 460px;
+				width: 300px;
+				border: 1px black solid;
+				padding: 15px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+			.screen {
+				width: 96%;
+				height: 80px;
+				background-color: #d0e6a8;
+				margin-bottom: 15px;
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				font-size: 36px;
+			}
+			.keyboard {
+				background-color: white;
+				display: grid;
+				grid-template-columns: repeat(4, 61px);
+				grid-template-rows: repeat(5, 61px);
+				grid-gap: 15px;
+			}
+			.key {
+				padding: 20px;
+				border: 1px solid rgb(222, 221, 221);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 24px;
+				font-family: inherit;
+				cursor: pointer;
+				background-color: white;
+			}
+			.special-key {
+				background-color: rgb(255, 39, 39);
+				color: white;
+			}
+			.equalkey {
+				grid-row: 4 / 6;
+				grid-column: 4 / 5;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="calculator">
+			<div class="screen" id="screen"></div>
+			<div class="keyboard">
+				<button class="key special-key" id="ac">AC</button>
+				<button class="key" id="times2">x2</button>
+				<button class="key" id="divide">&divide;</button>
+				<button class="key" id="times">&times;</button>
+				<button class="key" id="key-7">7</button>
+				<button class="key" id="key-8">8</button>
+				<button class="key" id="key-9">9</button>
+				<button class="key" id="minus">&minus;</button>
+				<button class="key" id="key-4">4</button>
+				<button class="key" id="key-5">5</button>
+				<button class="key" id="key-6">6</button>
+				<button class="key" id="plus">&plus;</button>
+				<button class="key" id="key-1">1</button>
+				<button class="key" id="key-2">2</button>
+				<button class="key" id="key-3">3</button>
+				<button class="key equalkey" id="equal">&equals;</button>
+				<button class="key" id="key-0">0</button>
+				<button class="key" id="point">.</button>
+				<button class="key" id="del">DEL</button>
+			</div>
+		</div>
+	</body>
+</html>

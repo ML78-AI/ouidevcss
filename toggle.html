@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			label {
+				height: 25px;
+				width: 50px;
+				background-color: red;
+				border-radius: 50px;
+				position: relative;
+				cursor: pointer;
+				transition: all 0.5s ease;
+			}
+			label::before {
+				content: "";
+				position: absolute;
+				border-radius: 50%;
+				width: 21px;
+				height: 21px;
+				top: 2px;
+				left: 2px;
+				background-color: white;
+				transition: all 0.5s ease;
+			}
+			label:hover::before {
+				box-shadow: 0 0 0 5px rgba(255, 0, 0, 0.3);
+			}
+			label:has(input:checked) {
+				background-color: rgb(81, 250, 81);
+			}
+			label:has(input:checked)::before {
+				transform: translate(25px);
+			}
+			label:has(input:checked):hover::before {
+				box-shadow: 0 0 0 5px rgba(0, 255, 0, 0.3);
+			}
+			input {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				display: none;
+				margin: 0;
+				border: none;
+			}
+		</style>
+	</head>
+	<body>
+		<label for="toggle">
+			<input type="checkbox" id="toggle" />
+		</label>
+	</body>
+</html>

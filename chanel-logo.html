@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			* {
+				box-sizing: border-box;
+				padding: 0;
+				margin: 0;
+			}
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+			}
+			.container {
+				display: flex;
+				flex-direction: column;
+			}
+			.circles {
+				display: flex;
+			}
+			.left-circle,
+			.right-circle {
+				position: relative;
+				height: 280px;
+				width: 280px;
+				background: radial-gradient(
+					closest-side,
+					transparent 0%,
+					transparent 70%,
+					black 70%
+				);
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+			}
+			.left-circle {
+				transform: translateX(24%);
+			}
+			.right-circle {
+				transform: translateX(-24%);
+				justify-content: flex-end;
+			}
+			.left-triangle {
+				height: 0;
+				width: 0;
+				border-width: 90px 0 90px 180px;
+				border-color: transparent transparent transparent white;
+				border-style: solid;
+				transform: translateX(-25%);
+			}
+			.right-triangle {
+				height: 0;
+				width: 0;
+				border-width: 90px 180px 90px 0;
+				border-color: transparent white transparent transparent;
+				border-style: solid;
+				transform: translateX(25%);
+			}
+			.brandname {
+				text-transform: uppercase;
+				font-size: 5.5rem;
+				text-align: center;
+				font-family: sans-serif;
+				font-weight: 600;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="circles">
+				<div class="left-circle">
+					<div class="left-triangle"></div>
+				</div>
+				<div class="right-circle">
+					<div class="right-triangle"></div>
+				</div>
+			</div>
+			<p class="brandname">chanel</p>
+		</div>
+	</body>
+</html>

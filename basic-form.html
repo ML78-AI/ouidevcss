@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background: #f4f4f4;
+            }
+            form {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            label {
+                margin-bottom: 5px;
+                display: block;
+            }
+
+            .data {
+                width: 95%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            input[type="submit"] {
+                background-color: #4caf50;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <div>
+                <label for="name">Name :</label>
+                <input type="text" id="name" class="data" />
+            </div>
+            <div>
+                <label for="email">Email :</label>
+                <input type="email" id="email" class="data" />
+            </div>
+            <div>
+                <label for="message">Message :</label>
+                <textarea id="message" class="data"></textarea>
+            </div>
+            <div>
+                <input type="submit" value="Send" />
+            </div>
+        </form>
+    </body>
+</html>

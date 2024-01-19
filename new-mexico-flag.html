@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: url("./assets/images/sky.jpg");
+				object-fit: cover;
+				margin: 0;
+			}
+			.new-mexico-flag {
+				height: 21em;
+				width: 32em;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+				background: #ffd700;
+			}
+			.zia-sun-symbol {
+				position: relative;
+				height: 10em;
+				width: 10em;
+			}
+			.vertical-lines {
+				display: flex;
+				gap: 0.3em;
+				align-items: center;
+				position: absolute;
+				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			.line {
+				background: #b60027;
+				border-radius: 50px;
+			}
+			.vline1,
+			.vline4 {
+				height: 8em;
+				width: 0.5em;
+			}
+			.vline2,
+			.vline3 {
+				height: 10em;
+				width: 0.5em;
+			}
+			.horizontal-lines {
+				display: flex;
+				flex-direction: column;
+				gap: 0.3em;
+				align-items: center;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%);
+			}
+			.hline1,
+			.hline4 {
+				width: 8em;
+				height: 0.5em;
+			}
+			.hline2,
+			.hline3 {
+				width: 10em;
+				height: 0.5em;
+			}
+			.circle {
+				background: #ffd700;
+				height: 3em;
+				width: 3em;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				border-radius: 50%;
+				border: 0.2em #b60027 solid;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="new-mexico-flag">
+			<div class="zia-sun-symbol">
+				<div class="vertical-lines">
+					<div class="line vline1"></div>
+					<div class="line vline2"></div>
+					<div class="line vline3"></div>
+					<div class="line vline4"></div>
+				</div>
+				<div class="horizontal-lines">
+					<div class="line hline1"></div>
+					<div class="line hline2"></div>
+					<div class="line hline3"></div>
+					<div class="line hline4"></div>
+				</div>
+				<div class="circle"></div>
+			</div>
+		</div>
+	</body>
+</html>

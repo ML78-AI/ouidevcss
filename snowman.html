@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0;
+			}
+			.message {
+                position: absolute;
+                top: 2em;
+                text-align: center;
+				font-size: 2em;
+				font-family: 'Titillium Web', sans-serif;
+            }
+			.snowman,
+			.hat {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			.hat {
+				transform: translate(-5%, 20%) rotate(-5deg);
+				z-index: 1;
+			}
+			.crown {
+				height: 4em;
+				width: 4.5em;
+				background: #4d4d4d;
+				position: relative;
+			}
+			.crown::after {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 32%;
+				background: #c2272d;
+				bottom: 0;
+			}
+			.brim {
+				height: 0.5em;
+				width: 6.2em;
+				background: #4d4d4d;
+				border-radius: 0.1em;
+			}
+			.head {
+				background: #e7e7e7;
+				height: 6.5em;
+				width: 6.5em;
+				border-radius: 50%;
+				position: relative;
+				z-index: 0;
+			}
+			.eye {
+				background: #4d4d4d;
+				height: 0.7em;
+				width: 0.7em;
+				border-radius: 50%;
+				position: absolute;
+			}
+			.eye.left-eye {
+				top: 30%;
+				left: 40%;
+			}
+			.eye.right-eye {
+				top: 28%;
+				right: 15%;
+			}
+			.nose {
+				height: 1.3em;
+				width: 1.3em;
+				background: #f6931c;
+				border-radius: 50%;
+				transform: translate(285%, 210%) rotate(75deg);
+				position: relative;
+			}
+			.nose::after {
+				position: absolute;
+				content: "";
+				height: 2.9em;
+				width: 2.6em;
+				background: #f6931c;
+				clip-path: polygon(50% 0%, 25% 100%, 75% 100%);
+				bottom: 50%;
+				left: 50%;
+				transform: translate(-50%);
+			}
+			.smile {
+				position: absolute;
+				height: 3em;
+				width: 4em;
+				border-width: 0.1em;
+				border-color: transparent transparent #4d4d4d transparent;
+				border-style: solid;
+				border-radius: 50%;
+				rotate: 20deg;
+				top: 25%;
+				right: 5%;
+			}
+			.body {
+				height: 9em;
+				width: 9em;
+				background: #e7e7e7;
+				border-radius: 50%;
+				overflow: hidden;
+				position: relative;
+				transform: translateY(-15%);
+				z-index: -1;
+			}
+			.scarf1 {
+				position: absolute;
+				background: #c2272d;
+				height: 6.8em;
+				width: 7.2em;
+				border-radius: 50%;
+				top: -40%;
+				left: 50%;
+				transform: translate(-50%);
+			}
+			.scarf-container {
+				position: absolute;
+				background: #882027;
+				width: 1.8em;
+				height: 6.7em;
+				z-index: -2;
+				right: 20%;
+			}
+			.scarf2 {
+				width: 100%;
+				height: 85%;
+			}
+			.end-scarf {
+				width: 100%;
+				height: 15%;
+				background: #e7e7e7;
+				display: flex;
+				justify-content: space-between;
+			}
+			.cloth {
+				width: 3px;
+				height: 9px;
+				border-radius: 50%;
+				background: #c3232c;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="message">
+            Winter is here. <br/>
+            Thanks for watching.
+        </div>
+		<div class="snowman">
+			<div class="hat">
+				<div class="crown"></div>
+				<div class="brim"></div>
+			</div>
+			<div class="head">
+				<div class="eye left-eye"></div>
+				<div class="eye right-eye"></div>
+				<div class="nose"></div>
+				<div class="smile"></div>
+			</div>
+			<div class="body">
+				<div class="scarf1"></div>
+				<div class="scarf-container">
+					<div class="scarf2"></div>
+					<div class="end-scarf">
+						<div class="cloth"></div>
+						<div class="cloth"></div>
+						<div class="cloth"></div>
+						<div class="cloth"></div>
+						<div class="cloth"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

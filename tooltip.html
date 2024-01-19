@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0;
+			}
+			.container {
+				display: flex;
+				flex-direction: column-reverse;
+				align-items: center;
+			}
+			button {
+				padding: 1em 1.5em 1em 1.5em;
+				border: 0;
+				text-transform: uppercase;
+				color: white;
+				background: linear-gradient(
+					115deg,
+					#4fcf70,
+					#fad648,
+					#a767e5,
+					#12bcfe,
+					#44ce7b
+				);
+				font-size: 1.3em;
+				cursor: pointer;
+				border-radius: 5px;
+				font-family: Arial, Helvetica, sans-serif;
+				margin-top: 20px;
+			}
+			.tooltip {
+				height: 2.5em;
+				width: 8em;
+				background: transparent;
+				color: #ffffff;
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-family: Arial, Helvetica, sans-serif;
+				transition: 0.5s ease;
+				overflow: hidden;
+			}
+			.triangle {
+				height: 0;
+				width: 0;
+				border-width: 10px 14px 0 14px;
+				border-color: #dd3644 transparent transparent transparent;
+				border-style: solid;
+				opacity: 0;
+			}
+
+			.shadow {
+				position: absolute;
+				width: 0;
+				height: 0;
+				background: #dd3644;
+				border-radius: 50%;
+				z-index: -1;
+			}
+			button:hover + .triangle {
+				animation: 0.5s apparition-triangle linear forwards 2s;
+			}
+			button:hover ~ .tooltip > .shadow {
+				animation: 2s apparition-tooltip ease-in-out forwards;
+			}
+			@keyframes apparition-triangle {
+				to {
+					opacity: 1;
+				}
+			}
+			@keyframes apparition-tooltip {
+				to {
+					width: 200%;
+					height: 200%;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<button><b>Hover me</b></button>
+			<div class="triangle"></div>
+			<div class="tooltip">
+				<div class="shadow"></div>
+				<b>Tooltip</b>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Imperial+Script&display=swap");
+            body {
+                display: flex;
+                height: 100vh;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+                background: grey;
+            }
+            h2 {
+                position: absolute;
+                top: 0;
+                text-align: center;
+                font-family: "Imperial Script", cursive;
+                font-size: 2.5em;
+                color: rgb(247, 175, 187);
+            }
+            .masterball {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                overflow: hidden;
+                border-radius: 50%;
+            }
+            .text {
+                background: white;
+                position: absolute;
+                clip-path: polygon(
+                    76% 91%,
+                    69% 98%,
+                    53% 74%,
+                    44% 86%,
+                    33% 75%,
+                    18% 98%,
+                    11% 91%,
+                    33% 54%,
+                    44% 69%,
+                    53% 55%
+                );
+                height: 7em;
+                width: 7em;
+                left: 34%;
+            }
+            .shell {
+                width: 19em;
+                border-width: 9.5em 0 9.5em 0;
+                border-radius: 50%;
+                border-style: solid;
+                border-color: #603885 transparent white transparent;
+            }
+            .middle {
+                background: black;
+                height: 1em;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .release-button {
+                height: 5em;
+                width: 5em;
+                background: radial-gradient(
+                    closest-side,
+                    white 54%,
+                    black 54%,
+                    black 60%,
+                    white 60%,
+                    white 75%,
+                    black 75%
+                );
+                border-radius: 50%;
+            }
+            .circle {
+                position: absolute;
+                height: 10em;
+                width: 10em;
+                background: #e24e70;
+                border-radius: 50%;
+                top: -2em;
+            }
+            .left-circle {
+                left: -2em;
+                transform: rotateX(50deg) rotateY(-35deg);
+            }
+            .right-circle {
+                right: -2em;
+                transform: rotateX(50deg) rotateY(35deg);
+            }
+        </style>
+    </head>
+    <body>
+        <h2>
+            Thanks for watching. <br />
+            Don't forget to subscribe and Merry Christmas :)
+        </h2>
+        <div class="masterball">
+            <div class="text"></div>
+            <div class="shell">
+                <div class="middle">
+                    <div class="release-button"></div>
+                </div>
+            </div>
+            <div class="circle left-circle"></div>
+            <div class="circle right-circle"></div>
+        </div>
+    </body>
+</html>

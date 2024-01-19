@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				display: flex;
+				height: 100vh;
+				justify-content: center;
+				align-items: center;
+				background-color: black;
+				margin: 0;
+			}
+			.container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 400px;
+				width: 400px;
+				background: black;
+				position: relative;
+			}
+			.trace1 {
+				position: absolute;
+				height: 260px;
+				width: 20px;
+				background: white;
+				transform: skewX(-40deg) translateX(100%);
+			}
+			.trace2 {
+				position: absolute;
+				height: 260px;
+				width: 60px;
+				background: white;
+				transform: skewX(40deg) translateX(15%);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.black-rectangle {
+				height: 226px;
+				width: 26px;
+				background: black;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="trace1"></div>
+			<div class="trace2">
+				<div class="black-rectangle"></div>
+			</div>
+		</div>
+	</body>
+</html>

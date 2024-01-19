@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                display: flex;
+                height: 100vh;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+            }
+            .android {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 7px;
+            }
+            .head {
+                height: 4.7rem;
+                width: 10rem;
+                border-radius: 6rem 6rem 0 0;
+                background-color: #a4c739;
+                position: relative;
+            }
+            .left-antenna,
+            .right-antenna {
+                position: absolute;
+                border-radius: 50px;
+                background-color: #a4c739;
+                width: 0.3rem;
+                height: 3rem;
+                top: -30%;
+            }
+            .left-antenna {
+                left: 24%;
+                rotate: -25deg;
+            }
+            .right-antenna {
+                right: 24%;
+                rotate: 25deg;
+            }
+            .head::before,
+            .head::after {
+                display: inline-block;
+                position: absolute;
+                content: "";
+                height: 0.8rem;
+                width: 0.8rem;
+                border-radius: 50%;
+                background-color: white;
+                top: 35%;
+            }
+            .head::before {
+                left: 25%;
+            }
+            .head::after {
+                right: 25%;
+            }
+            .android-body {
+                height: 8.5rem;
+                width: 10rem;
+                background-color: #a4c739;
+                border-radius: 0 0 20px 20px;
+                position: relative;
+            }
+            .android-body::before,
+            .android-body::after {
+                content: "";
+                position: absolute;
+                width: 2rem;
+                height: 6.3rem;
+                background-color: #a4c739;
+                border-radius: 50px;
+            }
+            .android-body::before {
+                left: -24%;
+            }
+            .android-body::after {
+                right: -24%;
+            }
+            .left-leg,
+            .right-leg {
+                width: 2rem;
+                height: 4rem;
+                background-color: #a4c739;
+                border-radius: 0 0 50px 50px;
+                position: absolute;
+                bottom: -40%;
+            }
+            .left-leg {
+                left: 22%;
+            }
+            .right-leg {
+                right: 22%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="android">
+            <div class="head">
+                <div class="left-antenna"></div>
+                <div class="right-antenna"></div>
+            </div>
+            <div class="android-body">
+                <div class="left-leg"></div>
+                <div class="right-leg"></div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.container {
+				display: flex;
+				align-items: center;
+			}
+			.bow {
+				height: 6.4em;
+				width: 6.4em;
+				border-radius: 50%;
+				background: #4385f5;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.internal-bow {
+				height: 3em;
+				width: 3em;
+				border-radius: 50%;
+				background: white;
+				z-index: 3;
+			}
+			.blade1 {
+				height: 1.6em;
+				width: 7.3em;
+				background: radial-gradient(
+					circle at 0% 50%,
+					#ec4338,
+					#ec4338 40%,
+					#febd04 40%
+				);
+				transform: translateX(-40%);
+				z-index: 2;
+			}
+			.blade2 {
+				height: 1.6em;
+				width: 3.4em;
+				background: #1a7e38;
+				transform: translateX(-125%);
+				position: relative;
+				z-index: 3;
+			}
+			.teeth {
+				height: 1.6em;
+				width: 3.4em;
+				background: #34a853;
+				position: absolute;
+				bottom: -100%;
+				display: flex;
+				justify-content: center;
+			}
+			.teeth::after {
+				content: "";
+				display: inline-block;
+				height: 2em;
+				width: 1em;
+				background: white;
+				border-radius: 50px;
+				transform: translateY(26%);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="bow">
+				<div class="internal-bow"></div>
+			</div>
+			<div class="blade1"></div>
+			<div class="blade2">
+				<div class="teeth"></div>
+			</div>
+		</div>
+	</body>
+</html>

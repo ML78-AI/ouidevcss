@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				display: flex;
+				height: 100vh;
+				justify-content: center;
+				align-items: center;
+				margin: 0;
+			}
+			.bg-banknote1,
+			.bg-banknote2,
+			.bg-banknote3 {
+				position: absolute;
+				height: 6em;
+				width: 12rem;
+				transform-origin: right;
+			}
+			.bg-banknote1 {
+				background: #004824;
+				transform: rotate(24deg);
+			}
+			.bg-banknote2 {
+				background: #016737;
+				transform: rotate(16deg);
+			}
+			.bg-banknote3 {
+				background: #009345;
+				transform: rotate(8deg);
+			}
+			.main-banknote {
+				border: 0.8em solid #3bb44b;
+				background: #ceef96;
+				height: 6em;
+				width: 12em;
+				position: relative;
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+			}
+			.top-left-corner,
+			.top-right-corner,
+			.bottom-left-corner,
+			.bottom-right-corner {
+				position: absolute;
+				height: 1.2em;
+				width: 1.2em;
+				background: #3bb44b;
+			}
+			.top-left-corner {
+				top: 0;
+				left: 0;
+				border-radius: 0 0 100% 0;
+			}
+			.top-right-corner {
+				top: 0;
+				right: 0;
+				border-radius: 0 0 0 100%;
+			}
+			.bottom-left-corner {
+				bottom: 0;
+				left: 0;
+				border-radius: 0 100% 0 0;
+			}
+			.bottom-right-corner {
+				bottom: 0;
+				right: 0;
+				border-radius: 100% 0 0 0;
+			}
+			.small-circle {
+				height: 1.5em;
+				width: 1.5em;
+				background: #3bb44b;
+				border-radius: 100%;
+			}
+			.middle-circle {
+				height: 4em;
+				width: 4em;
+				border-radius: 100%;
+				background: #3bb44b;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.symbol-dollar {
+				color: #c2f495;
+				font-size: 3.5em;
+				font-family: "Franklin Gothic Medium", "Arial Narrow", Arial,
+					sans-serif;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="bg-banknote1"></div>
+			<div class="bg-banknote2"></div>
+			<div class="bg-banknote3"></div>
+			<div class="main-banknote">
+				<div class="top-left-corner"></div>
+				<div class="top-right-corner"></div>
+				<div class="bottom-left-corner"></div>
+				<div class="bottom-right-corner"></div>
+				<div class="small-circle"></div>
+				<div class="middle-circle">
+					<span class="symbol-dollar">$</span>
+				</div>
+				<div class="small-circle"></div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            rel="stylesheet"
+        />
+        <style>
+            body {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+            }
+            footer {
+                display: flex;
+                width: 100%;
+                background: #808080;
+                min-height: 8em;
+                justify-content: space-around;
+                align-items: center;
+            }
+            .copyright {
+                font-size: 16px;
+                font-family: Arial, Helvetica, sans-serif;
+                color: #ffffff;
+                font-weight: 600;
+                text-align: center;
+            }
+            .social-media {
+                display: flex;
+                gap: 5px;
+            }
+            a {
+                height: 40px;
+                width: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                background: #ffffff;
+                text-decoration: none;
+                transition: 0.5s ease;
+                position: relative;
+                overflow: hidden;
+            }
+            .shadow {
+                height: 0;
+                background: #00ffff;
+                position: absolute;
+                width: 0;
+                transition: 0.5s ease;
+            }
+            a:hover > .shadow {
+                width: 200%;
+                height: 200%;
+            }
+            .fa-brands {
+                font-size: 24px;
+                background: transparent;
+                z-index: 2;
+            }
+            .fa-brands.fa-instagram {
+                color: #ee038c;
+            }
+            .fa-brands.fa-facebook {
+                color: #0866ff;
+            }
+            .fa-brands.fa-youtube {
+                color: #ff0000;
+            }
+            .fa-brands.fa-tiktok {
+                color: #000000;
+            }
+            .fa-brands.fa-linkedin {
+                color: #0a66c2;
+            }
+            .fa-brands.fa-x-twitter {
+                color: #000000;
+            }
+        </style>
+    </head>
+    <body>
+        <footer>
+            <p class="copyright">
+                All rights reserved by Someone. Copyright 2024
+            </p>
+            <div class="social-media">
+                <a href="https://www.instagram.com/">
+                    <div class="shadow"></div>
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/">
+                    <div class="shadow"></div>
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/">
+                    <div class="shadow"></div>
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://www.tiktok.com/">
+                    <div class="shadow"></div>
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a href="https://www.linkedin.com/">
+                    <div class="shadow"></div>
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://www.twitter.com/">
+                    <div class="shadow"></div>
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+            </div>
+        </footer>
+    </body>
+</html>

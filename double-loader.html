@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0;
+			}
+			.outer-loader-container {
+				height: 48px;
+				width: 48px;
+				border-radius: 50%;
+			}
+			.outer-loader {
+				position: absolute;
+				height: 40px;
+				width: 40px;
+				border-radius: 50%;
+				border-width: 4px;
+				border-style: solid;
+				border-color: #0404a0 transparent #0404a0 transparent;
+				animation: 0.7s loading linear infinite;
+			}
+			.inner-loader-container {
+				height: 48px;
+				width: 48px;
+				border-radius: 50%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.inner-loader {
+				height: 24px;
+				width: 24px;
+				border-radius: 50%;
+				border-width: 4px;
+				border-style: solid;
+				border-color: transparent #c0bfbf transparent #c0bfbf;
+				animation: 0.7s loading linear infinite reverse;
+			}
+			@keyframes loading {
+				to {
+					rotate: 360deg;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="outer-loader-container">
+			<div class="outer-loader"></div>
+			<div class="inner-loader-container">
+				<div class="inner-loader"></div>
+			</div>
+		</div>
+	</body>
+</html>

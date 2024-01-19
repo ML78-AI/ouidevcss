@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+			}
+			.container {
+				max-width: 14em;
+				position: relative;
+			}
+			.user-input {
+				padding: 1.5em;
+				height: 0.5em;
+				width: 11em;
+				border-radius: 30px;
+				outline: none;
+				border: 1px solid black;
+			}
+			.label-input {
+				position: absolute;
+				top: 50%;
+				left: 7%;
+				transform: translateY(-50%);
+				font-family: "Ubuntu", sans-serif;
+				transition: ease 0.3s;
+				background: white;
+				border-width: 0 0.5em 0 0.5em;
+				border-color: white;
+				border-style: solid;
+			}
+			.user-input:is(:focus) {
+				border: 1px solid red;
+			}
+			.user-input:is(:focus) + .label-input {
+				transform: translate(10%, -180%) scale(0.8);
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<input type="text" class="user-input" />
+			<label class="label-input">Name</label>
+		</div>
+	</body>
+</html>

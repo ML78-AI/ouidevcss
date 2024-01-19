@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+			}
+			.logo {
+				position: relative;
+				height: 7em;
+				width: 7em;
+				border-radius: 50%;
+				background: radial-gradient(
+					closest-side,
+					red 20%,
+					black 20%,
+					black 45%,
+					red 45%,
+					red 63%,
+					black 63%,
+					black 80%,
+					red 80%
+				);
+				animation: zoom 0.5s linear infinite;
+			}
+			.trapezoid {
+				position: absolute;
+				clip-path: polygon(20% 0%, 80% 0%, 85% 100%, 15% 100%);
+				background: red;
+				height: 3em;
+				width: 1.6em;
+				top: 0;
+				left: 50%;
+				transform: translate(-50%, -98%);
+			}
+			.rectangle {
+				position: absolute;
+				background: red;
+				bottom: 0;
+			}
+			.rectangle.left {
+				height: 1.9em;
+				width: 1.6em;
+				left: 8%;
+				transform: translateY(30%) rotate(35deg);
+			}
+			.rectangle.middle {
+				height: 2.6em;
+				width: 1.9em;
+				left: 50%;
+				transform: translate(-50%, 94%);
+			}
+			.rectangle.right {
+				height: 1.9em;
+				width: 1.6em;
+				right: 8%;
+				transform: translateY(30%) rotate(-35deg);
+			}
+			@keyframes zoom {
+				to {
+					transform: scale(1.8);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="logo">
+			<div class="trapezoid"></div>
+			<div class="rectangle left"></div>
+			<div class="rectangle middle"></div>
+			<div class="rectangle right"></div>
+		</div>
+	</body>
+</html>

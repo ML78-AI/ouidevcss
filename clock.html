@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Imperial+Script&display=swap");
+            body {
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+            }
+            .clock-container {
+                background: transparent;
+                height: 10em;
+                width: 10em;
+                border: 0.8em solid black;
+                border-radius: 50%;
+            }
+            .hours-hand-container,
+            .minutes-hand-container,
+            .seconds-hand-container {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                background: transparent;
+                border-radius: 50%;
+            }
+            .hours-hand-container {
+                animation: 43200s rotation linear infinite;
+            }
+            .minutes-hand-container {
+                transform: rotate(50deg);
+                animation: 3600s rotation linear infinite;
+            }
+            .seconds-hand-container {
+                transform: rotate(90deg);
+                animation: 60s rotation linear infinite;
+            }
+            .hours-hand-container::before {
+                content: "";
+                height: 42%;
+                width: 0.3em;
+                background: black;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -100%);
+            }
+            .minutes-hand-container::before {
+                content: "";
+                height: 25%;
+                width: 0.3em;
+                background: black;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -100%);
+            }
+            .seconds-hand-container::before {
+                content: "";
+                height: 35%;
+                width: 0.15em;
+                background: red;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -100%);
+            }
+            .support {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 1em;
+                width: 1em;
+                background: black;
+                border-radius: 50%;
+            }
+            .clock-face {
+                position: relative;
+                height: 100%;
+                width: 100%;
+                font-size: 1.2em;
+                font-family: "Rethink Sans", sans-serif;
+            }
+            .number {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 50%;
+                background: transparent;
+                transform-origin: bottom;
+            }
+            .number.one {
+                transform: translateX(-50%) rotate(30deg);
+            }
+            .number.two {
+                transform: translateX(-50%) rotate(60deg);
+            }
+            .number.three {
+                transform: translateX(-50%) rotate(90deg);
+            }
+            .number.four {
+                transform: translateX(-50%) rotate(120deg);
+            }
+            .number.five {
+                transform: translateX(-50%) rotate(150deg);
+            }
+            .number.six {
+                transform: translateX(-50%) rotate(180deg);
+            }
+            .number.seven {
+                transform: translateX(-50%) rotate(210deg);
+            }
+            .number.eight {
+                transform: translateX(-50%) rotate(240deg);
+            }
+            .number.nine {
+                transform: translateX(-50%) rotate(270deg);
+            }
+            .number.ten {
+                transform: translateX(-50%) rotate(300deg);
+            }
+            .number.eleven {
+                transform: translateX(-50%) rotate(330deg);
+            }
+            .message {
+                font-family: "Imperial Script", cursive;
+                font-size: 3em;
+                color: rgb(247, 175, 187);
+            }
+            @keyframes rotation {
+                to {
+                    rotate: 360deg;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="clock-container">
+            <div class="clock-face">
+                <div class="hours-hand-container"></div>
+                <div class="minutes-hand-container"></div>
+                <div class="seconds-hand-container"></div>
+                <div class="support"></div>
+                <div class="number twelve">XII</div>
+                <div class="number one">I</div>
+                <div class="number two">II</div>
+                <div class="number three">III</div>
+                <div class="number four">IV</div>
+                <div class="number five">V</div>
+                <div class="number six">VI</div>
+                <div class="number seven">VII</div>
+                <div class="number eight">VIII</div>
+                <div class="number nine">IX</div>
+                <div class="number ten">X</div>
+                <div class="number eleven">XI</div>
+            </div>
+        </div>
+        <h1 class="message">
+            Thanks for watching. <br />
+            Don't forget to subscribe :)
+        </h1>
+    </body>
+</html>

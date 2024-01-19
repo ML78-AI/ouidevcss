@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				background: grey;
+			}
+			.animated-button {
+				height: 3em;
+				width: 12em;
+				border-radius: 50px;
+				border: 0;
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				position: relative;
+				padding: 0;
+			}
+			.hidden-layer {
+				height: 100%;
+				width: 25%;
+				border-radius: 50px;
+				position: absolute;
+				background: transparent;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.line {
+				height: 0.2em;
+				background: white;
+				transition: 0.5s ease;
+			}
+			.arrow {
+				height: 0.4em;
+				width: 0.4em;
+				background: transparent;
+				border-width: 0.2em;
+				border-color: white white transparent transparent;
+				border-style: solid;
+				transform: rotate(45deg);
+			}
+			.layer {
+				height: 100%;
+				width: 25%;
+				border-radius: 50px;
+				background: black;
+				transition: 0.5s ease;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.text {
+				position: absolute;
+				right: 7%;
+				transition: 0.3s ease;
+				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+				text-transform: uppercase;
+				font-weight: bold;
+				letter-spacing: 1px;
+			}
+			.animated-button:hover {
+				animation: 2.5s scale linear infinite;
+			}
+			.animated-button:hover > .layer {
+				width: 100%;
+			}
+			.animated-button:hover > .hidden-layer > .line {
+				transform: translate(0.25em);
+				width: 0.5em;
+			}
+			.animated-button:hover > .text {
+				color: white;
+			}
+			@keyframes scale {
+				50% {
+					transform: scale(1.2);
+				}
+				100% {
+					transform: scale(1);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<button class="animated-button">
+			<div class="hidden-layer">
+				<div class="line"></div>
+				<div class="arrow"></div>
+			</div>
+			<div class="layer"></div>
+			<span class="text">Learn More</span>
+		</button>
+	</body>
+</html>

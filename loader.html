@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            :root {
+                --second: 0.1s;
+            }
+            body {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+            }
+            .loader {
+                display: flex;
+                gap: 0.5em;
+            }
+            .ball {
+                height: 0.8em;
+                width: 0.8em;
+                border-radius: 50%;
+                background: #c026d3;
+                animation-name: loading;
+                animation-duration: 1.6s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+            }
+            .ball.one,
+            .ball.two,
+            .ball.three,
+            .ball.four,
+            .ball.five,
+            .ball.six,
+            .ball.seven,
+            .ball.eight,
+            .ball.nine,
+            .ball.ten {
+                animation-delay: calc(var(--i) * var(--second));
+            }
+            @keyframes loading {
+                0% {
+                    transform: translateY(0%);
+                }
+                6.25% {
+                    transform: translateY(-200%);
+                }
+                18.75% {
+                    transform: translateY(0%);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="loader">
+            <div class="ball one" style="--i: 0"></div>
+            <div class="ball two" style="--i: 1"></div>
+            <div class="ball three" style="--i: 2"></div>
+            <div class="ball four" style="--i: 3"></div>
+            <div class="ball five" style="--i: 4"></div>
+            <div class="ball six" style="--i: 5"></div>
+            <div class="ball seven" style="--i: 6"></div>
+            <div class="ball eight" style="--i: 7"></div>
+            <div class="ball nine" style="--i: 8"></div>
+            <div class="ball ten" style="--i: 9"></div>
+        </div>
+    </body>
+</html>

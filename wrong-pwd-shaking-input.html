@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0;
+			}
+			.container {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+			}
+			#pwd-label {
+				margin-left: 2px;
+			}
+			.input-pwd {
+				outline: none;
+				padding: 10px;
+				border-radius: 20px;
+				border: 1px solid black;
+			}
+			#btn-submit {
+				padding: 10px;
+				cursor: pointer;
+				width: 70%;
+				background: blue;
+				color: white;
+				font-weight: bold;
+				border: none;
+			}
+			.wrongpwd-anim {
+				animation: shake 0.3s linear;
+				border: 1px solid red;
+			}
+			@keyframes shake {
+				25% {
+					transform: translateX(-3%);
+				}
+				50% {
+					transform: translateX(3%);
+				}
+				75% {
+					transform: translateX(-3%);
+				}
+				100% {
+					transform: translateX(3%);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<form class="container">
+			<label for="pwd" id="pwd-label">Password :</label>
+			<input type="password" id="pwd" class="input-pwd" />
+			<button id="btn-submit">Submit</button>
+		</form>
+		<script>
+			const form = document.querySelector(".container");
+			form.addEventListener("submit", (e) => {
+				e.preventDefault();
+				const [input] = e.target;
+				if (input.value !== "password") {
+					input.classList.add("wrongpwd-anim");
+					setTimeout(
+						() => input.classList.remove("wrongpwd-anim"),
+						300
+					);
+				}
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+
+            .pulse-button {
+                padding: 0.9em 2em;
+                font-size: 1em;
+                color: #fff;
+                background-color: #4caf50;
+                border: none;
+                border-radius: 0.3em;
+                box-shadow: 0 0.3em 1em rgba(76, 175, 80, 0.4);
+                position: relative;
+                overflow: hidden;
+                cursor: pointer;
+            }
+
+            .pulse-button::before {
+                content: "";
+                position: absolute;
+                background: rgba(255, 255, 255, 0.5);
+                width: 6.3em;
+                height: 6.3em;
+                border-radius: 50%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0);
+                transition: all 0.3s ease;
+                z-index: 0;
+            }
+
+            .pulse-button:hover::before {
+                transform: translate(-50%, -50%) scale(2);
+                opacity: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <button class="pulse-button">Click me</button>
+    </body>
+</html>

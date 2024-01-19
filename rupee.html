@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.rupee {
+				position: relative;
+			}
+			.top-r {
+				width: 3.7em;
+				height: 3.5em;
+				border-radius: 0 50% 50% 0;
+				background: black;
+				display: flex;
+				align-items: center;
+			}
+			.top-r::before {
+				content: "";
+				height: 2.5em;
+				width: 2.8em;
+				border-radius: 0 50% 50% 0;
+				background: white;
+			}
+			.bottom-r {
+				height: 3.5em;
+				width: 1em;
+				background: black;
+				transform: skew(38deg) translateX(1.37em);
+			}
+			.top-indian-flag,
+			.middle-indian-flag,
+			.bottom-indian-flag {
+				position: absolute;
+				width: 5em;
+				height: 0.7em;
+				transform: skewX(-30deg) translateX(-0.2em);
+			}
+			.top-indian-flag {
+				top: 0;
+				background: #f27200;
+			}
+			.middle-indian-flag {
+				top: 0.7em;
+				background: transparent;
+			}
+			.bottom-indian-flag {
+				top: 1.4em;
+				background: #148409;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="rupee">
+			<div class="top-r"></div>
+			<div class="bottom-r"></div>
+			<div class="top-indian-flag"></div>
+			<div class="middle-indian-flag"></div>
+			<div class="bottom-indian-flag"></div>
+		</div>
+	</body>
+</html>

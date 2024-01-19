@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                display: flex;
+                height: 100vh;
+                justify-content: center;
+                align-items: center;
+            }
+            .container {
+                display: flex;
+                align-items: center;
+                rotate: -90deg;
+            }
+            .stick {
+                background-color: #32aa51;
+                height: 15px;
+                width: 22px;
+            }
+            .support {
+                height: 100px;
+                width: 50px;
+                background: conic-gradient(
+                    from 55deg at 7% 11%,
+                    #fbbd03 0%,
+                    #fbbd03 20%,
+                    #ec4334 21%,
+                    #ec4334
+                );
+                border-radius: 100px 0 0 100px;
+            }
+            .hidden-circle {
+                height: 70px;
+                width: 70px;
+                background: white;
+                border-radius: 50%;
+                transform: translateX(-35px);
+            }
+            .microphone {
+                height: 47px;
+                width: 110px;
+                background: #4087f5;
+                border-radius: 50px;
+                transform: translateX(-90px);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="stick"></div>
+            <div class="support"></div>
+            <div class="hidden-circle"></div>
+            <div class="microphone"></div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0;
+			}
+			.container {
+				height: 1cm;
+				width: 1cm;
+				cursor: pointer;
+				background: transparent;
+				position: relative;
+			}
+			#menu {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				margin: 0;
+				padding: 0;
+				opacity: 0;
+				border: 0;
+				cursor: pointer;
+			}
+			.menu {
+				height: 100%;
+				width: 100%;
+			}
+			.line {
+				position: absolute;
+				width: 100%;
+				height: 4px;
+				border-radius: 0.5em;
+				background: black;
+				transform-origin: left;
+				transition: 0.3s ease;
+			}
+			.line.top {
+				top: 0;
+			}
+			.line.middle {
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			.line.bottom {
+				bottom: 0;
+			}
+			.container:has(input:checked) > .menu > .top {
+				transform: rotate(45deg);
+				width: 1.3cm;
+			}
+			.container:has(input:checked) > .menu > .middle {
+				display: none;
+			}
+			.container:has(input:checked) > .menu > .bottom {
+				transform: rotate(-45deg);
+				width: 1.3cm;
+			}
+		</style>
+	</head>
+	<body>
+		<label class="container" for="menu">
+			<input type="checkbox" id="menu" />
+			<div class="menu">
+				<span class="line top"></span>
+				<span class="line middle"></span>
+				<span class="line bottom"></span>
+			</div>
+		</label>
+	</body>
+</html>

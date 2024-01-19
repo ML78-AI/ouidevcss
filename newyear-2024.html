@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Imperial+Script&display=swap");
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+            h1 {
+                font-family: "Imperial Script", cursive;
+                font-size: 3em;
+                color: #a52a2a;
+                position: absolute;
+                top: 0;
+                text-align: center;
+            }
+            .container {
+                display: flex;
+                flex-direction: row-reverse;
+                gap: 30px;
+            }
+            .handle-container {
+                display: flex;
+                align-items: center;
+            }
+            .base {
+                height: 48px;
+                width: 12px;
+                border-radius: 20px;
+                background: linear-gradient(to bottom, #a6a6a6, #7d7d7d);
+            }
+            .wrapper {
+                height: 8px;
+                width: 120px;
+                transform-origin: left;
+                display: flex;
+                justify-content: end;
+                transform: translateX(-91px) rotate(-11deg);
+                transition: 0.5s ease;
+            }
+            .wrapper:has(input:checked) {
+                transform: translateX(-91px) rotate(11deg);
+            }
+            .handle {
+                height: 6px;
+                width: 40px;
+                background: #000000;
+                position: relative;
+                border-radius: 20px;
+            }
+            .knob {
+                height: 24px;
+                width: 24px;
+                border-radius: 50%;
+                background: radial-gradient(
+                    circle at 75% 20%,
+                    #ffffff 5%,
+                    #ff0000 20%,
+                    #a10202 75%
+                );
+                position: absolute;
+                right: -8px;
+                top: -9px;
+            }
+            input {
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                opacity: 0;
+                cursor: pointer;
+            }
+            .year {
+                display: flex;
+                background: black;
+                padding: 10px;
+            }
+            .year > * {
+                padding: 10px;
+            }
+            span {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 120px;
+                color: #ffd700;
+            }
+            .newyear {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                transform-style: preserve-3d;
+                transition: 0.5s ease;
+            }
+            .handle-container:has(input:checked) + .year > .newyear {
+                transform: rotateX(90deg);
+            }
+            #three {
+                color: #ff0000;
+            }
+            #four {
+                position: absolute;
+                transform: rotateX(-90deg) translateZ(52px);
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="message">Happy New Year To Everybody !</h1>
+        <div class="container">
+            <div class="handle-container">
+                <div class="base"></div>
+                <div class="wrapper">
+                    <div class="handle">
+                        <div class="knob">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="year">
+                <span>2</span>
+                <span>0</span>
+                <span>2</span>
+                <div class="newyear">
+                    <span id="three">3</span>
+                    <span id="four">4</span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

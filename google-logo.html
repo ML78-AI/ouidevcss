@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .container {
+                position: relative;
+            }
+            .logo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 18rem;
+                width: 18rem;
+                background: conic-gradient(
+                    #ec4338 45deg,
+                    white 45deg 81deg,
+                    #4385f5 81deg 140deg,
+                    #34a853 140deg 245deg,
+                    #febd04 245deg 300deg,
+                    #ec4338 300deg
+                );
+                border-radius: 100%;
+            }
+            .internal-circle {
+                height: 12rem;
+                width: 12rem;
+                background: white;
+                border-radius: 100%;
+            }
+            .line {
+                position: absolute;
+                background: #4385f5;
+                height: 3rem;
+                width: 9rem;
+                top: 42%;
+                right: 2px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="logo">
+                <div class="internal-circle"></div>
+            </div>
+            <div class="line"></div>
+        </div>
+    </body>
+</html>

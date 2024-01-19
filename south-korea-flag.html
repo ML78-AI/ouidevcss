@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0;
+				background: url("./assets/images/seoul.jpg");
+				object-fit: cover;
+			}
+			.flag {
+				height: 334px;
+				width: 501px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+				border: 1px black solid;
+				background: white;
+			}
+			.yin-yang {
+				--width-sphere: 160px;
+				width: var(--width-sphere);
+				height: calc(var(--width-sphere) / 2);
+				background: #ce2a37;
+				border-width: 0 0 calc(var(--width-sphere) / 2) 0;
+				border-color: #0045a1;
+				border-style: solid;
+				border-radius: 50%;
+				position: relative;
+				rotate: 30deg;
+			}
+			.yin-yang::before,
+			.yin-yang::after {
+				content: "";
+				position: absolute;
+				height: calc(var(--width-sphere) / 2);
+				width: calc(var(--width-sphere) / 2);
+				border-radius: 50%;
+				top: 50%;
+			}
+			.yin-yang::before {
+				background: #ce2a37;
+				left: 0;
+			}
+			.yin-yang::after {
+				background: #0045a1;
+				right: 0;
+			}
+			.rectangles-top-left,
+			.rectangles-bottom-left,
+			.rectangles-top-right,
+			.rectangles-bottom-right {
+				position: absolute;
+				display: flex;
+				flex-direction: column;
+				gap: 7px;
+			}
+			.rectangles-top-left {
+				top: 18%;
+				left: 15%;
+				rotate: -55deg;
+			}
+			.rectangles-bottom-left {
+				bottom: 18%;
+				left: 15%;
+				rotate: 55deg;
+			}
+			.rectangles-top-right {
+				top: 18%;
+				right: 15%;
+				rotate: 55deg;
+			}
+			.rectangles-bottom-right {
+				bottom: 18%;
+				right: 15%;
+				rotate: -55deg;
+			}
+			.big-rectangle {
+				height: 13px;
+				width: 87px;
+				background: black;
+			}
+			.split-rectangle {
+				display: flex;
+				gap: 7px;
+			}
+			.small-rectangle {
+				height: 13px;
+				width: 40px;
+				background: black;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="flag">
+			<div class="rectangles-top-left">
+				<div class="big-rectangle"></div>
+				<div class="big-rectangle"></div>
+				<div class="big-rectangle"></div>
+			</div>
+			<div class="rectangles-bottom-left">
+				<div class="big-rectangle"></div>
+				<div class="split-rectangle">
+					<div class="small-rectangle"></div>
+					<div class="small-rectangle"></div>
+				</div>
+				<div class="big-rectangle"></div>
+			</div>
+			<div class="yin-yang"></div>
+			<div class="rectangles-top-right">
+				<div class="split-rectangle">
+					<div class="small-rectangle"></div>
+					<div class="small-rectangle"></div>
+				</div>
+				<div class="big-rectangle"></div>
+				<div class="split-rectangle">
+					<div class="small-rectangle"></div>
+					<div class="small-rectangle"></div>
+				</div>
+			</div>
+			<div class="rectangles-bottom-right">
+				<div class="split-rectangle">
+					<div class="small-rectangle"></div>
+					<div class="small-rectangle"></div>
+				</div>
+				<div class="split-rectangle">
+					<div class="small-rectangle"></div>
+					<div class="small-rectangle"></div>
+				</div>
+				<div class="split-rectangle">
+					<div class="small-rectangle"></div>
+					<div class="small-rectangle"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

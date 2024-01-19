@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0;
+				background: grey;
+			}
+			.cube {
+				height: 100px;
+				width: 100px;
+				transform: rotateX(45deg) rotateY(45deg);
+				position: relative;
+				transform-style: preserve-3d;
+				animation: 10s rotation linear infinite;
+			}
+			.face {
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				border-radius: 5px;
+				background: white;
+			}
+			.face.one {
+				transform: translateZ(50px);
+			}
+			.face.two {
+				transform: rotateX(90deg) translateZ(50px);
+			}
+			.face.three {
+				transform: rotateY(90deg) translateZ(50px);
+			}
+			.face.four {
+				transform: translateZ(-50px);
+			}
+			.face.five {
+				transform: rotateY(-90deg) translateZ(50px);
+			}
+			.face.six {
+				transform: rotateX(-90deg) translateZ(50px);
+			}
+			.wrapper {
+				height: 100%;
+				width: 100%;
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				grid-template-rows: repeat(3, 1fr);
+			}
+			.circle {
+				height: 33px;
+				width: 33px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.circle::before {
+				content: "";
+				display: inline-block;
+				height: 1em;
+				width: 1em;
+				border-radius: 50%;
+			}
+			.face.one .circle.five::before {
+				background: black;
+			}
+			.face.two .circle.three::before,
+			.face.two .circle.seven::before {
+				background: black;
+			}
+			.face.three .circle.three::before,
+			.face.three .circle.five::before,
+			.face.three .circle.seven::before {
+				background: black;
+			}
+			.face.four .circle.one::before,
+			.face.four .circle.three::before,
+			.face.four .circle.seven::before,
+			.face.four .circle.nine::before {
+				background: black;
+			}
+			.face.five .circle.one::before,
+			.face.five .circle.three::before,
+			.face.five .circle.five::before,
+			.face.five .circle.seven::before,
+			.face.five .circle.nine::before {
+				background: black;
+			}
+			.face.six .circle.one::before,
+			.face.six .circle.three::before,
+			.face.six .circle.four::before,
+			.face.six .circle.six::before,
+			.face.six .circle.seven::before,
+			.face.six .circle.nine::before {
+				background: black;
+			}
+			@keyframes rotation {
+				to {
+					transform: rotateX(350deg) rotateY(220deg) rotateZ(100deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="cube">
+			<div class="face one">
+				<div class="wrapper">
+					<div class="circle one"></div>
+					<div class="circle two"></div>
+					<div class="circle three"></div>
+					<div class="circle four"></div>
+					<div class="circle five"></div>
+					<div class="circle six"></div>
+					<div class="circle seven"></div>
+					<div class="circle eight"></div>
+					<div class="circle nine"></div>
+				</div>
+			</div>
+			<div class="face two">
+				<div class="wrapper">
+					<div class="circle one"></div>
+					<div class="circle two"></div>
+					<div class="circle three"></div>
+					<div class="circle four"></div>
+					<div class="circle five"></div>
+					<div class="circle six"></div>
+					<div class="circle seven"></div>
+					<div class="circle eight"></div>
+					<div class="circle nine"></div>
+				</div>
+			</div>
+			<div class="face three">
+				<div class="wrapper">
+					<div class="circle one"></div>
+					<div class="circle two"></div>
+					<div class="circle three"></div>
+					<div class="circle four"></div>
+					<div class="circle five"></div>
+					<div class="circle six"></div>
+					<div class="circle seven"></div>
+					<div class="circle eight"></div>
+					<div class="circle nine"></div>
+				</div>
+			</div>
+			<div class="face four">
+				<div class="wrapper">
+					<div class="circle one"></div>
+					<div class="circle two"></div>
+					<div class="circle three"></div>
+					<div class="circle four"></div>
+					<div class="circle five"></div>
+					<div class="circle six"></div>
+					<div class="circle seven"></div>
+					<div class="circle eight"></div>
+					<div class="circle nine"></div>
+				</div>
+			</div>
+			<div class="face five">
+				<div class="wrapper">
+					<div class="circle one"></div>
+					<div class="circle two"></div>
+					<div class="circle three"></div>
+					<div class="circle four"></div>
+					<div class="circle five"></div>
+					<div class="circle six"></div>
+					<div class="circle seven"></div>
+					<div class="circle eight"></div>
+					<div class="circle nine"></div>
+				</div>
+			</div>
+			<div class="face six">
+				<div class="wrapper">
+					<div class="circle one"></div>
+					<div class="circle two"></div>
+					<div class="circle three"></div>
+					<div class="circle four"></div>
+					<div class="circle five"></div>
+					<div class="circle six"></div>
+					<div class="circle seven"></div>
+					<div class="circle eight"></div>
+					<div class="circle nine"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
