@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				margin: 0;
+				background: linear-gradient(
+					230deg,
+					hsl(174, 72%, 56%),
+					hsl(33, 100%, 50%),
+					hsl(330, 100%, 50%)
+				);
+			}
+			.message {
+				font-size: 3em;
+				font-weight: bold;
+				font-family: Georgia, "Times New Roman", Times, serif;
+				color: white;
+				animation-duration: 1s;
+				animation-name: from-left;
+				animation-timing-function: ease-out;
+				text-transform: uppercase;
+			}
+			@keyframes from-left {
+				0% {
+					opacity: 0;
+					transform: translate3d(-150%, 0, 0) skewX(30deg);
+				}
+
+				60% {
+					opacity: 1;
+					transform: skewX(-20deg);
+				}
+
+				80% {
+					transform: skewX(5deg);
+				}
+
+				100% {
+					transform: translateZ(0);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="message">Have a good day</div>
+	</body>
+</html>
