@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                overflow: hidden;
+            }
+            .react {
+                --color: #53c0de;
+                height: 130px;
+                width: 370px;
+                border: 11px solid var(--color);
+                border-radius: 50%;
+                position: relative;
+                background: radial-gradient(
+                    circle at center,
+                    var(--color) 15%,
+                    transparent 15%
+                );
+                animation: 6s rotation linear infinite;
+            }
+            .react::before,
+            .react::after {
+                content: "";
+                position: absolute;
+                height: 130px;
+                width: 370px;
+                border: 11px solid var(--color);
+                border-radius: 50%;
+            }
+            .react::before {
+                transform: translate(-11px, -11px) rotate(60deg);
+            }
+            .react::after {
+                transform: translate(-11px, -11px) rotate(-60deg);
+            }
+            @keyframes rotation {
+                to {
+                    rotate: 1turn;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="react"></div>
+        <script>
+            const react = document.querySelector(".react");
+            function generateRandomColor() {
+                const firstPart = Math.floor(Math.random() * 16777215);
+                const v = firstPart.toString(16);
+                if (v.length === 6) return `#${v}`;
+                return generateRandomColor();
+            }
+            function setColor(color) {
+                react.style.setProperty("--color", color);
+            }
+            setInterval(() => {
+                setColor(generateRandomColor());
+            }, 1000);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                overflow: hidden;
+                background: #2b2b2b;
+            }
+            .container {
+                height: 5em;
+                width: 9em;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+            }
+            button {
+                padding: 0;
+                border: 0;
+                height: 60%;
+                width: 80%;
+                text-transform: uppercase;
+                font-family: inherit;
+                font-size: 1em;
+                font-weight: 600;
+                letter-spacing: 1px;
+                color: white;
+                background: #17c3b2;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <button>Catch me</button>
+        </div>
+        <script>
+            const body = document.querySelector("body");
+            const { height, width } = body.getBoundingClientRect();
+            const btn = document.querySelector(".container");
+            const { random } = Math;
+            btn.addEventListener("mouseover", (e) => {
+                const newX = widthBijection(random() * width);
+                const newY = heightBijection(random() * height);
+                btn.style.left = `${newX}px`;
+                btn.style.top = `${newY}px`;
+            });
+            // avoid overflow
+            function heightBijection(x) {
+                return (1 - 232 / height) * x + 116;
+            }
+            function widthBijection(x) {
+                return (1 - 232 / width) * x + 116;
+            }
+        </script>
+    </body>
+</html>

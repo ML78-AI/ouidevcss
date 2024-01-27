@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+			rel="stylesheet"
+		/>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0;
+				background: #2a2a2a;
+			}
+			.circle {
+				height: 7.7em;
+				width: 7.7em;
+				border-radius: 50%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: white;
+				position: relative;
+			}
+			input {
+				height: 100%;
+				width: 100%;
+				opacity: 0;
+				cursor: pointer;
+				z-index: 3;
+			}
+			a {
+				height: 150px;
+				width: 40px;
+				border-radius: 50px;
+				position: absolute;
+				transform-origin: bottom;
+				pointer-events: none;
+			}
+			.container {
+				height: 100%;
+				width: 100%;
+				border-radius: inherit;
+				display: flex;
+				justify-content: center;
+				align-items: end;
+				position: relative;
+			}
+			.fa-brands {
+				height: 48px;
+				width: 48px;
+				border-radius: 50%;
+				background: white;
+				font-size: 32px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: absolute;
+			}
+			.fa-brands.fa-instagram {
+				color: #ee038c;
+				rotate: 60deg;
+			}
+			.fa-brands.fa-facebook {
+				color: #0866ff;
+				rotate: 20deg;
+			}
+			.fa-brands.fa-tiktok {
+				color: #000000;
+				rotate: -20deg;
+			}
+			.fa-brands.fa-x-twitter {
+				color: #000000;
+				rotate: -60deg;
+			}
+			.instagram {
+				transform: translateY(-40%) rotate(-60deg);
+			}
+			.facebook {
+				transform: translateY(-40%) rotate(-20deg);
+			}
+			.tiktok {
+				transform: translateY(-40%) rotate(20deg);
+			}
+			.twitter {
+				transform: translateY(-40%) rotate(60deg);
+			}
+			.circle:has(input:checked) > a > div > i {
+				animation: anim 0.5s linear forwards;
+			}
+			.hide {
+				height: 100%;
+				width: 100%;
+				border-radius: inherit;
+				background: white;
+				position: absolute;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: black;
+				font-size: 16px;
+				font-weight: 600;
+				text-align: center;
+			}
+			@keyframes anim {
+				from {
+					top: 100%;
+				}
+				to {
+					top: 0;
+					pointer-events: auto;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="circle">
+			<input type="checkbox" />
+			<a href="https://www.instagram.com/" class="instagram">
+				<div class="container">
+					<i class="fa-brands fa-instagram"></i>
+				</div>
+			</a>
+			<a href="https://www.facebook.com/" class="facebook">
+				<div class="container">
+					<i class="fa-brands fa-facebook"></i>
+				</div>
+			</a>
+			<a href="https://www.tiktok.com/" class="tiktok">
+				<div class="container">
+					<i class="fa-brands fa-tiktok"></i>
+				</div>
+			</a>
+			<a href="https://www.twitter.com/" class="twitter">
+				<div class="container">
+					<i class="fa-brands fa-x-twitter"></i>
+				</div>
+			</a>
+			<div class="hide">FOLLOW US</div>
+		</div>
+	</body>
+</html>

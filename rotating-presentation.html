@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@300&family=Roboto&display=swap");
+            * {
+                font-family: "Montserrat", sans-serif;
+                font-size: 24px;
+                font-weight: 700;
+            }
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background: #00ffab;
+            }
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                gap: 4px;
+                background: #101820;
+                border-radius: 20px;
+                overflow: hidden;
+                padding-left: 10px;
+            }
+            .presentation {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                height: 3em;
+                width: 10.5em;
+                transform-style: preserve-3d;
+                transition: 0.5s ease;
+                animation: 4s rotation linear infinite 2s;
+            }
+            span {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                position: absolute;
+                color: white;
+                background: #101820;
+                border-radius: 0 20px 20px 0;
+                color: #fee715;
+            }
+            .eng {
+                transform: rotateX(180deg) translateZ(29px);
+            }
+            .dev {
+                transform: rotateX(-90deg) translateZ(29px);
+            }
+            .me {
+                transform: translateZ(29px);
+            }
+            @keyframes rotation {
+                25%,
+                50% {
+                    transform: rotateX(90deg);
+                }
+                75%,
+                100% {
+                    transform: rotateX(180deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            I'm
+            <div class="presentation">
+                <span class="eng">a software engineer</span>
+                <span class="dev">a web developer</span>
+                <span class="me">ouidevcss</span>
+            </div>
+        </div>
+    </body>
+</html>

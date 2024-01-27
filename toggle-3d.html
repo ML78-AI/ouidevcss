@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background: #550155;
+                overflow: hidden;
+            }
+            .toggle-3d {
+                height: 4em;
+                width: 12em;
+                border-radius: 50px;
+                position: relative;
+            }
+            #toggle {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                margin: 0;
+                cursor: pointer;
+                z-index: 5;
+            }
+            .toggle-container {
+                height: 100%;
+                width: 100%;
+                border-radius: 50px;
+                display: flex;
+                align-items: center;
+                background: linear-gradient(#420101, #ff0000);
+            }
+            .sphere {
+                height: 3.5em;
+                width: 3.5em;
+                border-radius: 50%;
+                background: radial-gradient(
+                    circle at 25% 25%,
+                    #ffd700,
+                    #8b7701
+                );
+                margin: 0 0.3em 0 0.3em;
+                z-index: 1;
+                transition: 1s ease;
+            }
+            .shadow {
+                z-index: 0;
+                background: radial-gradient(#000f, #fff0 72%);
+                border-radius: 50%;
+                height: 1.5em;
+                width: 4.5em;
+                position: absolute;
+                bottom: -0.5em;
+                transition: 1s ease;
+            }
+            #toggle:checked + .toggle-container {
+                background: linear-gradient(#013501, #19f519);
+            }
+            #toggle:checked + .toggle-container > .sphere,
+            #toggle:checked + .toggle-container > .shadow {
+                transform: translateX(7.9em);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="toggle-3d">
+            <input type="checkbox" id="toggle" />
+            <label for="toggle" class="toggle-container">
+                <div class="sphere"></div>
+                <div class="shadow"></div>
+            </label>
+        </div>
+    </body>
+</html>

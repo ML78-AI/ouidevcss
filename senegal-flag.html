@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+				flex-direction: column;
+				gap: 5em;
+				background-image: url("./assets/images/dakar.jpg");
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+			}
+			h1 {
+				display: flex;
+			}
+			.country {
+				text-transform: uppercase;
+				font-size: 2em;
+				font-family: Verdana, Geneva, Tahoma, sans-serif;
+			}
+			.country.green {
+				color: #00813d;
+			}
+			.country.yellow {
+				color: #f5e840;
+			}
+			.country.red {
+				color: #dc1a22;
+			}
+			.senegal-flag {
+				display: flex;
+				height: 17em;
+				width: 28em;
+			}
+			.rectangle {
+				height: 100%;
+				width: 33%;
+			}
+			.rectangle.green {
+				background: #00813d;
+			}
+			.rectangle.yellow {
+				background: #f5e840;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.rectangle.red {
+				background: #dc1a22;
+			}
+			.star {
+				height: 6em;
+				width: 6em;
+				clip-path: polygon(
+					50% 0%,
+					61% 35%,
+					98% 35%,
+					68% 57%,
+					79% 91%,
+					50% 70%,
+					21% 91%,
+					32% 57%,
+					2% 35%,
+					39% 35%
+				);
+				background: #00813d;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>
+			<span class="country green">Se</span>
+			<span class="country yellow">ne</span>
+			<span class="country red">gal</span>
+		</h1>
+		<div class="senegal-flag">
+			<div class="rectangle green"></div>
+			<div class="rectangle yellow">
+				<div class="star"></div>
+			</div>
+			<div class="rectangle red"></div>
+		</div>
+	</body>
+</html>
