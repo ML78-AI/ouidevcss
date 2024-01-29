@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			:root {
+				--startX: 35%;
+				--side: 10em;
+			}
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				overflow: hidden;
+				background-image: url("./assets/images/japan.jpg");
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+			}
+			.japan-flag {
+				height: 21em;
+				width: 32em;
+				background: repeating-conic-gradient(
+					from 45deg at var(--startX) 50%,
+					#bd0029 0deg 10deg,
+					white 10deg 20deg
+				);
+				display: flex;
+				align-items: center;
+			}
+			.circle {
+				height: var(--side);
+				width: var(--side);
+				border-radius: 50%;
+				background: #bd0029;
+				margin-left: calc(var(--startX) - (var(--side) / 2));
+			}
+		</style>
+	</head>
+	<body>
+		<div class="japan-flag">
+			<div class="circle"></div>
+		</div>
+	</body>
+</html>

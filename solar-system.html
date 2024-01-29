@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				overflow: hidden;
+				background: #2b2b2b;
+			}
+			.solar-system {
+				height: 30em;
+				width: 30em;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+			}
+			.sun {
+				height: 6em;
+				width: 6em;
+				border-radius: 50%;
+				background: yellow;
+			}
+			.mercury-container {
+				position: absolute;
+				height: 10em;
+				width: 10em;
+				animation: rotation 8.8s linear infinite;
+				border-radius: 50%;
+				border: 1px solid white;
+				display: flex;
+				justify-content: center;
+			}
+			.mercury {
+				height: 1.5em;
+				width: 1.5em;
+				border-radius: 50%;
+				background: grey;
+				transform: translateY(-50%);
+			}
+			.venus-container {
+				position: absolute;
+				height: 17em;
+				width: 17em;
+				border: 1px solid white;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				animation: rotation 22.5s linear infinite;
+			}
+			.venus {
+				height: 3.5em;
+				width: 3.5em;
+				border-radius: 50%;
+				background: #d89f38;
+				transform: translateX(-50%);
+			}
+			.earth-container {
+				position: absolute;
+				height: 25em;
+				width: 25em;
+				border: 1px solid white;
+				border-radius: 50%;
+				display: flex;
+				justify-content: end;
+				align-items: center;
+				animation: rotation 36.5s linear infinite;
+			}
+			.earth {
+				height: 3.5em;
+				width: 3.5em;
+				border-radius: 50%;
+				background: #313a86;
+				transform: translateX(50%);
+			}
+			.mars-container {
+				position: absolute;
+				height: 31em;
+				width: 31em;
+				border: 1px solid white;
+				border-radius: 50%;
+				display: flex;
+				align-items: end;
+				justify-content: center;
+				animation: rotation 68.7s linear infinite;
+			}
+			.mars {
+				height: 2.7em;
+				width: 2.7em;
+				border-radius: 50%;
+				background: #d86633;
+				transform: translateY(50%);
+			}
+			@keyframes rotation {
+				to {
+					rotate: 1turn;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="solar-system">
+			<div class="sun"></div>
+			<div class="mercury-container">
+				<div class="mercury"></div>
+			</div>
+			<div class="venus-container">
+				<div class="venus"></div>
+			</div>
+			<div class="earth-container">
+				<div class="earth"></div>
+			</div>
+			<div class="mars-container">
+				<div class="mars"></div>
+			</div>
+		</div>
+	</body>
+</html>

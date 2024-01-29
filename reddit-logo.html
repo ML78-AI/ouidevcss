@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+            }
+            .reddit-logo {
+                height: 13.5em;
+                width: 13.5em;
+                background: #ff4500;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .face {
+                height: 5.4em;
+                width: 8.5em;
+                background: white;
+                border-radius: 50%;
+                transform: translateY(1.5em);
+                position: relative;
+            }
+            .antenna {
+                position: relative;
+                height: 2.5em;
+                width: 1.7em;
+                border-radius: 0.25em;
+                border-color: white transparent transparent white;
+                border-width: 0.3em;
+                border-style: solid;
+                transform: translate(190%, -65%) rotate(10deg);
+            }
+            .antenna::before {
+                position: absolute;
+                content: "";
+                height: 1em;
+                width: 1em;
+                background: white;
+                border-radius: 50%;
+                top: -25%;
+                right: -30%;
+            }
+            .ear {
+                position: absolute;
+                height: 1.8em;
+                width: 1.8em;
+                background: white;
+                border-radius: 50%;
+                top: 10%;
+            }
+            .ear.left-ear {
+                left: -5%;
+            }
+            .ear.right-ear {
+                right: -5%;
+            }
+            .eye {
+                position: absolute;
+                height: 1.4em;
+                width: 1.4em;
+                background: #ff4500;
+                border-radius: 50%;
+                top: 25%;
+            }
+            .eye.left-eye {
+                left: 22%;
+            }
+            .eye.right-eye {
+                right: 22%;
+            }
+            .smile {
+                position: relative;
+                width: 4.1em;
+                height: 3em;
+                border: solid 0.4em #ff4500;
+                border-color: transparent transparent #ff4500 transparent;
+                border-radius: 50%;
+                transform: translate(37%, -55%);
+            }
+            .smile::before,
+            .smile::after {
+                position: absolute;
+                content: "";
+                height: 0.4em;
+                width: 0.4em;
+                background: #ff4500;
+                bottom: 0.23em;
+            }
+            .smile::before {
+                border-top-left-radius: 100%;
+                border-bottom-left-radius: 100%;
+                left: 0.1em;
+                rotate: 39deg;
+            }
+            .smile::after {
+                border-top-right-radius: 100%;
+                border-bottom-right-radius: 100%;
+                right: 0.1em;
+                rotate: -39deg;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="reddit-logo">
+            <div class="face">
+                <div class="antenna"></div>
+                <div class="ear left-ear"></div>
+                <div class="ear right-ear"></div>
+                <div class="eye left-eye"></div>
+                <div class="eye right-eye"></div>
+                <div class="smile"></div>
+            </div>
+        </div>
+    </body>
+</html>

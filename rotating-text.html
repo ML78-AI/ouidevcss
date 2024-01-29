@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				margin: 0;
+				background: radial-gradient(#00c3ff, #ffff1c);
+			}
+			.message {
+				font-size: 3em;
+				font-weight: bold;
+				font-family: Georgia, "Times New Roman", Times, serif;
+				color: white;
+				animation-duration: 2s;
+				animation-name: rotation;
+				animation-timing-function: ease-out;
+				text-transform: uppercase;
+			}
+			@keyframes rotation {
+				0% {
+					opacity: 0;
+					transform: scale(0) rotate(0turn);
+				}
+				10% {
+					opacity: 0.1;
+					transform: scale(0.1) rotate(1turn);
+				}
+				20% {
+					opacity: 0.2;
+					transform: scale(0.2) rotate(2turn);
+				}
+				30% {
+					opacity: 0.3;
+					transform: scale(0.3) rotate(3turn);
+				}
+				40% {
+					opacity: 0.4;
+					transform: scale(0.4) rotate(4turn);
+				}
+				50% {
+					opacity: 0.5;
+					transform: scale(0.5) rotate(5turn);
+				}
+				60% {
+					opacity: 0.6;
+					transform: scale(0.6) rotate(6turn);
+				}
+				70% {
+					opacity: 0.7;
+					transform: scale(0.7) rotate(7turn);
+				}
+				80% {
+					opacity: 0.8;
+					transform: scale(0.8) rotate(8turn);
+				}
+				90% {
+					opacity: 0.9;
+					transform: scale(0.9) rotate(9turn);
+				}
+				100% {
+					opacity: 1;
+					transform: scale(1) rotate(10turn);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="message">Have a good day</div>
+	</body>
+</html>
