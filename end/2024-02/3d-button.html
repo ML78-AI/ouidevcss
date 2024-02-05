@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				overflow: hidden;
+			}
+			.btn-container {
+				height: 3em;
+				width: 13em;
+				cursor: pointer;
+				position: relative;
+				background: #4479e1;
+				transform-style: preserve-3d;
+				transform: rotateX(30deg);
+			}
+			.label {
+				background: #17c3b2;
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				font-family: inherit;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				font-weight: 600;
+				user-select: none;
+				font-size: 2em;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: white;
+				transform: translateZ(20px);
+			}
+			.btn-container:active > .label {
+				transform: translateZ(0px);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="btn-container">
+			<div class="label">Click me</div>
+		</div>
+	</body>
+</html>

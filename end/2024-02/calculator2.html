@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			@font-face {
+				font-family: digital;
+				src: url("../../assets/fonts/digital-7.ttf");
+			}
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0;
+			}
+			.calculator {
+				height: 460px;
+				width: 320px;
+				border-radius: 15px;
+				padding: 15px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				background: black;
+				font-family: digital;
+			}
+			.screen {
+				width: 96%;
+				height: 80px;
+				background-color: #a7af7c;
+				border-radius: 10px;
+				margin-bottom: 15px;
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				font-size: 36px;
+				overflow: hidden;
+			}
+			.keyboard {
+				background-color: white;
+				display: grid;
+				grid-template-columns: repeat(4, 65px);
+				grid-template-rows: repeat(5, 61px);
+				grid-gap: 12px;
+				background: black;
+				font-family: "Roboto", sans-serif;
+			}
+			.key {
+				padding: 20px;
+				border: none;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 24px;
+				font-family: inherit;
+				cursor: pointer;
+				border-radius: 50%;
+				color: white;
+			}
+			svg {
+				fill: white;
+			}
+			.rest {
+				background: #9a9a9a;
+			}
+			.num {
+				background: #2f2f2f;
+			}
+			.op,
+			.eq {
+				background: #ee9406;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="calculator">
+			<div class="screen" id="screen"></div>
+			<div class="keyboard">
+				<button class="key rest" id="clear">AC</button>
+				<button class="key rest" id="remove">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 32 32"
+						id="arrow"
+					>
+						<g>
+							<path
+								d="M32,15H3.41l8.29-8.29L10.29,5.29l-10,10a1,1,0,0,0,0,1.41l10,10,1.41-1.41L3.41,17H32Z"
+							/>
+						</g>
+					</svg>
+				</button>
+				<button class="key rest" id="ans">Ans</button>
+				<button class="key op" id="divide">&divide;</button>
+				<button class="key num" id="key-7">7</button>
+				<button class="key num" id="key-8">8</button>
+				<button class="key num" id="key-9">9</button>
+				<button class="key op" id="times">&times;</button>
+				<button class="key num" id="key-4">4</button>
+				<button class="key num" id="key-5">5</button>
+				<button class="key num" id="key-6">6</button>
+				<button class="key op" id="minus">&minus;</button>
+				<button class="key num" id="key-1">1</button>
+				<button class="key num" id="key-2">2</button>
+				<button class="key num" id="key-3">3</button>
+				<button class="key op" id="plus">&plus;</button>
+				<button class="key num" id="key-0">0</button>
+				<button class="key num" id="key-00">00</button>
+				<button class="key num" id="point">.</button>
+				<button class="key eq" id="equal">&equals;</button>
+			</div>
+		</div>
+		<script>
+			const screen = document.querySelector(".screen");
+			let ans = "";
+			let hiddenCalc = "";
+			const keyboard = document.querySelector(".keyboard");
+			keyboard.addEventListener("click", (e) => {
+				e.preventDefault();
+				if (e.srcElement.className !== "keyboard")
+					handleKeyboard({ srcElement: e.srcElement });
+			});
+			function handleKeyboard({ srcElement }) {
+				const { className, textContent, id } = srcElement;
+				if (className === "key num") {
+					screen.textContent += textContent.toString();
+					hiddenCalc += textContent.toString();
+				} else if (id === "clear") {
+					screen.textContent = hiddenCalc = "";
+				} else if (id === "plus") {
+					hiddenCalc += "+";
+					screen.textContent += textContent;
+				} else if (id === "minus") {
+					hiddenCalc += "-";
+					screen.textContent += textContent;
+				} else if (id === "times") {
+					hiddenCalc += "*";
+					screen.textContent += textContent;
+				} else if (id === "divide") {
+					hiddenCalc += "/";
+					screen.textContent += textContent;
+				} else if (screen.textContent && id === "equal") {
+					try {
+						screen.textContent =
+							hiddenCalc =
+							ans =
+								eval(hiddenCalc);
+					} catch {
+						screen.textContent = "Error";
+						hiddenCalc = "";
+					}
+				} else if (id === "ans") {
+					screen.textContent = hiddenCalc = ans.toString();
+				} else if (id === "remove" || id === "arrow") {
+					screen.textContent = screen.textContent.slice(0, -1);
+					hiddenCalc = hiddenCalc.toString().slice(0, -1);
+				}
+			}
+		</script>
+	</body>
+</html>

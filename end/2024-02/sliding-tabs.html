@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0;
+				background: gray;
+			}
+			.tabs {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 16px 25px 16px 25px;
+				border-radius: 70px;
+				position: relative;
+				background-color: #e6eef9;
+			}
+			input[type="radio"] {
+				display: none;
+			}
+			label {
+				cursor: pointer;
+				z-index: 1;
+				height: 30px;
+				width: 70px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-family: Helvetica, sans-serif;
+			}
+			input[type="radio"]:checked + label {
+				color: white;
+				text-shadow: 2px 2px 2px rgb(255, 255, 255, 0.75);
+			}
+			#home:checked ~ .highlight {
+				transform: translateX(-100%);
+			}
+			#contact:checked ~ .highlight {
+				transform: translateX(100%);
+			}
+			.highlight {
+				position: absolute;
+				height: 30px;
+				width: 70px;
+				border-radius: 70px;
+				background: linear-gradient(
+					141deg,
+					#bf66ff 0%,
+					#6248ff 50%,
+					#00ddeb 100%
+				);
+				transition: 0.3s ease;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="tabs">
+			<input type="radio" class="tab" id="home" name="tab" checked />
+			<label for="home" class="home-label">Home</label>
+			<input type="radio" class="tab" id="about" name="tab" />
+			<label for="about" class="about-label">About</label>
+			<input type="radio" class="tab" id="contact" name="tab" />
+			<label for="contact" class="contact-label">Contact</label>
+			<div class="highlight"></div>
+		</div>
+	</body>
+</html>

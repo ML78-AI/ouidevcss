@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                overflow: hidden;
+                background: #51bbb5;
+            }
+            .loading-card {
+                height: 12em;
+                width: 17em;
+                border-radius: 5px;
+                background: white;
+                display: flex;
+                flex-direction: column;
+                padding: 10px;
+            }
+            .header {
+                display: flex;
+                gap: 5px;
+                align-items: center;
+            }
+            .pic {
+                height: 4.5em;
+                width: 4.5em;
+                border-radius: 50%;
+            }
+            .presentation {
+                height: 1em;
+                width: 12em;
+                border-radius: 1em;
+            }
+            .content {
+                margin-top: 6px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+            .text {
+                height: 1em;
+                width: 17em;
+                border-radius: 1em;
+            }
+            .loading {
+                background: linear-gradient(
+                        to right,
+                        rgba(255, 255, 255, 0),
+                        rgba(255, 255, 255, 0.5) 40%,
+                        rgba(255, 255, 255, 0) 99%
+                    ),
+                    lightgray;
+                background-repeat: repeat-y;
+                background-size: 35px;
+                background-position: 0 0;
+                animation: shine 1s infinite;
+            }
+            @keyframes shine {
+                to {
+                    background-position: 105% 0, 0 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="loading-card">
+            <div class="header">
+                <div class="pic loading"></div>
+                <div class="presentation loading"></div>
+            </div>
+            <div class="content">
+                <div class="text loading"></div>
+                <div class="text loading"></div>
+                <div class="text loading"></div>
+                <div class="text loading"></div>
+                <div class="text loading"></div>
+            </div>
+        </div>
+    </body>
+</html>

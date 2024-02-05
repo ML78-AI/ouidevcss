@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				overflow: hidden;
+				background-image: url("../../assets/images/ghana.jpg");
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+			}
+			.ghana-flag {
+				height: 21em;
+				width: 32em;
+			}
+			.rectangle {
+				width: 100%;
+				height: 33.3%;
+			}
+			.red {
+				background: #cf0821;
+			}
+			.yellow {
+				display: flex;
+				justify-content: center;
+				background: #fcd20e;
+			}
+			.star {
+				height: 108%;
+				width: 8em;
+				background: black;
+				clip-path: polygon(
+					50% 0%,
+					61% 35%,
+					98% 35%,
+					68% 57%,
+					79% 91%,
+					50% 70%,
+					21% 91%,
+					32% 57%,
+					2% 35%,
+					39% 35%
+				);
+			}
+			.green {
+				background: #006b3d;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="ghana-flag">
+			<div class="rectangle red"></div>
+			<div class="rectangle yellow">
+				<div class="star"></div>
+			</div>
+			<div class="rectangle green"></div>
+		</div>
+	</body>
+</html>
