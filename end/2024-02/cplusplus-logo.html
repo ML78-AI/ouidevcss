@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				overflow: hidden;
+				background: black;
+			}
+			.csharp-logo {
+				height: 25em;
+				width: 25em;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.hexagon {
+				height: 9.8em;
+				width: 16.5em;
+				background: linear-gradient(90deg, #659bd3 50%, #00599d 50%);
+				position: relative;
+				border-radius: 0.5em;
+				display: flex;
+				justify-content: end;
+				align-items: center;
+			}
+			.plus {
+				clip-path: polygon(
+					10% 37.5%,
+					35% 37.5%,
+					35% 12.5%,
+					65% 12.5%,
+					65% 37.5%,
+					90% 37.5%,
+					90% 62.5%,
+					65% 62.5%,
+					65% 87.5%,
+					35% 87.5%,
+					35% 62.5%,
+					10% 62.5%
+				);
+				background: white;
+				height: 2.5em;
+				width: 2.5em;
+				z-index: 3;
+			}
+			.hexagon::before,
+			.hexagon::after {
+				border-radius: 0.5em;
+				top: 0;
+				left: 0;
+				position: absolute;
+				content: "";
+				height: inherit;
+				width: inherit;
+			}
+			.hexagon::before {
+				rotate: 60deg;
+				background: conic-gradient(
+					from 60deg at 50% 50%,
+					#004283 60deg,
+					#659bd3 60deg,
+					#659bd3 240deg,
+					#00599d 240deg
+				);
+			}
+			.hexagon::after {
+				rotate: -60deg;
+				background: conic-gradient(
+					from 120deg at 50% 50%,
+					#00599d 60deg,
+					#004283 60deg,
+					#004283 180deg,
+					#659bd3 180deg
+				);
+			}
+			.c {
+				position: absolute;
+				height: 11em;
+				width: 11em;
+				border-radius: 50%;
+				background: conic-gradient(
+						from 60deg,
+						#00599d 60deg,
+						#00599d 61deg,
+						transparent 61deg
+					),
+					radial-gradient(
+						closest-side,
+						transparent 50%,
+						white 50%,
+						white 99%,
+						transparent 99%
+					);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="csharp-logo">
+			<div class="hexagon">
+				<div class="plus"></div>
+				<div class="plus"></div>
+			</div>
+			<div class="c"></div>
+		</div>
+	</body>
+</html>

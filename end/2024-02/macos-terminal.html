@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0;
+				background: grey;
+			}
+			p {
+				font-family: "Lucida Grande", sans-serif;
+				margin: 0;
+				color: white;
+			}
+			.macos-terminal {
+				display: flex;
+				flex-direction: column;
+			}
+			.header {
+				border-radius: 5px 5px 0 0;
+				background: #3e3f40;
+				height: 1.3em;
+				width: 23em;
+				position: relative;
+				justify-content: center;
+				align-items: center;
+				display: flex;
+			}
+			.user {
+				height: 100%;
+				font-size: 0.75em;
+				display: flex;
+				align-items: center;
+			}
+			.buttons {
+				position: absolute;
+				left: 0;
+				height: 100%;
+				width: 17%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 5px;
+			}
+			.red-btn,
+			.yellow-btn,
+			.green-btn {
+				height: 0.8em;
+				width: 0.8em;
+				border-radius: 50%;
+				cursor: pointer;
+			}
+			.red-btn {
+				background: #f7514b;
+			}
+			.yellow-btn {
+				background: #f4bd48;
+			}
+			.green-btn {
+				background: #62d13f;
+			}
+			.terminal {
+				width: 23em;
+				height: 14em;
+				border-radius: 0 0 5px 5px;
+				background: #1e1e1e;
+			}
+			.last-login {
+				font-size: 0.7em;
+				padding: 4px 0 2px 4px;
+			}
+			.wrapper {
+				display: flex;
+				gap: 5px;
+			}
+			.command {
+				font-size: 0.7em;
+				padding-left: 4px;
+				display: inline-block;
+			}
+			.cursor {
+				height: 0.75em;
+				width: 0.4em;
+				background: white;
+				animation: 1s blinker infinite;
+			}
+			@keyframes blinker {
+				50% {
+					opacity: 0;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="macos-terminal">
+			<div class="header">
+				<div class="buttons">
+					<div class="red-btn"></div>
+					<div class="yellow-btn"></div>
+					<div class="green-btn"></div>
+				</div>
+				<p class="user">ouidevcss -- -bash -- 80&times;24</p>
+			</div>
+			<div class="terminal">
+				<p class="last-login">
+					Last login: Tue Dec 12 11:32:45 on ttys000
+				</p>
+				<div class="wrapper">
+					<p class="command">ouidevcss@Ouidevcss-Macbook-Air ~ %</p>
+					<div class="cursor"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

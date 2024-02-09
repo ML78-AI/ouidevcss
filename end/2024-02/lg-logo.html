@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+			}
+			.container {
+				display: flex;
+				flex-direction: column;
+				gap: 1em;
+				align-items: center;
+			}
+			.lg-logo {
+				height: 20em;
+				width: 20em;
+				border-radius: 50%;
+				background: #c10031;
+				display: grid;
+				place-items: center;
+				position: relative;
+			}
+			.g {
+				height: 16em;
+				width: 16em;
+				border-width: 0.7em;
+				border-color: white transparent white white;
+				border-style: solid;
+				border-radius: 50%;
+				rotate: -45deg;
+			}
+			.line {
+				position: absolute;
+				height: 0.7em;
+				width: 32%;
+				background: white;
+				transform: translateX(5.45em);
+			}
+			.l {
+				position: absolute;
+				height: 8em;
+				width: 2em;
+				border-color: transparent transparent white white;
+				border-width: 0 0 0.7em 0.7em;
+				border-style: solid;
+				transform: translate(1em);
+			}
+			.circle {
+				position: absolute;
+				height: 2.5em;
+				width: 2.5em;
+				background: white;
+				border-radius: 50%;
+				left: 25%;
+				top: 30%;
+			}
+			.brandname {
+				color: #6a6a6a;
+				font-size: 11em;
+				font-weight: 900;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="lg-logo">
+				<div class="g"></div>
+				<div class="line"></div>
+				<div class="l"></div>
+				<div class="circle"></div>
+			</div>
+			<div class="brandname">LG</div>
+		</div>
+	</body>
+</html>

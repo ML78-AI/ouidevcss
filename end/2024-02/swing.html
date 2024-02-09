@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			.container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+			}
+
+			.animated-text {
+				font-size: 3em;
+				animation: scrolling 2s infinite, swinging 2s infinite;
+				font-family: "Lucida Sans", sans-serif;
+			}
+			@keyframes swinging {
+				0% {
+					transform: translateX(0) rotate(0);
+				}
+				10% {
+					transform: translateX(5px) rotate(-5deg);
+				}
+				20% {
+					transform: translateX(-5px) rotate(5deg);
+				}
+				30% {
+					transform: translateX(5px) rotate(-5deg);
+				}
+				40% {
+					transform: translateX(-5px) rotate(5deg);
+				}
+				50% {
+					transform: translateX(0) rotate(0);
+				}
+			}
+
+			@keyframes scrolling {
+				0% {
+					letter-spacing: 1em;
+				}
+				100% {
+					letter-spacing: normal;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="animated-text">Swing</h1>
+		</div>
+	</body>
+</html>

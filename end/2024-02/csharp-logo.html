@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				overflow: hidden;
+				background: black;
+			}
+			.csharp-logo {
+				height: 25em;
+				width: 25em;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.hexagon {
+				height: 9.8em;
+				width: 16.5em;
+				background: linear-gradient(90deg, #9147b5 50%, #510897 50%);
+				position: relative;
+				border-radius: 0.5em;
+				display: flex;
+				justify-content: end;
+				align-items: center;
+			}
+			svg {
+				fill: white;
+				height: 50px;
+				width: 50px;
+				margin-right: 1em;
+				z-index: 5;
+			}
+			.hexagon::before,
+			.hexagon::after {
+				border-radius: 0.5em;
+				top: 0;
+				left: 0;
+				position: absolute;
+				content: "";
+				height: inherit;
+				width: inherit;
+			}
+			.hexagon::before {
+				rotate: 60deg;
+				background: conic-gradient(
+					from 60deg at 50% 50%,
+					#40047b 60deg,
+					#9147b5 60deg,
+					#9147b5 240deg,
+					#510897 240deg
+				);
+			}
+			.hexagon::after {
+				rotate: -60deg;
+				background: conic-gradient(
+					from 120deg at 50% 50%,
+					#510897 60deg,
+					#40047b 60deg,
+					#40047b 180deg,
+					#9147b5 180deg
+				);
+			}
+			.c {
+				position: absolute;
+				height: 11em;
+				width: 11em;
+				border-radius: 50%;
+				background: conic-gradient(
+						from 60deg,
+						#510897 60deg,
+						#510897 61deg,
+						transparent 61deg
+					),
+					radial-gradient(
+						closest-side,
+						transparent 50%,
+						white 50%,
+						white 99%,
+						transparent 99%
+					);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="csharp-logo">
+			<div class="hexagon">
+				<svg viewBox="0 0 490 490">
+					<path
+						d="M64.333,490h58.401l33.878-137.69h122.259L245.39,490h58.401l33.878-137.69h119.92v-48.162h-108.24l29.2-117.324h79.04
+	v-48.162H390.23L424.108,0H365.31l-33.878,138.661H208.79L242.668,0h-58.415l-33.864,138.661H32.411v48.162h106.298l-28.818,117.324
+	h-77.48v48.162h65.8L64.333,490z M197.11,186.824h122.642l-29.2,117.324H168.292L197.11,186.824z"
+					/>
+				</svg>
+			</div>
+			<div class="c"></div>
+		</div>
+	</body>
+</html>

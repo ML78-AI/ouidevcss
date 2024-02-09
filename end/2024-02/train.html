@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				display: flex;
+				justify-content: end;
+				flex-direction: column;
+				align-items: center;
+				height: 100vh;
+				overflow: hidden;
+				margin: 0;
+			}
+			.wagon {
+				width: 27em;
+				height: 14em;
+				border-radius: 10px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: end;
+				animation: 3s moving linear forwards;
+			}
+			.top-container {
+				width: 100%;
+				height: 3%;
+				display: flex;
+				justify-content: space-around;
+			}
+			.top {
+				background: #3b1f0a;
+				height: 100%;
+				width: 25%;
+				border-radius: 5px 5px 0 0;
+			}
+			.cabin {
+				width: 100%;
+				height: 75%;
+				background: linear-gradient(
+					#e40315 7%,
+					#f6c320 7%,
+					#f6c320 75%,
+					#e40315 75%
+				);
+				border-radius: 10px;
+				gap: 10px;
+				display: flex;
+				justify-content: center;
+			}
+			.window {
+				height: 4em;
+				width: 5em;
+				background: linear-gradient(-40deg, white 50%, #66c4e1 50%);
+				margin-top: 28px;
+			}
+			.bottom {
+				height: 5%;
+				width: 95%;
+				background: #3c3a39;
+				border-radius: 0 0 5px 5px;
+				display: flex;
+				justify-content: space-around;
+			}
+			.wheels-container {
+				width: 100%;
+				display: flex;
+				justify-content: space-around;
+			}
+			.wheels {
+				display: flex;
+				gap: 5px;
+			}
+			.wheel {
+				height: 1.5em;
+				width: 3em;
+				border-radius: 0 0 1.5em 1.5em;
+				background: radial-gradient(
+					circle at 50% 0%,
+					#504e4f 55%,
+					#211715 55%
+				);
+			}
+			.ground {
+				width: 100%;
+				height: 50%;
+				background: linear-gradient(
+					#47403f 5%,
+					#b18247 5%,
+					#b18247 25%,
+					#9ac947 25%,
+					#9ac947 50%,
+					#82b93a 50%
+				);
+			}
+			@keyframes moving {
+				0% {
+					transform: translateX(150%);
+				}
+				100% {
+					transform: translateX(0%);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wagon">
+			<div class="top-container">
+				<div class="top"></div>
+				<div class="top"></div>
+			</div>
+			<div class="cabin">
+				<div class="window"></div>
+				<div class="window"></div>
+				<div class="window"></div>
+				<div class="window"></div>
+			</div>
+			<div class="bottom"></div>
+			<div class="wheels-container">
+				<div class="wheels">
+					<div class="wheel"></div>
+					<div class="wheel"></div>
+				</div>
+				<div class="wheels">
+					<div class="wheel"></div>
+					<div class="wheel"></div>
+				</div>
+			</div>
+		</div>
+		<div class="ground"></div>
+	</body>
+</html>
