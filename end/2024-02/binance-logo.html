@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				margin: 0;
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				align-items: center;
+				gap: 3.5em;
+				background: black;
+			}
+			.binance-logo {
+				height: 17em;
+				width: 17em;
+				transform: rotate(45deg);
+				background: #f3ba2f;
+				position: relative;
+			}
+			.binance-logo::before,
+			.binance-logo::after {
+				position: absolute;
+				content: "";
+				height: 10.5em;
+				width: 10.5em;
+				border-color: black;
+				border-style: solid;
+			}
+			.binance-logo::before {
+				top: 0;
+				left: 0;
+				border-width: 0 2.7em 2.7em 0;
+			}
+			.binance-logo::after {
+				bottom: 0;
+				right: 0;
+				border-width: 2.7em 0 0 2.7em;
+			}
+			.brandname {
+				color: #f3ba2f;
+				font-size: 6.5em;
+				font-family: "IBM Plex Sans", sans-serif;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="binance-logo"></div>
+		<div class="brandname">BINANCE</div>
+	</body>
+</html>
