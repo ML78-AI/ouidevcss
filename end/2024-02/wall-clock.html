@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                height: 100vh;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .wall-clock {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .top {
+                clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+                background: #78543a;
+                height: 3em;
+                width: 20em;
+            }
+            .decoration {
+                width: 12em;
+                height: 0.3em;
+                background: linear-gradient(
+                    90deg,
+                    gold 12.5%,
+                    silver 12.5%,
+                    silver 87.5%,
+                    gold 87.5%
+                );
+            }
+            .main-part {
+                display: flex;
+            }
+            .left,
+            .right {
+                width: 1.5em;
+                height: 20em;
+                background: #78543a;
+            }
+            .middle {
+                height: 20em;
+                width: 9em;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #78543a;
+            }
+            .clock-container {
+                width: 92%;
+                height: 92%;
+                border-radius: 100px 100px 0 0;
+                background: #a88667;
+                opacity: 0.9;
+            }
+            .pendulum {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: 10em;
+                width: 100%;
+                transform-origin: top;
+                animation: swing 2.5s linear infinite;
+            }
+            .wire {
+                height: 65%;
+                width: 0.3em;
+                background: #fef1be;
+            }
+            .bob {
+                height: 3em;
+                width: 3em;
+                border-radius: 50%;
+                background: #fef1be;
+            }
+            .bottom {
+                height: 2em;
+                width: 14em;
+                background: #78543a;
+            }
+            .hours-hand-container,
+            .minutes-hand-container,
+            .seconds-hand-container {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                background: transparent;
+                border-radius: 50%;
+            }
+            .hours-hand-container {
+                animation: 43200s rotation linear infinite;
+            }
+            .minutes-hand-container {
+                transform: rotate(50deg);
+                animation: 3600s rotation linear infinite;
+            }
+            .seconds-hand-container {
+                transform: rotate(90deg);
+                animation: 60s rotation linear infinite;
+            }
+            .hours-hand-container::before {
+                content: "";
+                height: 35%;
+                width: 0.25em;
+                background: black;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -100%);
+            }
+            .minutes-hand-container::before {
+                content: "";
+                height: 25%;
+                width: 0.25em;
+                background: black;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -100%);
+            }
+            .seconds-hand-container::before {
+                content: "";
+                height: 35%;
+                width: 0.15em;
+                background: red;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -100%);
+            }
+            .support {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 1em;
+                width: 1em;
+                background: black;
+                border-radius: 50%;
+            }
+            .clock-face {
+                position: relative;
+                height: 6.7em;
+                width: 6.7em;
+                font-size: 1.2em;
+                font-family: "Rethink Sans", sans-serif;
+                background: white;
+                border-radius: 50%;
+                border: 2px solid black;
+            }
+            .number {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 50%;
+                background: transparent;
+                transform-origin: bottom;
+                font-size: 0.7em;
+            }
+            .number.one {
+                transform: translateX(-50%) rotate(30deg);
+            }
+            .number.two {
+                transform: translateX(-50%) rotate(60deg);
+            }
+            .number.three {
+                transform: translateX(-50%) rotate(90deg);
+            }
+            .number.four {
+                transform: translateX(-50%) rotate(120deg);
+            }
+            .number.five {
+                transform: translateX(-50%) rotate(150deg);
+            }
+            .number.six {
+                transform: translateX(-50%) rotate(180deg);
+            }
+            .number.seven {
+                transform: translateX(-50%) rotate(210deg);
+            }
+            .number.eight {
+                transform: translateX(-50%) rotate(240deg);
+            }
+            .number.nine {
+                transform: translateX(-50%) rotate(270deg);
+            }
+            .number.ten {
+                transform: translateX(-50%) rotate(300deg);
+            }
+            .number.eleven {
+                transform: translateX(-50%) rotate(330deg);
+            }
+            @keyframes rotation {
+                to {
+                    rotate: 360deg;
+                }
+            }
+            @keyframes swing {
+                0% {
+                    rotate: 0deg;
+                }
+                25% {
+                    rotate: 15deg;
+                }
+                75% {
+                    rotate: -15deg;
+                }
+                100% {
+                    rotate: 0deg;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wall-clock">
+            <div class="top"></div>
+            <div class="decoration"></div>
+            <div class="main-part">
+                <div class="left"></div>
+                <div class="middle">
+                    <div class="clock-container">
+                        <div class="clock-face">
+                            <div class="hours-hand-container"></div>
+                            <div class="minutes-hand-container"></div>
+                            <div class="seconds-hand-container"></div>
+                            <div class="support"></div>
+                            <div class="number twelve">XII</div>
+                            <div class="number one">I</div>
+                            <div class="number two">II</div>
+                            <div class="number three">III</div>
+                            <div class="number four">IV</div>
+                            <div class="number five">V</div>
+                            <div class="number six">VI</div>
+                            <div class="number seven">VII</div>
+                            <div class="number eight">VIII</div>
+                            <div class="number nine">IX</div>
+                            <div class="number ten">X</div>
+                            <div class="number eleven">XI</div>
+                        </div>
+                        <div class="pendulum">
+                            <div class="wire"></div>
+                            <div class="bob"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right"></div>
+            </div>
+            <div class="decoration"></div>
+            <div class="bottom"></div>
+        </div>
+    </body>
+</html>

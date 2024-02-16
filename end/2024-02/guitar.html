@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				overflow: hidden;
+			}
+			.guitar {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			.head {
+				height: 4.5em;
+				width: 3em;
+				border-radius: 10px;
+				background: #683d2c;
+				display: grid;
+				grid-template-columns: repeat(2, 1.5em);
+				grid-template-rows: repeat(3, 1.5em);
+				place-items: center;
+			}
+			.capstan {
+				background: #afa8a4;
+				height: 0.5em;
+				width: 0.5em;
+				border-radius: 50%;
+			}
+			.neck {
+				height: 8em;
+				width: 1.5em;
+				background: #683d2c;
+			}
+			.body {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				transform: translateY(-5%);
+			}
+			.top-circle {
+				background: #e6c893;
+				height: 6em;
+				width: 6em;
+				border-radius: 50%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.sound-hole {
+				height: 3.3em;
+				width: 3.3em;
+				border-radius: 50%;
+				background: radial-gradient(
+					closest-side,
+					#6e4d36 75%,
+					#e6c893 75%,
+					#e6c893 83%,
+					#683d2c 85%
+				);
+				z-index: 2;
+			}
+			.bottom-circle {
+				background: #e6c893;
+				height: 8em;
+				width: 8em;
+				border-radius: 50%;
+				transform: translateY(-30%);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.bridge {
+				width: 3.3em;
+				height: 0.6em;
+				background: black;
+				border-radius: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="guitar">
+			<div class="head">
+				<div class="capstan"></div>
+				<div class="capstan"></div>
+				<div class="capstan"></div>
+				<div class="capstan"></div>
+				<div class="capstan"></div>
+				<div class="capstan"></div>
+			</div>
+			<div class="neck"></div>
+			<div class="body">
+				<div class="top-circle">
+					<div class="sound-hole"></div>
+				</div>
+				<div class="bottom-circle">
+					<div class="bridge"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

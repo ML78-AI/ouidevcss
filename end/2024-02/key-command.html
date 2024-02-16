@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				overflow: hidden;
+				background: black;
+			}
+			.command-key {
+				height: 280px;
+				width: 280px;
+				position: relative;
+				--border-width: 15px;
+			}
+			.vertical {
+				position: absolute;
+				display: flex;
+				justify-content: space-between;
+				height: 100%;
+				width: 100%;
+			}
+			.left,
+			.right {
+				height: calc(100% - 2 * var(--border-width));
+				width: 25%;
+				border-width: var(--border-width);
+				border-style: solid;
+				border-radius: 100px;
+			}
+			.left {
+				border-color: white white white transparent;
+			}
+			.right {
+				border-color: white transparent white white;
+			}
+			.horizontal {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				height: 100%;
+				width: 100%;
+			}
+			.top,
+			.bottom {
+				width: calc(100% - 2 * var(--border-width));
+				height: 25%;
+				border-width: var(--border-width);
+				border-style: solid;
+				border-radius: 100px;
+			}
+			.top {
+				border-color: transparent white white white;
+			}
+			.bottom {
+				border-color: white white transparent white;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="command-key">
+			<div class="vertical">
+				<div class="left"></div>
+				<div class="right"></div>
+			</div>
+			<div class="horizontal">
+				<div class="top"></div>
+				<div class="bottom"></div>
+			</div>
+		</div>
+	</body>
+</html>

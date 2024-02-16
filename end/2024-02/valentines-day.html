@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				display: flex;
+				justify-content: center;
+				height: 100vh;
+				overflow: hidden;
+			}
+			.container {
+				height: 100%;
+				width: 30em;
+				position: relative;
+				display: flex;
+				justify-content: center;
+			}
+			.target {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 22em;
+				width: 22em;
+				background: radial-gradient(
+					closest-side,
+					white 55%,
+					#fe0000 55%,
+					#fe0000 69%,
+					white 69%,
+					white 83%,
+					#fe0000 83%
+				);
+				border-radius: 50%;
+			}
+			#heart {
+				height: 11em;
+				width: 10em;
+				transform: translateY(10px);
+				animation: in-love 0.5s linear infinite 3.8s;
+			}
+			.cls-1 {
+				fill: #fe0000;
+				fill-rule: evenodd;
+			}
+			.dart {
+				height: 5em;
+				width: 0.3em;
+				background: brown;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+				position: absolute;
+				bottom: 10%;
+				opacity: 1;
+			}
+			.dart.left {
+				left: 10%;
+				animation: fail-throw 1s linear forwards 1s;
+			}
+			.dart.middle {
+				left: 50%;
+				animation: success-throw 0.7s linear forwards 3s;
+			}
+			.dart.middle > .tip {
+				animation: impact 0.1s linear forwards 3.7s;
+			}
+			.dart.right {
+				left: 90%;
+				animation: fail-throw 1s linear forwards 2s;
+			}
+			.tip {
+				background: #f871a0;
+				clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+				height: 1.2em;
+				width: 0.9em;
+				transform: translateY(-100%);
+			}
+			.flight {
+				background: #f871a0;
+				clip-path: polygon(
+					50% 0%,
+					80% 25%,
+					80% 90%,
+					50% 60%,
+					20% 90%,
+					20% 25%
+				);
+				height: 1.4em;
+				width: 1.2em;
+				transform: translateY(50%);
+			}
+			@keyframes fail-throw {
+				99% {
+					bottom: 100%;
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			@keyframes success-throw {
+				to {
+					bottom: 65%;
+				}
+			}
+			@keyframes impact {
+				from {
+					opacity: 1;
+				}
+				to {
+					opacity: 0;
+				}
+			}
+			@keyframes in-love {
+				50% {
+					transform: translateY(10px) scale(1.2);
+				}
+				100% {
+					transform: translateY(10px) scale(1);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="target">
+				<svg
+					id="heart"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 122.88 107.39"
+				>
+					<path
+						class="cls-1"
+						d="M60.83,17.18c8-8.35,13.62-15.57,26-17C110-2.46,131.27,21.26,119.57,44.61c-3.33,6.65-10.11,14.56-17.61,22.32-8.23,8.52-17.34,16.87-23.72,23.2l-17.4,17.26L46.46,93.55C29.16,76.89,1,55.92,0,29.94-.63,11.74,13.73.08,30.25.29c14.76.2,21,7.54,30.58,16.89Z"
+					/>
+				</svg>
+			</div>
+			<div class="dart left">
+				<div class="tip"></div>
+				<div class="flight"></div>
+			</div>
+			<div class="dart middle">
+				<div class="tip"></div>
+				<div class="flight"></div>
+			</div>
+			<div class="dart right">
+				<div class="tip"></div>
+				<div class="flight"></div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				overflow: hidden;
+			}
+			.venn-diagram {
+				height: 20em;
+				width: 20em;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.ellipsis {
+				position: absolute;
+				height: 22em;
+				width: 11em;
+				border-radius: 50%;
+				transform-origin: 50% 83.5%;
+				mix-blend-mode: screen;
+			}
+			.blue {
+				background: rgb(54, 54, 241);
+				transform: rotate(-45deg);
+				mix-blend-mode: darken;
+			}
+			.red {
+				background: rgb(247, 78, 78);
+				transform: rotate(45deg);
+			}
+			.orange {
+				background: rgb(250, 170, 22);
+				transform: rotate(45deg) translate(-55%, 8.5%);
+			}
+			.green {
+				background: rgb(98, 250, 98);
+				transform: rotate(-45deg) translate(55%, 8.5%);
+				mix-blend-mode: darken;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="venn-diagram">
+			<div class="ellipsis blue"></div>
+			<div class="ellipsis red"></div>
+			<div class="ellipsis orange"></div>
+			<div class="ellipsis green"></div>
+		</div>
+	</body>
+</html>
