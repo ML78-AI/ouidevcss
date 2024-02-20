@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.figma-logo {
+				height: 18em;
+				width: 18em;
+				background: #333333;
+				border-radius: 5px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+			.level {
+				display: flex;
+			}
+			.level::after,
+			.level::before {
+				content: "";
+				height: 4.2em;
+				width: 4.2em;
+			}
+			.level.one::before {
+				border-radius: 50% 0 0 50%;
+				background: #ee4e2a;
+			}
+			.level.one::after {
+				border-radius: 0 50% 50% 0;
+				background: #fb7266;
+			}
+			.level.two::before {
+				border-radius: 50% 0 0 50%;
+				background: #a061fa;
+			}
+			.level.two::after {
+				border-radius: 50%;
+				background: #2ebdfa;
+			}
+			.level.three::before {
+				border-radius: 50% 0 50% 50%;
+				background: #00ce84;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="figma-logo">
+			<div class="level one"></div>
+			<div class="level two"></div>
+			<div class="level three"></div>
+		</div>
+	</body>
+</html>

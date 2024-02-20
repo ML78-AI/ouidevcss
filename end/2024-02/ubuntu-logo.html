@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.ubuntu-logo {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 1em;
+			}
+			.logo {
+				height: 10em;
+				width: 10em;
+				border-radius: 50%;
+				background: conic-gradient(
+					from 90deg,
+					#ca0016 0%,
+					#ca0016 33.3%,
+					#ffb516 33.3%,
+					#ffb516 66.6%,
+					#fe6309 66.6%,
+					#fe6309 99.9%
+				);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+			}
+			.circle {
+				height: 6em;
+				width: 6em;
+				background: white;
+				border-radius: 50%;
+			}
+			.line {
+				position: absolute;
+				height: 0.7em;
+				width: 6em;
+				background: white;
+				top: 50%;
+				left: 50%;
+				transform-origin: left;
+			}
+			.line.top {
+				transform: translateY(-50%) rotate(-120deg);
+			}
+			.line.middle {
+				transform: translateY(-50%);
+			}
+			.line.bottom {
+				transform: translateY(-50%) rotate(120deg);
+			}
+			.ball {
+				position: absolute;
+				height: 2.5em;
+				width: 2.5em;
+				border: 7px solid white;
+				border-radius: 50%;
+			}
+			.ball.red {
+				background: #ca0016;
+				transform: translate(90%, -140%);
+			}
+			.ball.orange {
+				background: #fe6309;
+				transform: translate(-165%);
+			}
+			.ball.yellow {
+				background: #ffb516;
+				transform: translate(90%, 140%);
+			}
+			.ubuntu {
+				font-family: "Ubuntu", sans-serif;
+				font-size: 7em;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="ubuntu-logo">
+			<div class="logo">
+				<div class="circle"></div>
+				<div class="line top"></div>
+				<div class="line middle"></div>
+				<div class="line bottom"></div>
+				<div class="ball red"></div>
+				<div class="ball orange"></div>
+				<div class="ball yellow"></div>
+			</div>
+			<div class="ubuntu">Ubuntu</div>
+		</div>
+	</body>
+</html>

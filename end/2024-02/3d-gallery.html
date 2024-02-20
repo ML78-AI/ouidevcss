@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				overflow: hidden;
+			}
+			.gallery {
+				transform-style: preserve-3d;
+				position: relative;
+				height: 170px;
+				width: 230px;
+				animation: rotation 10s linear infinite;
+				transition: 0.3s ease;
+			}
+			.gallery:has(.items:hover) {
+				animation-play-state: paused;
+			}
+			.items {
+				height: 100%;
+				width: 100%;
+				position: absolute;
+			}
+			.shadow {
+				height: 100%;
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: absolute;
+				color: transparent;
+				background: black;
+				opacity: 0;
+				transition: 0.5s ease;
+				font-weight: bold;
+				font-size: 2em;
+				text-align: center;
+			}
+			.items:hover > .shadow {
+				opacity: 0.5;
+				color: white;
+			}
+			img {
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+				transition: 0.3s ease;
+			}
+			img:hover {
+				transform: scale(1.2);
+			}
+			.items:nth-child(1) {
+				transform: translateZ(230px);
+			}
+			.items:nth-child(2) {
+				transform: rotateY(60deg) translateZ(230px);
+			}
+			.items:nth-child(3) {
+				transform: rotateY(120deg) translateZ(230px);
+			}
+			.items:nth-child(4) {
+				transform: rotateY(180deg) translateZ(230px);
+			}
+			.items:nth-child(5) {
+				transform: rotateY(240deg) translateZ(230px);
+			}
+			.items:nth-child(6) {
+				transform: rotateY(300deg) translateZ(230px);
+			}
+			@keyframes rotation {
+				from {
+					transform: rotateY(0deg);
+				}
+				to {
+					transform: rotateY(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="gallery">
+			<div class="items">
+				<div class="shadow">Moscow</div>
+				<img src="../../assets/images/moscow.jpg" alt="Moscow" />
+			</div>
+			<div class="items">
+				<div class="shadow">Paris</div>
+				<img src="../../assets/images/paris.jpeg" alt="Paris" />
+			</div>
+			<div class="items">
+				<div class="shadow">London</div>
+				<img src="../../assets/images/london.jpg" alt="London" />
+			</div>
+			<div class="items">
+				<div class="shadow">Montreal</div>
+				<img src="../../assets/images/montreal.jpeg" alt="Montreal" />
+			</div>
+			<div class="items">
+				<div class="shadow">Osaka</div>
+				<img src="../../assets/images/osaka.jpeg" alt="Osaka" />
+			</div>
+			<div class="items">
+				<div class="shadow">Phnom Penh</div>
+				<img
+					src="../../assets/images/phnom-penh.jpg"
+					alt="Phnom Penh"
+				/>
+			</div>
+		</div>
+	</body>
+</html>

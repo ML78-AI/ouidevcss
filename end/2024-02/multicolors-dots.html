@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: black;
+			}
+			.multicolor-dots-loader {
+				position: relative;
+				height: 5em;
+				width: 5em;
+			}
+			.layer {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				border-radius: 50%;
+				animation: rotation 1.5s linear infinite;
+			}
+			.layer.blue {
+				animation-delay: 0s;
+			}
+			.layer.green {
+				animation-delay: 0.1s;
+			}
+			.layer.yellow {
+				animation-delay: 0.2s;
+			}
+			.layer.orange {
+				animation-delay: 0.3s;
+			}
+			.layer.red {
+				animation-delay: 0.4s;
+			}
+			.dots {
+				height: 100%;
+				width: 100%;
+				display: flex;
+				justify-content: center;
+			}
+			.dots::before {
+				content: "";
+				border-radius: 50%;
+				display: inline-block;
+				transform: translateY(-50%);
+			}
+			.layer.blue > .dots::before {
+				height: 0.8em;
+				width: 0.8em;
+				background: blue;
+			}
+			.layer.green > .dots::before {
+				height: 0.7em;
+				width: 0.7em;
+				background: green;
+			}
+			.layer.yellow > .dots::before {
+				height: 0.6em;
+				width: 0.6em;
+				background: yellow;
+			}
+			.layer.orange > .dots::before {
+				height: 0.5em;
+				width: 0.5em;
+				background: orange;
+			}
+			.layer.red > .dots::before {
+				height: 0.4em;
+				width: 0.4em;
+				background: red;
+			}
+			@keyframes rotation {
+				0% {
+					rotate: 0turn;
+				}
+				60% {
+					rotate: 1turn;
+				}
+				100% {
+					rotate: 1turn;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="multicolor-dots-loader">
+			<div class="layer red">
+				<div class="dots"></div>
+			</div>
+			<div class="layer orange">
+				<div class="dots"></div>
+			</div>
+			<div class="layer yellow">
+				<div class="dots"></div>
+			</div>
+			<div class="layer green">
+				<div class="dots"></div>
+			</div>
+			<div class="layer blue">
+				<div class="dots"></div>
+			</div>
+		</div>
+	</body>
+</html>
