@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+			}
+			body,
+			.stack-overflow-logo {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.container {
+				display: flex;
+				gap: 2em;
+				display: flex;
+				justify-content: center;
+				align-items: end;
+			}
+			.stack-overflow-logo {
+				height: 3em;
+				width: 7.5em;
+				border-width: 0 1em 1em 1em;
+				border-color: transparent #b6b5b5 #b6b5b5 #b6b5b5;
+				border-style: solid;
+			}
+			.rect {
+				position: absolute;
+				width: 5em;
+				height: 1em;
+				background: #ec7c22;
+				transform-origin: 250% 50%;
+			}
+			.two {
+				transform: rotate(10deg);
+			}
+			.three {
+				transform: rotate(20deg);
+			}
+			.four {
+				transform: rotate(30deg);
+			}
+			.five {
+				transform: rotate(40deg);
+			}
+			.name {
+				display: flex;
+				flex-direction: column;
+				font-family: Helvetica, sans-serif;
+				font-size: 3em;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="stack-overflow-logo">
+				<div class="rect one"></div>
+				<div class="rect two"></div>
+				<div class="rect three"></div>
+				<div class="rect four"></div>
+				<div class="rect five"></div>
+			</div>
+			<div class="name">
+				<span class="stack">stack</span>
+				<span class="overflow">
+					<b> overflow </b>
+				</span>
+			</div>
+		</div>
+	</body>
+</html>

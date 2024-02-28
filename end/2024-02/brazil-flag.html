@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.brazilian-flag,
+			.yellow-square {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.brazilian-flag {
+				height: 21em;
+				width: 32em;
+				background: #009c37;
+			}
+			.yellow-square {
+				height: 16em;
+				width: 24em;
+				background: #fee000;
+				clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+			}
+			.circle {
+				height: 10em;
+				width: 10em;
+				border-radius: 50%;
+				background: #002277;
+				position: relative;
+				overflow: hidden;
+			}
+			.curve {
+				position: absolute;
+				height: 7em;
+				width: 15em;
+				border-radius: 50%;
+				border: 1.1em solid white;
+				bottom: -25%;
+				left: -45%;
+				transform: rotate(20deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="brazilian-flag">
+			<div class="yellow-square">
+				<div class="circle">
+					<div class="curve"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
