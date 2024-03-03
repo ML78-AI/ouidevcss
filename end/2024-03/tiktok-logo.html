@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+				background: black;
+			}
+			.logo-container {
+				position: absolute;
+			}
+			.tiktok-logo {
+				position: relative;
+				height: 30em;
+				width: 9em;
+				display: grid;
+				place-items: center;
+				mix-blend-mode: lighten;
+			}
+			.tiktok-logo.blue {
+				transform: translate(-0.5em, -0.5em);
+			}
+			.tiktok-logo.white {
+				z-index: 2;
+			}
+			.top {
+				height: 7em;
+				width: 7em;
+				border-radius: 50%;
+				border-width: 2em;
+				border-style: solid;
+				position: absolute;
+				top: -2.5em;
+				rotate: 45deg;
+				right: -9em;
+			}
+			.tiktok-logo.blue > .top {
+				border-color: transparent transparent #27eae6 transparent;
+			}
+			.tiktok-logo.red > .top {
+				border-color: transparent transparent #f22f56 transparent;
+			}
+			.line {
+				position: absolute;
+				width: 2em;
+				height: 12em;
+				right: 0;
+				top: 3.1em;
+			}
+			.tiktok-logo.blue > .line {
+				background: #27eae6;
+			}
+			.tiktok-logo.red > .line {
+				background: #f22f56;
+			}
+			.circle {
+				height: 5em;
+				width: 5em;
+				border-radius: 50%;
+				border-width: 2em;
+				border-style: solid;
+				rotate: -45deg;
+			}
+			.tiktok-logo.blue > .circle {
+				border-color: #27eae6 transparent #27eae6 #27eae6;
+			}
+			.tiktok-logo.red > .circle {
+				border-color: #f22f56 transparent #f22f56 #f22f56;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="logo-container">
+			<div class="tiktok-logo blue">
+				<div class="top"></div>
+				<div class="line"></div>
+				<div class="circle"></div>
+			</div>
+		</div>
+		<div class="logo-container">
+			<div class="tiktok-logo red">
+				<div class="top"></div>
+				<div class="line"></div>
+				<div class="circle"></div>
+			</div>
+		</div>
+	</body>
+</html>

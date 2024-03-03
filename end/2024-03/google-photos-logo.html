@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.google-photos-logo {
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 20em;
+				width: 20em;
+			}
+			.half-circle {
+				position: absolute;
+				height: 5rem;
+				width: 10rem;
+				border-radius: 5rem 5rem 0 5px;
+				transform-origin: 100% 100%;
+			}
+			.yellow {
+				background: #eeb200;
+				transform: translate(-50%, -50%);
+			}
+			.red {
+				background: #df3f30;
+				transform: translate(-50%, -50%) rotate(90deg);
+			}
+			.blue {
+				background: #4081ef;
+				transform: translate(-50%, -50%) rotate(180deg);
+			}
+			.green {
+				background: #31a452;
+				transform: translate(-50%, -50%) rotate(270deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="google-photos-logo">
+			<div class="half-circle yellow"></div>
+			<div class="half-circle red"></div>
+			<div class="half-circle blue"></div>
+			<div class="half-circle green"></div>
+		</div>
+	</body>
+</html>

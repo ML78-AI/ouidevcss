@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0;
+				background-color: black;
+			}
+			.prism {
+				position: relative;
+			}
+			.light-ray {
+				position: absolute;
+				top: 0;
+				left: 0;
+				transform-origin: left;
+				transform: translateY(-50%) rotate(45deg);
+				height: 0.2em;
+				background: white;
+				animation: moving 5s linear forwards;
+			}
+			.light-ray-decompose {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				height: 27em;
+				border-radius: 50%;
+				background: conic-gradient(
+					transparent 42deg,
+					red 46deg 50deg,
+					orange 54deg 58deg,
+					yellow 62deg 66deg,
+					green 70deg 74deg,
+					blue 78deg 82deg,
+					purple 86deg 90deg,
+					transparent 94deg
+				);
+				animation-name: moving;
+				animation-duration: 5s;
+				animation-delay: 5s;
+				animation-fill-mode: forwards;
+			}
+			@keyframes moving {
+				from {
+					width: 0;
+				}
+				to {
+					width: 22.2em;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="prism">
+			<svg height="500" width="500">
+				<polygon
+					points="250,60 100,400 400,400"
+					fill="#D4EBF4"
+					class="triangle"
+					stroke="#049edc"
+					stroke-width="4"
+				/>
+			</svg>
+			<div class="light-ray"></div>
+			<div class="light-ray-decompose"></div>
+		</div>
+	</body>
+</html>

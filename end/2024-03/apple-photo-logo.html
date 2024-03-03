@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.apple-photo-symbol {
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: start;
+				height: 25em;
+				width: 25em;
+			}
+			.petal {
+				height: 10em;
+				width: 6em;
+				border-radius: 50px;
+				mix-blend-mode: multiply;
+				position: absolute;
+				transform-origin: 50% 105%;
+				animation: 0.5s rotate linear forwards;
+			}
+			.petal.orange {
+				background: #fdae03;
+			}
+			.petal.yellow {
+				background: #eedc23;
+				animation-delay: 0s;
+			}
+			.petal.green1 {
+				background: #aed83c;
+				animation-delay: 0.5s;
+			}
+			.petal.green2 {
+				background: #45c298;
+				animation-delay: 1s;
+			}
+			.petal.blue {
+				background: #63b0e3;
+				animation-delay: 1.5s;
+			}
+			.petal.purple {
+				background: #ab89c6;
+				animation-delay: 2s;
+			}
+			.petal.pink {
+				background: #e47daa;
+				animation-delay: 2.5s;
+			}
+			.petal.red {
+				background: #fe7151;
+				animation-delay: 3s;
+			}
+			@keyframes rotate {
+				from {
+					rotate: 0deg;
+				}
+				to {
+					rotate: calc(var(--i) * 45deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="apple-photo-symbol">
+			<div class="petal orange" style="--i: 0"></div>
+			<div class="petal yellow" style="--i: 1"></div>
+			<div class="petal green1" style="--i: 2"></div>
+			<div class="petal green2" style="--i: 3"></div>
+			<div class="petal blue" style="--i: 4"></div>
+			<div class="petal purple" style="--i: 5"></div>
+			<div class="petal pink" style="--i: 6"></div>
+			<div class="petal red" style="--i: 7"></div>
+		</div>
+	</body>
+</html>

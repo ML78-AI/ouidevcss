@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.instagram-logo {
+				height: 19em;
+				width: 19em;
+				border-radius: 50px;
+				background: radial-gradient(
+						circle at 20% 100%,
+						#f8b861 25%,
+						#dd3e6d 40%,
+						transparent 60%
+					),
+					linear-gradient(-35deg, #d42b83 20%, #5b4eca 80%);
+			}
+			.instagram-logo,
+			.square {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.square {
+				height: 12em;
+				width: 12em;
+				border-radius: 75px;
+				border: 1.2em solid white;
+				position: relative;
+			}
+			.square::before {
+				position: absolute;
+				content: "";
+				height: 1.5em;
+				width: 1.5em;
+				background: white;
+				border-radius: 100%;
+				top: 11%;
+				right: 11%;
+			}
+			.circle {
+				height: 6em;
+				width: 6em;
+				border-radius: 100%;
+				border: 1.2em solid white;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="instagram-logo">
+			<div class="square">
+				<div class="circle"></div>
+			</div>
+		</div>
+	</body>
+</html>
