@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.loader {
+				height: 20em;
+				width: 20em;
+				position: relative;
+				display: flex;
+				justify-content: center;
+			}
+			.bar {
+				height: 20em;
+				width: 2em;
+				position: absolute;
+			}
+			.blade {
+				content: "";
+				width: 100%;
+				height: 5em;
+				display: inline-block;
+				border-radius: 50px;
+				background: black;
+				transform-origin: bottom;
+				opacity: 0;
+				animation: fade 1s linear infinite;
+			}
+			.two {
+				transform: rotate(30deg);
+			}
+			.two > .blade {
+				animation-delay: 0.083s;
+			}
+			.three {
+				transform: rotate(60deg);
+			}
+			.three > .blade {
+				animation-delay: 0.167s;
+			}
+			.four {
+				transform: rotate(90deg);
+			}
+			.four > .blade {
+				animation-delay: 0.25s;
+			}
+			.five {
+				transform: rotate(120deg);
+			}
+			.five > .blade {
+				animation-delay: 0.334s;
+			}
+			.six {
+				transform: rotate(150deg);
+			}
+			.six > .blade {
+				animation-delay: 0.417s;
+			}
+			.seven {
+				transform: rotate(180deg);
+			}
+			.seven > .blade {
+				animation-delay: 0.5s;
+			}
+			.eight {
+				transform: rotate(210deg);
+			}
+			.eight > .blade {
+				animation-delay: 0.583s;
+			}
+			.nine {
+				transform: rotate(240deg);
+			}
+			.nine > .blade {
+				animation-delay: 0.667s;
+			}
+			.ten {
+				transform: rotate(270deg);
+			}
+			.ten > .blade {
+				animation-delay: 0.75s;
+			}
+			.eleven {
+				transform: rotate(300deg);
+			}
+			.eleven > .blade {
+				animation-delay: 0.833s;
+			}
+			.twelve {
+				transform: rotate(330deg);
+			}
+			.twelve > .blade {
+				animation-delay: 0.917s;
+			}
+
+			@keyframes fade {
+				from {
+					opacity: 1;
+				}
+				to {
+					opacity: 0.1;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="loader">
+			<div class="bar one">
+				<div class="blade"></div>
+			</div>
+			<div class="bar two">
+				<div class="blade"></div>
+			</div>
+			<div class="bar three">
+				<div class="blade"></div>
+			</div>
+			<div class="bar four">
+				<div class="blade"></div>
+			</div>
+			<div class="bar five">
+				<div class="blade"></div>
+			</div>
+			<div class="bar six">
+				<div class="blade"></div>
+			</div>
+			<div class="bar seven">
+				<div class="blade"></div>
+			</div>
+			<div class="bar eight">
+				<div class="blade"></div>
+			</div>
+			<div class="bar nine">
+				<div class="blade"></div>
+			</div>
+			<div class="bar ten">
+				<div class="blade"></div>
+			</div>
+			<div class="bar eleven">
+				<div class="blade"></div>
+			</div>
+			<div class="bar twelve">
+				<div class="blade"></div>
+			</div>
+		</div>
+	</body>
+</html>

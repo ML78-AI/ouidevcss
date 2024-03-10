@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: black;
+			}
+			.orbit {
+				height: 5em;
+				width: 5em;
+				position: absolute;
+				animation: rotation 1s linear infinite;
+			}
+			.orbit.two {
+				display: flex;
+				justify-content: end;
+				align-items: end;
+			}
+			.star {
+				height: 2.7em;
+				width: 2.7em;
+				border-radius: 100%;
+			}
+			.star.one {
+				background: yellow;
+			}
+			.star.two {
+				background: #8ccdd9;
+			}
+			.wave {
+				position: absolute;
+				border-radius: 100%;
+				border: 3px solid white;
+				transform: translate(-50%, -50%);
+				animation: gravitational-wave 2s linear infinite
+					calc(var(--i) * 0.5s);
+			}
+			@keyframes gravitational-wave {
+				from {
+					height: 0;
+					width: 0;
+				}
+				to {
+					height: 60em;
+					width: 60em;
+				}
+			}
+			@keyframes rotation {
+				from {
+					transform: translate(-50%, -50%) rotate(0turn);
+				}
+				to {
+					transform: translate(-50%, -50%) rotate(1turn);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="binary">
+			<div class="orbit one">
+				<div class="star one"></div>
+			</div>
+			<div class="orbit two">
+				<div class="star two"></div>
+			</div>
+			<div class="wave" style="--i: 0"></div>
+			<div class="wave" style="--i: 1"></div>
+			<div class="wave" style="--i: 2"></div>
+			<div class="wave" style="--i: 3"></div>
+			<div class="wave" style="--i: 4"></div>
+			<div class="wave" style="--i: 5"></div>
+		</div>
+	</body>
+</html>
