@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				overflow: hidden;
+				background: grey;
+			}
+			.rugby-field {
+				width: 100%;
+				height: 100%;
+				transform-style: preserve-3d;
+				transform: perspective(300px) rotateX(40deg) translateY(-25%);
+				background: green;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.goal-container {
+				display: flex;
+				align-items: end;
+				transform-origin: bottom;
+				transform: translateY(-70%) rotateX(-40deg);
+			}
+			.goal-post {
+				height: 32em;
+				width: 0.5em;
+				background: white;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: end;
+			}
+			.protect {
+				border-radius: 5px 5px 0 0;
+				height: 7em;
+				width: 1.5em;
+				background: #1478fa;
+			}
+			.crossbar {
+				height: 9em;
+				width: 15em;
+				border-top: 0.5em white solid;
+			}
+			.ball {
+				position: absolute;
+				width: 9em;
+				height: 4em;
+				background: #a84909;
+				border-radius: 50%;
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				overflow: hidden;
+				left: 20%;
+				bottom: 25%;
+				rotate: -60deg;
+				animation: 0.5s rotate linear infinite 0.7s,
+					2s shoot linear forwards 0.7s;
+			}
+			.vline {
+				width: 0.6em;
+				height: 4em;
+				background: white;
+			}
+			.hline {
+				width: 3em;
+				height: 0.6em;
+				background: white;
+			}
+			@keyframes rotate {
+				from {
+					rotate: 0deg;
+				}
+				to {
+					rotate: 360deg;
+				}
+			}
+			@keyframes shoot {
+				20% {
+					transform: scale(0.8);
+				}
+				50% {
+					transform: scale(0.5);
+				}
+				75% {
+					transform: scale(0.3);
+				}
+				100% {
+					bottom: 99%;
+					left: 50%;
+					transform: scale(0.15);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="rugby-field">
+			<div class="goal-container">
+				<div class="goal-post">
+					<div class="protect"></div>
+				</div>
+				<div class="crossbar"></div>
+				<div class="goal-post">
+					<div class="protect"></div>
+				</div>
+			</div>
+		</div>
+		<div class="ball">
+			<div class="vline"></div>
+			<div class="hline"></div>
+			<div class="vline"></div>
+		</div>
+	</body>
+</html>

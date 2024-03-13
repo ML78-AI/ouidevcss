@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.colorado-flag {
+				display: flex;
+				align-items: center;
+				height: 21em;
+				width: 32em;
+				background: linear-gradient(
+					#242b57 33.3%,
+					white 33.3%,
+					white 66.6%,
+					#242b57 66.6%
+				);
+			}
+			.circle {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 15em;
+				width: 15em;
+				border-radius: 50%;
+				background: conic-gradient(
+					from 68deg,
+					white 0%,
+					white 12.2%,
+					#b0313a 12.2%
+				);
+				margin-left: 5.5em;
+			}
+			.inner-circle {
+				height: 7.5em;
+				width: 7.5em;
+				border-radius: 50%;
+				background: #fbe051;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="colorado-flag">
+			<div class="circle">
+				<div class="inner-circle"></div>
+			</div>
+		</div>
+	</body>
+</html>

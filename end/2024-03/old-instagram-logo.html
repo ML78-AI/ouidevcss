@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.old-insta-logo {
+				height: 19em;
+				width: 19em;
+			}
+			.top {
+				width: 100%;
+				height: 27%;
+				background: #895c3e;
+				border-radius: 3.5em 3.5em 0 0;
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				overflow: hidden;
+			}
+			.colors {
+				height: 100%;
+				width: 15%;
+				background: linear-gradient(
+					90deg,
+					#c82940 25%,
+					#ecb72e 25%,
+					#ecb72e 50%,
+					#6dbe85 50%,
+					#6dbe85 75%,
+					#3788e4 75%
+				);
+				transform: translateX(-65%);
+			}
+
+			.flash {
+				height: 3.5em;
+				width: 3.5em;
+				border-radius: 5px;
+				background: radial-gradient(
+					closest-side,
+					#1e272b 30%,
+					#121414 30%,
+					#121414 40%,
+					#1e272b 40%,
+					#1e272b 65%,
+					#121414 65%
+				);
+				transform: translate(35%, 7%);
+			}
+			.line {
+				width: 100%;
+				height: 3%;
+				background: black;
+			}
+			.body {
+				width: 100%;
+				height: 70%;
+				background: #e5dbca;
+				border-radius: 0 0 3.5em 3.5em;
+				display: flex;
+				justify-content: center;
+				position: relative;
+			}
+			.insta {
+				color: white;
+				font-weight: 600;
+				position: absolute;
+				height: 2em;
+				width: 3.7em;
+				background: #39332c;
+				border-radius: 50px;
+				left: 4.5%;
+				top: -10%;
+				display: grid;
+				place-items: center;
+			}
+			.image-sensor {
+				height: 10em;
+				width: 10em;
+				background: radial-gradient(
+					closest-side,
+					#1e272b 30%,
+					#121414 30%,
+					#121414 45%,
+					#1e272b 45%,
+					#1e272b 70%,
+					#121414 70%,
+					#121414 85%,
+					#d3ccc0 85%
+				);
+				border-radius: 50%;
+				transform: translateY(-13%);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="old-insta-logo">
+			<div class="top">
+				<div class="colors"></div>
+				<div class="flash"></div>
+			</div>
+			<div class="line"></div>
+			<div class="body">
+				<span class="insta">Insta</span>
+				<div class="image-sensor"></div>
+			</div>
+		</div>
+	</body>
+</html>
