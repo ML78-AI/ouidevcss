@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				display: flex;
+				justify-content: start;
+				flex-direction: column;
+				align-items: center;
+				height: 100vh;
+				overflow: hidden;
+			}
+			h1 {
+				color: #3ca75e;
+				font-size: 3em;
+				font-family: "Gill Sans", sans-serif;
+				text-align: center;
+			}
+			.clover {
+				height: 200px;
+				width: 200px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.leaf {
+				transform-origin: bottom;
+				position: absolute;
+				height: 100px;
+				width: 100px;
+				display: flex;
+				justify-content: center;
+				align-items: end;
+			}
+			.leaf.right {
+				rotate: 90deg;
+			}
+			.leaf.left {
+				rotate: -90deg;
+			}
+			.leaf.bottom {
+				rotate: 180deg;
+			}
+			.square {
+				height: 50px;
+				width: 50px;
+				background: #3ca75e;
+				transform: translateY(-25%) rotate(45deg);
+				position: relative;
+			}
+			.square::before,
+			.square::after {
+				content: "";
+				position: absolute;
+				height: 50px;
+				width: 50px;
+				border-radius: 50%;
+				background: #3ca75e;
+			}
+			.square::before {
+				transform: translateX(-50%);
+			}
+			.square::after {
+				transform: translateY(-50%);
+			}
+			.stem {
+				height: 8em;
+				width: 0.5em;
+				border-radius: 10px;
+				background: #3ca75e;
+				transform-origin: bottom;
+				rotate: 180deg;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="st-patrick">Happy St. Patrick's Day</h1>
+		<div class="clover">
+			<div class="leaf top">
+				<div class="square"></div>
+			</div>
+			<div class="leaf left">
+				<div class="square"></div>
+			</div>
+			<div class="leaf right">
+				<div class="square"></div>
+			</div>
+			<div class="leaf bottom">
+				<div class="square"></div>
+			</div>
+			<div class="stem"></div>
+		</div>
+	</body>
+</html>

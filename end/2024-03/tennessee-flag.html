@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.tennessee-flag {
+				display: flex;
+				height: 21em;
+				width: 32em;
+			}
+			.red-bg {
+				height: 100%;
+				width: 91%;
+				background: #c90200;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.white-bg {
+				height: 100%;
+				width: 2%;
+				background: white;
+			}
+			.blue-bg {
+				height: 100%;
+				width: 7%;
+				background: #002d64;
+			}
+			.circle {
+				position: relative;
+				height: 12em;
+				width: 12em;
+				border-radius: 50%;
+				background: radial-gradient(
+					closest-side,
+					#002d64 92%,
+					white 92%
+				);
+				display: flex;
+				justify-content: center;
+				flex-wrap: wrap;
+			}
+			.star {
+				clip-path: polygon(
+					50% 0%,
+					61% 35%,
+					98% 35%,
+					68% 57%,
+					79% 91%,
+					50% 70%,
+					21% 91%,
+					32% 57%,
+					2% 35%,
+					39% 35%
+				);
+				height: 4.5em;
+				width: 4.5em;
+				background: white;
+				transform-origin: top;
+			}
+			.one {
+				transform-origin: 100% 100%;
+				transform: translateY(30%) rotate(-10deg);
+			}
+			.two {
+				transform-origin: 0% 100%;
+				transform: translateY(30%) rotate(10deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="tennessee-flag">
+			<div class="red-bg">
+				<div class="circle">
+					<div class="star one"></div>
+					<div class="star two"></div>
+					<div class="star three"></div>
+				</div>
+			</div>
+			<div class="white-bg"></div>
+			<div class="blue-bg"></div>
+		</div>
+	</body>
+</html>

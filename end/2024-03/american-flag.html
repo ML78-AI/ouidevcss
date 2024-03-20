@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+				background: repeating-conic-gradient(
+					#dc1d3f 0deg,
+					#dc1d3f 10deg,
+					#f7f7f7 10deg,
+					#f7f7f7 20deg,
+					#06133c 20deg,
+					#06133c 30deg,
+					#f7f7f7 30deg,
+					#f7f7f7 40deg
+				);
+			}
+			.american-flag {
+				display: flex;
+				height: 16.8em;
+				width: 32em;
+				background: repeating-linear-gradient(
+					#f7f7f7 7.7%,
+					#f7f7f7 15.4%,
+					#dc1d3f 15.4%,
+					#dc1d3f 23.1%
+				);
+			}
+			.rectangle {
+				width: 12.8em;
+				height: 8.05em;
+				background: #06133c;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				padding: 0.5em 0 0.5em 0;
+			}
+			.stars {
+				height: 1.05em;
+				display: flex;
+			}
+			.six {
+				width: 100%;
+				justify-content: space-around;
+			}
+			.five {
+				width: 95%;
+				justify-content: space-evenly;
+			}
+			.star {
+				height: 0.9em;
+				width: 0.9em;
+				background: white;
+				clip-path: polygon(
+					50% 0%,
+					61% 35%,
+					98% 35%,
+					68% 57%,
+					79% 91%,
+					50% 70%,
+					21% 91%,
+					32% 57%,
+					2% 35%,
+					39% 35%
+				);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="american-flag">
+			<div class="rectangle">
+				<div class="stars six"></div>
+				<div class="stars five"></div>
+				<div class="stars six"></div>
+				<div class="stars five"></div>
+				<div class="stars six"></div>
+				<div class="stars five"></div>
+				<div class="stars six"></div>
+				<div class="stars five"></div>
+				<div class="stars six"></div>
+			</div>
+		</div>
+		<script>
+			function appendStar(num, line) {
+				for (let i = 0; i < num; i++) {
+					const star = document.createElement("div");
+					star.className = "star";
+					line.appendChild(star);
+				}
+			}
+
+			const stars = document.querySelectorAll(".stars");
+			stars.forEach((s) => {
+				if (s.className.includes("six")) {
+					appendStar(6, s);
+				} else {
+					appendStar(5, s);
+				}
+			});
+		</script>
+	</body>
+</html>

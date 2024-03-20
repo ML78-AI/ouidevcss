@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+				background: antiquewhite;
+			}
+			.toggle {
+				position: relative;
+				height: 40px;
+				width: 80px;
+				border-radius: 50px;
+				background: #0a2146;
+				display: flex;
+				align-items: center;
+				transition: 0.5s ease;
+			}
+			.checkbox {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				cursor: pointer;
+				padding: 0;
+				margin: 0;
+				opacity: 0;
+			}
+			.slider {
+				height: 26px;
+				width: 26px;
+				border-radius: 50%;
+				background: #0a2146;
+				margin: 0 4px 0 4px;
+				box-shadow: inset 8px -4px 0px 0px white;
+				transition: 0.5s ease;
+				cursor: pointer;
+			}
+			.toggle:has(.checkbox:checked) {
+				background: #80d2f6;
+			}
+			.checkbox:checked + .slider {
+				transform: translateX(46px);
+				background: yellow;
+				box-shadow: none;
+			}
+		</style>
+	</head>
+	<body>
+		<label class="toggle">
+			<input type="checkbox" class="checkbox" />
+			<div class="slider"></div>
+		</label>
+	</body>
+</html>
