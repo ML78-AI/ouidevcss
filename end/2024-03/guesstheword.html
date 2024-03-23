@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-family: sans-serif;
+				background: #1cb295;
+			}
+			.guesstheword {
+				height: 20em;
+				border-radius: 5px;
+				background: white;
+				min-width: 16em;
+			}
+			.title {
+				padding: 1em;
+				position: relative;
+				margin-bottom: 1em;
+			}
+			.title::after {
+				position: absolute;
+				content: "";
+				width: 100%;
+				height: 1px;
+				background: grey;
+				bottom: 0;
+				left: 0;
+			}
+			.container {
+				padding: 1em;
+			}
+			.inputs {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 0.8em;
+				margin-bottom: 1em;
+			}
+			.letter {
+				height: 2em;
+				width: 1.5em;
+				outline: none;
+				text-align: center;
+				font-size: 1.4em;
+				text-transform: uppercase;
+			}
+			.indicators {
+				font-size: 0.8em;
+			}
+			.actions {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 0.5em;
+			}
+			button {
+				color: white;
+				border-radius: 5px;
+				border: 0;
+				cursor: pointer;
+				width: 14em;
+				height: 3em;
+				outline: none;
+			}
+			.submit {
+				background: #1cb295;
+			}
+			.reset {
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="guesstheword">
+			<header class="title">Guess the Word</header>
+			<form class="container">
+				<div class="inputs"></div>
+				<div class="indicators">
+					<p class="remaining">
+						Remaining guess : <span class="rem-val">5</span>
+					</p>
+					<p class="wrong">
+						Wrong letters : <span class="wr-val"></span>
+					</p>
+				</div>
+				<div class="actions">
+					<button class="submit">Submit</button>
+					<button class="reset">Reset Game</button>
+				</div>
+			</form>
+		</div>
+		<script src="./guesstheword.js"></script>
+	</body>
+</html>

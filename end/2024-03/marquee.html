@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+				background: #222;
+			}
+			.marquee {
+				height: 75px;
+				width: 500px;
+				overflow: hidden;
+				position: relative;
+				background: white;
+				color: red;
+				border: 3px solid red;
+			}
+			.scrolling-text {
+				display: grid;
+				place-items: center;
+				position: absolute;
+				height: 100%;
+				margin: 0;
+				transform: translateX(150%);
+				animation: scroll-left 5s linear infinite;
+				font-size: 2em;
+				font-weight: bold;
+				font-family: Verdana, Geneva, Tahoma, sans-serif;
+			}
+			.scrolling-text:hover {
+				animation-play-state: paused;
+			}
+
+			@keyframes scroll-left {
+				0% {
+					transform: translateX(150%);
+				}
+				100% {
+					transform: translateX(-100%);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="marquee">
+			<p class="scrolling-text">Thanks for watching &#x1F60A;</p>
+		</div>
+	</body>
+</html>
