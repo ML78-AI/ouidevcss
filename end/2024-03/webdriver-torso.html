@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+			}
+			.rectangle {
+				position: absolute;
+			}
+			.red {
+				background: #f12300;
+			}
+			.blue {
+				background: #1922f7;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="rectangle blue"></div>
+		<div class="rectangle red"></div>
+		<script>
+			const blueRectangle = document.querySelector(".blue");
+			const redRectangle = document.querySelector(".red");
+			const body = document.querySelector("body");
+			setInterval(() => {
+				const { height, width } = body.getBoundingClientRect();
+
+				blueRectangle.style.height = generateDimension(height);
+				blueRectangle.style.width = generateDimension(width);
+				blueRectangle.style.left = generateDimension(width);
+				blueRectangle.style.top = generateDimension(height);
+
+				redRectangle.style.height = generateDimension(height);
+				redRectangle.style.width = generateDimension(width);
+				redRectangle.style.left = generateDimension(width);
+				redRectangle.style.top = generateDimension(height);
+			}, 1000);
+			function generateDimension(value) {
+				return `${Math.floor(value * Math.random()) / 2}px`;
+			}
+		</script>
+	</body>
+</html>

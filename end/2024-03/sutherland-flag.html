@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: #32b5f1;
+			}
+			.sutherland-flag {
+				display: flex;
+				height: 21em;
+				width: 32em;
+				background: white;
+				position: relative;
+				overflow: hidden;
+			}
+			.hline {
+				position: absolute;
+				background: black;
+				width: 100%;
+				height: 4em;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			.first-diagonal-line,
+			.second-diagonal-line {
+				position: absolute;
+				width: 4em;
+				height: 200%;
+				background: black;
+				left: 25%;
+			}
+			.first-diagonal-line {
+				transform: translateY(-25%) rotate(45deg);
+			}
+			.second-diagonal-line {
+				transform: translateY(-25%) rotate(-45deg);
+			}
+			.vline {
+				position: absolute;
+				background: black;
+				width: 4em;
+				height: 100%;
+				left: 25%;
+				display: flex;
+				align-items: center;
+			}
+			.line {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				position: absolute;
+				height: 9.8em;
+				width: 4em;
+				background: #ffce00;
+				flex-direction: column;
+			}
+			.line::before,
+			.line::after {
+				content: "";
+				height: 4em;
+				width: 4em;
+				background: black;
+			}
+			.line::before {
+				clip-path: polygon(50% 50%, 0 0, 100% 0);
+				transform: translateY(-1px);
+			}
+			.line::after {
+				clip-path: polygon(50% 50%, 0 100%, 100% 100%);
+				transform: translateY(1px);
+			}
+			.dline-star-one {
+				rotate: 45deg;
+			}
+			.dline-star-two {
+				rotate: -45deg;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="sutherland-flag">
+			<div class="hline"></div>
+			<div class="first-diagonal-line"></div>
+			<div class="second-diagonal-line"></div>
+			<div class="vline">
+				<div class="line vline-star"></div>
+				<div class="line dline-star-one"></div>
+				<div class="line dline-star-two"></div>
+			</div>
+		</div>
+	</body>
+</html>

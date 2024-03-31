@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			:root {
+				--height-parent: 170px;
+				--width-parent: 180px;
+				--height-child: 70px;
+				--width-child: 50px;
+			}
+			body {
+				height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+				gap: 10px;
+			}
+			.parent {
+				height: var(--height-parent);
+				width: var(--width-parent);
+				background: red;
+			}
+			.child {
+				height: var(--height-child);
+				width: var(--width-child);
+				background: blue;
+			}
+			.method1 {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.method2 {
+				display: grid;
+				place-items: center;
+			}
+			.method3 {
+				position: relative;
+			}
+			.child3 {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			.child4 {
+				margin: calc((var(--height-parent) - var(--height-child)) / 2)
+					auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="parent method1">
+			<div class="child child1"></div>
+		</div>
+		<div class="parent method2">
+			<div class="child child2"></div>
+		</div>
+		<div class="parent method3">
+			<div class="child child3"></div>
+		</div>
+		<div class="parent method4">
+			<div class="child child4"></div>
+		</div>
+	</body>
+</html>
