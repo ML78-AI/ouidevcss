@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            :root {
+                --height-item: 2em;
+            }
+            body {
+                height: 100vh;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: sans-serif;
+                background: linear-gradient(
+                    to bottom,
+                    #68eacc 0%,
+                    #497be8 100%
+                );
+            }
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1em;
+                background: white;
+                border-radius: 5px;
+                padding: 20px;
+                min-width: 22em;
+            }
+            .title {
+                font-size: 3em;
+                margin: 0;
+            }
+            .add-todo {
+                display: flex;
+                align-items: center;
+                gap: 1em;
+            }
+            .new-todo {
+                width: 16em;
+                height: 1.5em;
+                outline: none;
+            }
+            .add {
+                background: #20b2a9;
+                color: white;
+                cursor: pointer;
+                border: 0;
+                border-radius: 5px;
+                padding: 7px;
+            }
+            .todo-list {
+                display: flex;
+                flex-direction: column;
+                max-height: calc(7 * var(--height-item));
+                overflow-y: auto;
+            }
+            .todo-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                min-height: var(--height-item);
+                min-width: 20em;
+                border-bottom: 1px solid grey;
+                padding: 6px;
+            }
+            .todo {
+                display: flex;
+                align-items: center;
+            }
+            .checkbox-container {
+                height: 1em;
+                width: 1em;
+                background: red;
+                position: relative;
+                background: rgb(224, 224, 224);
+            }
+            .checkbox {
+                height: 100%;
+                width: 100%;
+                border: 0;
+                margin: 0;
+                opacity: 0;
+                cursor: pointer;
+                position: absolute;
+                z-index: 2;
+            }
+            .tick {
+                position: absolute;
+                height: 0.5em;
+                width: 1.2em;
+                transform-origin: 0 100%;
+                border-style: solid;
+                border-width: 0 0 3px 3px;
+                border-color: transparent;
+                top: 20%;
+                left: 50%;
+                transform: rotate(-45deg);
+            }
+            .checkbox:checked + .tick {
+                border-color: transparent transparent rgb(2, 202, 2)
+                    rgb(2, 202, 2);
+            }
+            .task {
+                margin: 0 0 0 1em;
+                font-family: Arial, Helvetica, sans-serif;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                max-width: 12em;
+            }
+            .task:hover {
+                text-overflow: clip;
+                white-space: normal;
+                word-break: break-all;
+            }
+            .remove {
+                color: white;
+                background: red;
+                border: 0;
+                cursor: pointer;
+                border-radius: 5px;
+                padding: 7px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="title">My Todos</h1>
+            <form class="add-todo">
+                <input
+                    type="text"
+                    class="new-todo"
+                    placeholder="Add something to do..."
+                />
+                <button type="submit" class="add">Add todo</button>
+            </form>
+            <div class="todo-list"></div>
+        </div>
+        <script src="./liste-a-faire.js"></script>
+    </body>
+</html>
