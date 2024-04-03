@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+				background: repeating-linear-gradient(
+					90deg,
+					#217b16 8.33%,
+					#217b16 16.66%,
+					#025501 16.66%,
+					#025501 24.99%
+				);
+			}
+			.football-field {
+				height: 18em;
+				width: 30em;
+				border: 4px solid white;
+				position: relative;
+				display: flex;
+				align-items: center;
+			}
+			.corner {
+				position: absolute;
+				height: 25px;
+				width: 25px;
+				border-radius: 50%;
+				border-style: solid;
+			}
+			.tl {
+				inset: 0 auto auto 0;
+				border-color: transparent white transparent transparent;
+				transform: translate(-50%, -50%) rotate(45deg);
+			}
+			.tr {
+				inset: 0 0 auto auto;
+				border-color: transparent transparent transparent white;
+				transform: translate(50%, -50%) rotate(-45deg);
+			}
+			.bl {
+				inset: auto auto 0 0;
+				border-color: transparent white transparent transparent;
+				transform: translate(-50%, 50%) rotate(-45deg);
+			}
+			.br {
+				inset: auto 0 0 auto;
+				border-color: transparent transparent transparent white;
+				transform: translate(50%, 50%) rotate(45deg);
+			}
+			.container {
+				width: 100%;
+				height: 50%;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				position: relative;
+			}
+			.penalty-box {
+				height: 100%;
+				width: 20%;
+				border: 2px solid white;
+				display: flex;
+				justify-content: start;
+				align-items: center;
+				gap: 1em;
+			}
+			.penalty-box::after {
+				content: "";
+				height: 0.5em;
+				width: 0.5em;
+				background: white;
+				border-radius: 50%;
+			}
+			.pb-left {
+				transform: translate(-2px);
+			}
+			.pb-right {
+				transform: translate(2px) rotate(180deg);
+			}
+			.goal-box {
+				height: 60%;
+				width: 50%;
+				border: 2px solid white;
+				transform: translate(-2px);
+			}
+			.penalty-arc {
+				width: 3.5em;
+				height: 3.5em;
+				border-style: solid;
+				border-width: 2px;
+				border-radius: 0 100%;
+				position: absolute;
+			}
+			.pa-left {
+				transform: translate(110%) rotate(45deg);
+				border-color: white white transparent transparent;
+			}
+			.pa-right {
+				right: 0;
+				transform: translate(-110%) rotate(45deg);
+				border-color: transparent transparent white white;
+			}
+			.center-circle {
+				width: 5em;
+				height: 5em;
+				border-radius: 50%;
+				border: 2px solid white;
+				display: grid;
+				place-items: center;
+				position: relative;
+			}
+			.center-circle > * {
+				position: absolute;
+				background: white;
+			}
+			.center-spot {
+				height: 0.5em;
+				width: 0.5em;
+				border-radius: 50%;
+			}
+			.half-way-line {
+				height: 18em;
+				width: 2px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="football-field">
+			<div class="tl corner"></div>
+			<div class="tr corner"></div>
+			<div class="bl corner"></div>
+			<div class="br corner"></div>
+			<div class="container">
+				<div class="penalty-box pb-left">
+					<div class="goal-box"></div>
+				</div>
+				<div class="penalty-arc pa-left"></div>
+				<div class="center-circle">
+					<div class="center-spot"></div>
+					<div class="half-way-line"></div>
+				</div>
+				<div class="penalty-arc pa-right"></div>
+				<div class="penalty-box pb-right">
+					<div class="goal-box"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

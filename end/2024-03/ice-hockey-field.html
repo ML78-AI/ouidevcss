@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            :root {
+                --blue: #5ac8e5;
+                --red: #d52c24;
+            }
+            body {
+                height: 100vh;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: var(--blue);
+            }
+            .circle,
+            .center-circle-container,
+            .neutral-zone,
+            .center-zone {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .ice-hockey-field {
+                height: 18em;
+                width: 30em;
+                border: 3px solid var(--blue);
+                border-radius: 75px;
+                display: flex;
+                justify-content: center;
+                overflow: hidden;
+                background: white;
+            }
+            .defending-zone,
+            .attacking-zone {
+                height: 100%;
+                width: 30%;
+                border-width: 0 3px 0 3px;
+                border-style: solid;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                position: relative;
+            }
+            .goal {
+                height: 2em;
+                width: 1em;
+                position: absolute;
+                background: var(--blue);
+            }
+            .goal.left {
+                border-radius: 0 1em 1em 0;
+            }
+            .goal.right {
+                border-radius: 1em 0 0 1em;
+            }
+            .defending-zone {
+                border-color: transparent var(--blue) transparent var(--red);
+            }
+            .attacking-zone {
+                align-items: end;
+                border-color: transparent var(--red) transparent var(--blue);
+            }
+            .neutral-zone {
+                height: 100%;
+                width: 25%;
+            }
+            .circle {
+                height: 5.5em;
+                width: 5.5em;
+                border: 2px solid var(--red);
+                border-radius: 100%;
+                flex-direction: column;
+                position: relative;
+            }
+            .circle::before,
+            .circle::after {
+                content: "";
+                position: absolute;
+                height: 0.5em;
+                width: 1em;
+                border-width: 0 2px 0 2px;
+                border-color: var(--red);
+                border-style: solid;
+            }
+            .circle::before {
+                top: 0;
+                transform: translateY(-100%);
+            }
+            .circle::after {
+                bottom: 0;
+                transform: translateY(100%);
+            }
+            .center-circle-container {
+                flex-direction: column;
+                gap: 3px;
+                position: relative;
+            }
+            .center-circle-container::before {
+                content: "";
+                position: absolute;
+                height: 0.4em;
+                width: 0.4em;
+                background: var(--red);
+                border-radius: 100%;
+            }
+            .top,
+            .bottom {
+                display: flex;
+                gap: 6px;
+            }
+            .rect {
+                height: 0.4em;
+                width: 0.55em;
+                border-style: solid;
+            }
+            .rect.tl {
+                border-width: 0 2px 2px 0;
+                border-color: transparent var(--red) var(--red) transparent;
+            }
+            .rect.tr {
+                border-width: 0 0 2px 2px;
+                border-color: transparent transparent var(--red) var(--red);
+            }
+            .rect.bl {
+                border-width: 2px 2px 0 0;
+                border-color: var(--red) var(--red) transparent transparent;
+            }
+            .rect.br {
+                border-width: 2px 0 0 2px;
+                border-color: var(--red) transparent transparent var(--red);
+            }
+            .defending-zone > .circle {
+                margin-left: 0.7em;
+            }
+            .attacking-zone > .circle {
+                margin-right: 0.7em;
+            }
+            .neutral-zone {
+                position: relative;
+            }
+            .point {
+                height: 0.4em;
+                width: 0.4em;
+                background: var(--red);
+                border-radius: 100%;
+                position: absolute;
+            }
+            .point.tl {
+                top: 25%;
+                left: 10%;
+            }
+            .point.tr {
+                top: 25%;
+                right: 10%;
+            }
+            .point.bl {
+                bottom: 25%;
+                left: 10%;
+            }
+            .point.br {
+                bottom: 25%;
+                right: 10%;
+            }
+            .center-zone {
+                height: 5em;
+                width: 5em;
+                border-radius: 100%;
+                border: 3px solid var(--blue);
+                position: relative;
+            }
+            .center-zone::before {
+                content: "";
+                height: 0.5em;
+                width: 0.5em;
+                background: var(--blue);
+                border-radius: 100%;
+                z-index: 1;
+            }
+            .center-zone::after {
+                position: absolute;
+                content: "";
+                background: var(--red);
+                height: 18em;
+                width: 3px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="ice-hockey-field">
+            <div class="defending-zone">
+                <div class="goal left"></div>
+                <div class="circle">
+                    <div class="center-circle-container">
+                        <div class="top">
+                            <div class="rect tl"></div>
+                            <div class="rect tr"></div>
+                        </div>
+                        <div class="bottom">
+                            <div class="rect bl"></div>
+                            <div class="rect br"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="circle">
+                    <div class="center-circle-container">
+                        <div class="top">
+                            <div class="rect tl"></div>
+                            <div class="rect tr"></div>
+                        </div>
+                        <div class="bottom">
+                            <div class="rect bl"></div>
+                            <div class="rect br"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="neutral-zone">
+                <div class="point tl"></div>
+                <div class="point tr"></div>
+                <div class="point bl"></div>
+                <div class="point br"></div>
+                <div class="center-zone"></div>
+            </div>
+            <div class="attacking-zone">
+                <div class="goal right"></div>
+                <div class="circle">
+                    <div class="center-circle-container">
+                        <div class="top">
+                            <div class="rect tl"></div>
+                            <div class="rect tr"></div>
+                        </div>
+                        <div class="bottom">
+                            <div class="rect bl"></div>
+                            <div class="rect br"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="circle">
+                    <div class="center-circle-container">
+                        <div class="top">
+                            <div class="rect tl"></div>
+                            <div class="rect tr"></div>
+                        </div>
+                        <div class="bottom">
+                            <div class="rect bl"></div>
+                            <div class="rect br"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

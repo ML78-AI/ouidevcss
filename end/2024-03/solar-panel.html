@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: linear-gradient(#3ba4e9 50%, #6ab650 50%);
+			}
+			.ray {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: absolute;
+				top: 0;
+				left: 0;
+				border-radius: 100%;
+				transform: translate(-50%, -50%);
+				background: rgba(255, 255, 0, 0.3);
+				z-index: 1;
+				animation: celerity 5s linear forwards;
+			}
+			.sun {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 9em;
+				width: 9em;
+				background: yellow;
+				border-radius: 100%;
+				transform: translate(-50%, -50%);
+			}
+			.solar-panel {
+				height: 25em;
+				width: 20em;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			.solar-cells {
+				position: relative;
+				height: 20em;
+				width: 20em;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border: 3px solid white;
+				transform: skewX(-15deg);
+				background: repeating-linear-gradient(
+					to left bottom,
+					#027683,
+					#027683 15%,
+					#79acaf 15%,
+					#79acaf 20%
+				);
+			}
+			.horizontal-sep {
+				height: 33.3%;
+				width: 98%;
+				position: absolute;
+				border-width: 3px 0 3px 0;
+				border-color: white transparent white transparent;
+				border-style: solid;
+			}
+			.vertical-sep {
+				height: 98%;
+				width: 33.3%;
+				border-width: 0 3px 0 3px;
+				border-color: transparent white transparent white;
+				border-style: solid;
+			}
+			.support {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				transform: translateX(-15%);
+			}
+			.support::before {
+				display: inline-block;
+				content: "";
+				height: 5em;
+				width: 3em;
+				background: white;
+			}
+			.support::after {
+				display: inline-block;
+				content: "";
+				height: 1.5em;
+				width: 10em;
+				background: white;
+				border-radius: 5px;
+			}
+			@keyframes celerity {
+				from {
+					height: 0;
+					width: 0;
+				}
+				to {
+					height: 60em;
+					width: 60em;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="ray"></div>
+		<div class="sun"></div>
+		<div class="solar-panel">
+			<div class="solar-cells">
+				<div class="horizontal-sep"></div>
+				<div class="vertical-sep"></div>
+			</div>
+			<div class="support"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.container {
+				display: flex;
+				flex-direction: column;
+			}
+			.square {
+				height: 128px;
+				width: 128px;
+				border: 1px solid black;
+			}
+			#one,
+			#three {
+				background: #87635b;
+			}
+			#two,
+			#four {
+				background: #eedac3;
+			}
+			img {
+				height: 100%;
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="square" id="one">
+				<img src="../assets/images/chess.jpg" draggable="true" />
+			</div>
+			<div class="square" id="two"></div>
+			<div class="square" id="three"></div>
+			<div class="square" id="four"></div>
+		</div>
+
+		<script>
+			let dragged;
+			const squares = Object.values(
+				document.querySelector(".container").children
+			);
+
+			squares.forEach((square) => {
+				square.addEventListener("dragstart", (e) => {
+					dragged = e.target;
+				});
+				square.addEventListener("dragenter", (e) => {
+					e.target.style.background = "#729153";
+				});
+				square.addEventListener("dragover", (e) => {
+					e.preventDefault();
+				});
+				square.addEventListener("dragleave", (e) => {
+					e.target.style.background = restoreBg(e.target.id);
+				});
+				square.addEventListener("dragend", (e) => {});
+				square.addEventListener("drop", (e) => {
+					e.preventDefault();
+					if (e.target.id === "") return;
+					e.target.style.background = restoreBg(e.target.id);
+					dragged.parentNode.removeChild(dragged);
+					e.target.appendChild(dragged);
+				});
+			});
+
+			function restoreBg(id) {
+				if (id === "two" || id === "four") return "#eedac3";
+				return "#87635b";
+			}
+		</script>
+	</body>
+</html>

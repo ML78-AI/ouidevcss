@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: #2a70ec;
+				font-family: sans-serif;
+			}
+			.guessthenumber {
+				height: 22em;
+				min-width: 21em;
+				border-radius: 5px;
+				background: white;
+				display: flex;
+				flex-direction: column;
+				gap: 1.3em;
+			}
+			.title {
+				padding: 15px;
+				text-align: center;
+				margin: 0;
+				font-size: 1.2em;
+				position: relative;
+			}
+			.title::after {
+				content: "";
+				height: 1px;
+				width: 100%;
+				background: grey;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+			}
+			.rule {
+				text-align: center;
+			}
+			.hint,
+			.remaining,
+			.result,
+			.allguesses {
+				text-align: center;
+				margin: 0;
+			}
+			.actions {
+				display: flex;
+				gap: 10px;
+				justify-content: center;
+			}
+			input {
+				width: 25%;
+				height: 1.8em;
+				text-align: center;
+				font-size: 1.4em;
+				outline: none;
+				border-radius: 5px;
+				border: 1px solid black;
+			}
+
+			button {
+				width: 25%;
+				color: white;
+				font-size: 1.4em;
+				background: #2a70ec;
+				border: 0;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="guessthenumber">
+			<h1 class="title">Guess the Number</h1>
+			<header class="rule">
+				Guess the number between <span class="min">1</span> and
+				<span class="max">100</span>
+			</header>
+			<p class="hint"></p>
+			<div class="actions">
+				<input type="text" class="guess" />
+				<button class="submit">Check</button>
+			</div>
+			<p class="remaining">
+				Remaining guess : <span class="rem-val">5</span>
+			</p>
+			<p class="allguesses">All guesses : <span class="all"></span></p>
+			<p class="result"></p>
+		</div>
+		<script src="./guess-the-number.js"></script>
+	</body>
+</html>

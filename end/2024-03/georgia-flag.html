@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: linear-gradient(to left, #000046, #1cb5e0);
+			}
+			.georgia-flag {
+				display: flex;
+				height: 22em;
+				width: 32em;
+				flex-wrap: wrap;
+				background: white;
+			}
+			.rectangle {
+				height: 9em;
+				width: 14em;
+				display: grid;
+				place-items: center;
+				border-style: solid;
+			}
+			.top-left {
+				border-width: 0 2em 2em 0;
+				border-color: transparent #ff092b #ff092b transparent;
+			}
+			.top-right {
+				border-width: 0 0 2em 2em;
+				border-color: transparent transparent #ff092b #ff092b;
+			}
+			.bottom-left {
+				border-width: 2em 2em 0 0;
+				border-color: #ff092b #ff092b transparent transparent;
+			}
+			.bottom-right {
+				border-width: 2em 0 0 2em;
+				border-color: #ff092b transparent transparent #ff092b;
+			}
+			.cross-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				height: 6em;
+				width: 6em;
+			}
+			.top,
+			.left,
+			.right,
+			.bottom {
+				height: 2em;
+				width: 2em;
+				background: #ff092b;
+				clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+			}
+			.top {
+				transform: translateY(0.4em) rotate(180deg);
+			}
+			.line {
+				display: flex;
+				align-items: center;
+			}
+			.left {
+				rotate: 90deg;
+			}
+			.middle {
+				height: 1.2em;
+				width: 1.2em;
+				background: #ff092b;
+			}
+			.right {
+				rotate: -90deg;
+			}
+			.bottom {
+				transform: translateY(-0.4em);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="georgia-flag">
+			<div class="rectangle top-left">
+				<div class="cross-container">
+					<div class="top"></div>
+					<div class="line">
+						<div class="left"></div>
+						<div class="middle"></div>
+						<div class="right"></div>
+					</div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			<div class="rectangle top-right">
+				<div class="cross-container">
+					<div class="top"></div>
+					<div class="line">
+						<div class="left"></div>
+						<div class="middle"></div>
+						<div class="right"></div>
+					</div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			<div class="rectangle bottom-left">
+				<div class="cross-container">
+					<div class="top"></div>
+					<div class="line">
+						<div class="left"></div>
+						<div class="middle"></div>
+						<div class="right"></div>
+					</div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			<div class="rectangle bottom-right">
+				<div class="cross-container">
+					<div class="top"></div>
+					<div class="line">
+						<div class="left"></div>
+						<div class="middle"></div>
+						<div class="right"></div>
+					</div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

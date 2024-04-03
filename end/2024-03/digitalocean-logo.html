@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+			.digitalocean {
+				position: relative;
+				height: 16em;
+				width: 16em;
+			}
+			.circle {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				border-radius: 100%;
+				background: conic-gradient(
+						from 180deg,
+						white 0deg,
+						white 90deg,
+						transparent 90deg
+					),
+					radial-gradient(
+						closest-side,
+						white 0%,
+						white 65%,
+						#007cff 65%,
+						#007cff 99%,
+						white 99%
+					);
+			}
+			.squares {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				display: flex;
+				align-items: end;
+				z-index: 1;
+			}
+			.hidden-element {
+				width: 0.7em;
+			}
+			.square1 {
+				height: 4.8em;
+				width: 2em;
+				background: linear-gradient(#007cff 42%, white 42%);
+			}
+			.square2 {
+				height: 2.8em;
+				width: 2.4em;
+				background: linear-gradient(#007cff 85%, white 85%);
+			}
+			.square3 {
+				height: 5.6em;
+				width: 2.8em;
+				background: linear-gradient(#007cff 50%, white 50%);
+			}
+			.name {
+				color: #007cff;
+				font-size: 4em;
+				font-family: "Inter", sans-serif;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="digitalocean">
+			<div class="circle"></div>
+			<div class="squares">
+				<div class="hidden-element"></div>
+				<div class="square1"></div>
+				<div class="square2"></div>
+				<div class="square3"></div>
+			</div>
+		</div>
+		<h1 class="name">DigitalOcean</h1>
+	</body>
+</html>
