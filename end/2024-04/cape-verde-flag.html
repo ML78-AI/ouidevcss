@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+			}
+			.cape-verde-flag {
+				display: flex;
+				justify-content: center;
+				align-items: end;
+				height: 21em;
+				width: 32em;
+				position: relative;
+				background: linear-gradient(
+					#003594 50%,
+					white 50%,
+					white 58.33%,
+					#d01a22 58.33%,
+					#d01a22 66.66%,
+					white 66.66%,
+					white 75%,
+					#003594 75%
+				);
+			}
+			.stars-container {
+				height: 13em;
+				width: 13em;
+				position: relative;
+				display: flex;
+				justify-content: center;
+				transform: translate(-25%, -10%);
+			}
+			.star-container {
+				position: absolute;
+				height: 50%;
+				width: 2em;
+				transform-origin: bottom;
+				transform: rotate(calc(36deg * var(--i)));
+			}
+			.star-container:nth-child(2n) > .star {
+				transform: rotate(36deg);
+			}
+			.star {
+				content: "";
+				display: inline-block;
+				height: 2em;
+				width: 2em;
+				clip-path: polygon(
+					50% 0%,
+					61% 35%,
+					98% 35%,
+					68% 57%,
+					79% 91%,
+					50% 70%,
+					21% 91%,
+					32% 57%,
+					2% 35%,
+					39% 35%
+				);
+				background: #f7d20e;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="cape-verde-flag">
+			<div class="stars-container">
+				<div class="star-container" style="--i: 0">
+					<div class="star"></div>
+				</div>
+				<div class="star-container" style="--i: 1">
+					<div class="star"></div>
+				</div>
+				<div class="star-container" style="--i: 2">
+					<div class="star"></div>
+				</div>
+				<div class="star-container" style="--i: 3">
+					<div class="star"></div>
+				</div>
+				<div class="star-container" style="--i: 4">
+					<div class="star"></div>
+				</div>
+				<div class="star-container" style="--i: 5">
+					<div class="star"></div>
+				</div>
+				<div class="star-container" style="--i: 6">
+					<div class="star"></div>
+				</div>
+				<div class="star-container" style="--i: 7">
+					<div class="star"></div>
+				</div>
+				<div class="star-container" style="--i: 8">
+					<div class="star"></div>
+				</div>
+				<div class="star-container" style="--i: 9">
+					<div class="star"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

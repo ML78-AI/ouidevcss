@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            * {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                overflow: hidden;
+            }
+            .container {
+                display: flex;
+                gap: 3em;
+                flex-direction: column;
+                align-items: center;
+            }
+            .box-shadow-generator {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5em;
+            }
+            .parameter {
+                display: flex;
+                align-items: center;
+                gap: 0.5em;
+                width: 400px;
+            }
+            label {
+                width: 20%;
+            }
+            input[type="range"] {
+                border-radius: 8px;
+                height: 10px;
+                width: 70%;
+                outline: none;
+                appearance: none;
+                background: linear-gradient(
+                    to right,
+                    #86efac,
+                    #3b82f6,
+                    #9333ea
+                );
+            }
+            span {
+                width: 10%;
+            }
+            .range::-webkit-slider-thumb {
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+                border-radius: 50%;
+                background: black;
+                appearance: none;
+            }
+            .rectangle {
+                height: 6em;
+                width: 12em;
+                background: #3df83d;
+                box-shadow: 5px 5px 5px 10px #ff0000;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="property">box-shadow : 5px 5px 5px 10px #ff0000</div>
+            <form class="box-shadow-generator">
+                <div class="parameter x">
+                    <label>Offset X</label>
+                    <input
+                        type="range"
+                        min="-30"
+                        max="30"
+                        value="5"
+                        class="range"
+                    />
+                    <span class="value x">5px</span>
+                </div>
+                <div class="parameter y">
+                    <label>Offset Y</label>
+                    <input
+                        type="range"
+                        min="-30"
+                        max="30"
+                        value="5"
+                        class="range"
+                    />
+                    <span class="value y">5px</span>
+                </div>
+                <div class="parameter blur">
+                    <label>Blur</label>
+                    <input
+                        type="range"
+                        min="0"
+                        max="30"
+                        value="5"
+                        class="range"
+                    />
+                    <span class="value blur">5px</span>
+                </div>
+                <div class="parameter spread">
+                    <label>Spread</label>
+                    <input
+                        type="range"
+                        min="-30"
+                        max="30"
+                        value="10"
+                        class="range"
+                    />
+                    <span class="value spread">10px</span>
+                </div>
+                <div class="parameter color">
+                    <label>Color</label>
+                    <input type="color" value="#ff0000" />
+                </div>
+                <div class="parameter inset">
+                    <label>Inset</label>
+                    <input type="checkbox" />
+                </div>
+            </form>
+            <div class="rectangle"></div>
+        </div>
+        <script>
+            const property = document.querySelector(".property");
+            const form = document.querySelector(".box-shadow-generator");
+            const values = document.querySelectorAll(".value");
+            const rectangle = document.querySelector(".rectangle");
+
+            form.addEventListener("change", (e) => {
+                const [x, y, blur, spread, color, inset] = e.target.form;
+                const [
+                    offsetXValue,
+                    offsetYValue,
+                    blurValue,
+                    spreadValue,
+                    insetValue,
+                    colorValue,
+                ] = [
+                    `${x.value}px`,
+                    `${y.value}px`,
+                    `${blur.value}px`,
+                    `${spread.value}px`,
+                    `${inset.checked ? "inset" : ""}`,
+                    `${color.value}`,
+                ];
+
+                values[0].textContent = offsetXValue;
+                values[1].textContent = offsetYValue;
+                values[2].textContent = blurValue;
+                values[3].textContent = spreadValue;
+                const allValues = [
+                    insetValue,
+                    offsetXValue,
+                    offsetYValue,
+                    blurValue,
+                    spreadValue,
+                    colorValue,
+                ].join(" ");
+                property.textContent = `box-shadow : ${allValues}`;
+                rectangle.style.boxShadow = `${allValues}`;
+            });
+        </script>
+    </body>
+</html>

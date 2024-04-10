@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+			.basket-ball {
+				height: 13em;
+				width: 13em;
+				background: radial-gradient(
+					circle at 25% 40%,
+					#d09b8a 8%,
+					#b3523a 25%,
+					#924a3b 60%
+				);
+				border-radius: 50%;
+				position: relative;
+				overflow: hidden;
+				z-index: 1;
+			}
+			.curve {
+				position: absolute;
+				border: 3px solid black;
+				border-radius: 50%;
+			}
+			.curve.right {
+				height: 6.5em;
+				width: 17em;
+				top: 15%;
+				left: 40%;
+			}
+			.curve.left {
+				height: 8em;
+				width: 10em;
+				top: 20%;
+				right: 90%;
+			}
+			.curve.middle {
+				height: 15em;
+				width: 10em;
+				top: -10%;
+				left: 25%;
+				transform: rotate(-20deg);
+			}
+			.curve.horizontal {
+				height: 10em;
+				width: 25em;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -13%) rotate(-10deg);
+			}
+			.shadow {
+				background: radial-gradient(#000f, #66656500 72%);
+				border-radius: 50%;
+				height: 1.5em;
+				width: 10em;
+				transform: translateY(-35%);
+				opacity: 0.8;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="basket-ball">
+			<div class="curve right"></div>
+			<div class="curve middle"></div>
+			<div class="curve left"></div>
+			<div class="curve horizontal"></div>
+		</div>
+		<div class="shadow"></div>
+	</body>
+</html>
