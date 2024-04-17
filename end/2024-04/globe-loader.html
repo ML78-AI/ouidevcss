@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: #1b2227;
+			}
+			.loader-globe {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+			.pole {
+				height: 0.8em;
+				width: 0.8em;
+				background: white;
+				border-radius: 50%;
+				position: absolute;
+			}
+			.north-pole {
+				top: 5%;
+				left: 5%;
+			}
+			.south-pole {
+				bottom: 5%;
+				right: 5%;
+			}
+			.globe-container {
+				position: relative;
+			}
+			.bracket-container {
+				height: 9em;
+				width: 9em;
+				border-radius: 50%;
+				border-width: 4px;
+				border-style: solid;
+				border-color: transparent white white white;
+				rotate: 45deg;
+				display: grid;
+				place-items: center;
+			}
+			.bracket {
+				display: grid;
+				place-items: center;
+			}
+			.globe {
+				height: 6em;
+				width: 6em;
+				border: 0.8em red solid;
+				border-radius: 50%;
+				animation: 1s rotate linear infinite;
+			}
+			.joint {
+				height: 1em;
+				width: 0.3em;
+				background: white;
+			}
+			.base {
+				height: 1em;
+				width: 4.5em;
+				border-radius: 100% 100% 0 0;
+				background: white;
+			}
+			@keyframes rotate {
+				from {
+					transform: rotateX(0deg);
+				}
+				to {
+					transform: rotateX(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="loader-globe">
+			<div class="globe-container">
+				<div class="north-pole pole"></div>
+				<div class="bracket-container">
+					<div class="bracket">
+						<div class="globe"></div>
+					</div>
+				</div>
+				<div class="south-pole pole"></div>
+			</div>
+			<div class="joint"></div>
+			<div class="base"></div>
+		</div>
+	</body>
+</html>

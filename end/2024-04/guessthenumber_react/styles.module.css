@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+body {
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: "Roboto", sans-serif;
+}
+.guessthenumber {
+	height: 24em;
+	min-width: 21em;
+	border-radius: 5px;
+	background: radial-gradient(
+		circle farthest-corner at 10% 20%,
+		rgb(153, 103, 186) 41.2%,
+		rgb(0, 113, 227) 90%
+	);
+	display: flex;
+	flex-direction: column;
+	gap: 1.3em;
+	border: 1px solid black;
+	color: white;
+	font-size: 1.2em;
+}
+.title {
+	padding: 22px;
+	text-align: center;
+	margin: 0;
+	font-size: 1.3em;
+	position: relative;
+}
+.title::after {
+	content: "";
+	height: 1px;
+	width: 100%;
+	background: black;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.rule {
+	text-align: center;
+}
+.hint,
+.remaining,
+.result,
+.allguesses {
+	text-align: center;
+	margin: 0;
+}
+.hint {
+	color: orange;
+	font-weight: 700;
+	display: flex;
+	justify-content: center;
+	gap: 0.5em;
+}
+.actions {
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+}
+input {
+	width: 25%;
+	height: 1.8em;
+	text-align: center;
+	font-size: 1.4em;
+	outline: none;
+	border-radius: 5px;
+	border: 1px solid black;
+}
+
+button {
+	width: 25%;
+	color: white;
+	font-size: 1.4em;
+	border: 0;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.result {
+	font-weight: bold;
+	font-size: 2em;
+}
