@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.wheel {
+				position: relative;
+				height: 13em;
+				width: 13em;
+				border-radius: 50%;
+				background: radial-gradient(
+					circle at center,
+					#825222 20%,
+					white 20%,
+					white 62%,
+					#825222 62%
+				);
+				animation: rotation 2s linear infinite;
+			}
+			.spoke {
+				position: absolute;
+				height: 100%;
+				width: 0.6em;
+				background: #825222;
+				left: 50%;
+			}
+			.one {
+				transform: translateX(-50%);
+			}
+			.two {
+				transform: translateX(-50%) rotate(45deg);
+			}
+			.three {
+				transform: translateX(-50%) rotate(90deg);
+			}
+			.four {
+				transform: translateX(-50%) rotate(135deg);
+			}
+			@keyframes rotation {
+				from {
+					rotate: 0turn;
+				}
+				to {
+					rotate: 1turn;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wheel">
+			<div class="spoke one"></div>
+			<div class="spoke two"></div>
+			<div class="spoke three"></div>
+			<div class="spoke four"></div>
+		</div>
+	</body>
+</html>

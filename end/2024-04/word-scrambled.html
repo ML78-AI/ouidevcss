@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: radial-gradient(
+					circle at center,
+					#9cf6ff,
+					#6be3f8,
+					#1aa7e0,
+					#0865ac
+				);
+			}
+			.word-scrambled {
+				font-family: "Montserrat", sans-serif;
+				background: white;
+				min-width: 300px;
+				min-height: 380px;
+				border-radius: 5px;
+			}
+			.title-container {
+				display: flex;
+				flex-direction: column;
+			}
+			.title-container::after {
+				content: "";
+				width: 100%;
+				height: 1px;
+				background: black;
+				display: inline-block;
+			}
+			.title {
+				margin: 0;
+				padding: 15px;
+				font-size: 1.3em;
+			}
+			.content {
+				display: flex;
+				flex-direction: column;
+				padding: 15px;
+				gap: 1em;
+			}
+			.word {
+				font-weight: bold;
+				letter-spacing: 4px;
+				text-transform: uppercase;
+				font-size: 1.5em;
+				text-align: center;
+				margin: 0.5em 0;
+			}
+			.result {
+				width: 100%;
+				text-align: center;
+				font-size: 1.8em;
+				font-weight: bold;
+			}
+			.user-input {
+				padding: 1em;
+				outline: none;
+			}
+			.actions {
+				height: 2.5em;
+				width: 100%;
+				display: flex;
+				justify-content: space-evenly;
+				align-items: center;
+			}
+			button {
+				height: 95%;
+				width: 35%;
+				cursor: pointer;
+				color: white;
+				border: 0;
+				border-radius: 5px;
+			}
+			.retry {
+				background: red;
+			}
+			.submit {
+				background: green;
+			}
+		</style>
+	</head>
+	<body>
+		<form class="word-scrambled">
+			<header class="title-container">
+				<h1 class="title">Word scrambled</h1>
+			</header>
+			<main class="content">
+				<div class="word"></div>
+				<div class="check">
+					Check : <span class="check-value">-</span>
+				</div>
+				<div class="time">
+					Time left : <span class="time-left"></span>s
+				</div>
+				<div class="result"></div>
+				<input
+					class="user-input"
+					type="text"
+					placeholder="Enter a word"
+				/>
+			</main>
+			<div class="actions">
+				<button type="button" class="retry">Retry</button>
+				<button type="submit" class="submit">Check</button>
+			</div>
+		</form>
+		<script src="./word-scambled.js"></script>
+	</body>
+</html>

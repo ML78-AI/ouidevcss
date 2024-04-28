@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                height: 100vh;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .samsung-galaxy-loader {
+                position: relative;
+                animation: rotate 1.1s linear infinite,
+                    scale 1.1s linear infinite;
+            }
+            .container {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+            }
+            .inner-container {
+                position: relative;
+                height: 100%;
+                width: 100%;
+            }
+            .point {
+                position: absolute;
+                height: 1em;
+                width: 1em;
+                border-radius: 50%;
+                background: #0380fe;
+            }
+            .top {
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .left {
+                top: 50%;
+                left: 0;
+                transform: translate(-50%, -50%);
+            }
+            .right {
+                top: 50%;
+                right: 0;
+                transform: translate(50%, -50%);
+            }
+            .bottom {
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%, 50%);
+                background: #00d693;
+            }
+            @keyframes rotate {
+                from {
+                    rotate: 0turn;
+                }
+                to {
+                    rotate: 1turn;
+                }
+            }
+            @keyframes scale {
+                0%,
+                100% {
+                    height: 3.7em;
+                    width: 3.7em;
+                }
+                50% {
+                    height: 1.8em;
+                    width: 1.8em;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="samsung-galaxy-loader">
+            <div class="container">
+                <div class="inner-container">
+                    <div class="point top"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="inner-container">
+                    <div class="point left"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="inner-container">
+                    <div class="point right"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="inner-container">
+                    <div class="point bottom"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

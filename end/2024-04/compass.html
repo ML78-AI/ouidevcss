@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: #1b2227;
+			}
+			.compass {
+				height: 18em;
+				width: 18em;
+				border-radius: 50%;
+				border-style: solid;
+				border-color: #ce842b #f5b22b #ce842b #f5b22b;
+				border-width: 0.5em;
+			}
+			.inner-layer {
+				height: 17em;
+				width: 17em;
+				border-radius: 50%;
+				border-style: solid;
+				border-color: #f5b22b #ce842b #f5b22b #ce842b;
+				border-width: 0.5em;
+				position: relative;
+				display: grid;
+				place-items: center;
+			}
+			.main-needles {
+				position: absolute;
+				height: 90%;
+				width: 100%;
+				clip-path: polygon(50% 0, 55% 50%, 50% 100%, 45% 50%);
+				background: linear-gradient(#d73930 50%, #62a7d0 50%);
+				z-index: 1;
+				display: grid;
+				place-items: center;
+				animation: orientation 2s linear forwards;
+			}
+			.main-needles::before {
+				content: "";
+				height: 1.75em;
+				width: 1.75em;
+				border-radius: 50%;
+				background: radial-gradient(circle, white 55%, gold 55%);
+			}
+			.poles {
+				position: relative;
+				height: 100%;
+				width: 100%;
+				border-radius: 50%;
+				display: grid;
+				place-items: center;
+				background: conic-gradient(
+					#e2e3e5 90deg,
+					white 90deg,
+					white 180deg,
+					#e2e3e5 180deg,
+					#e2e3e5 270deg,
+					white 270deg
+				);
+			}
+			.rect {
+				height: 98%;
+				width: 0.3em;
+				position: absolute;
+				rotate: calc(var(--i) * 10deg);
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+			.rect::before,
+			.rect::after {
+				display: inline-block;
+				content: "";
+				width: 100%;
+				height: 4%;
+				background: #295461;
+			}
+			.pole {
+				position: absolute;
+			}
+			.ns-poles {
+				height: 90%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-between;
+			}
+			.we-poles {
+				width: 90%;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			span {
+				font-size: 2em;
+				color: #295461;
+			}
+			.bg-needles {
+				height: 65%;
+				width: 65%;
+				clip-path: polygon(
+					50% 0,
+					55% 40%,
+					75% 25%,
+					60% 45%,
+					100% 50%,
+					60% 55%,
+					75% 75%,
+					55% 60%,
+					50% 100%,
+					45% 60%,
+					25% 75%,
+					40% 55%,
+					0 50%,
+					40% 45%,
+					25% 25%,
+					45% 40%
+				);
+				background: #c9c9cd;
+			}
+			@keyframes orientation {
+				0% {
+					rotate: 20deg;
+				}
+				20%,
+				40% {
+					rotate: 50deg;
+				}
+				30% {
+					rotate: 30deg;
+				}
+				70%,
+				100% {
+					rotate: 160deg;
+				}
+				90% {
+					rotate: 180deg;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="compass">
+			<div class="inner-layer">
+				<div class="main-needles"></div>
+				<div class="poles">
+					<div class="rect" style="--i: 0"></div>
+					<div class="rect" style="--i: 1"></div>
+					<div class="rect" style="--i: 2"></div>
+					<div class="rect" style="--i: 3"></div>
+					<div class="rect" style="--i: 4"></div>
+					<div class="rect" style="--i: 5"></div>
+					<div class="rect" style="--i: 6"></div>
+					<div class="rect" style="--i: 7"></div>
+					<div class="rect" style="--i: 8"></div>
+					<div class="rect" style="--i: 9"></div>
+					<div class="rect" style="--i: 10"></div>
+					<div class="rect" style="--i: 11"></div>
+					<div class="rect" style="--i: 12"></div>
+					<div class="rect" style="--i: 13"></div>
+					<div class="rect" style="--i: 14"></div>
+					<div class="rect" style="--i: 15"></div>
+					<div class="rect" style="--i: 16"></div>
+					<div class="rect" style="--i: 17"></div>
+					<div class="pole ns-poles">
+						<span>N</span>
+						<span>S</span>
+					</div>
+					<div class="pole we-poles">
+						<span>W</span>
+						<span>E</span>
+					</div>
+					<div class="bg-needles"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
