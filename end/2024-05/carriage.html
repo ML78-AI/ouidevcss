@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.carriage {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			.crown {
+				clip-path: polygon(
+					50% 0%,
+					70% 70%,
+					100% 20%,
+					75% 100%,
+					25% 100%,
+					0 20%,
+					30% 70%
+				);
+				background: gold;
+				height: 3.4em;
+				width: 3.4em;
+			}
+			.top {
+				width: 18.6em;
+				height: 4em;
+				background: #c3dff2;
+				border-radius: 100% 100% 0 0;
+				position: relative;
+			}
+			.top::before,
+			.top::after {
+				content: "";
+				position: absolute;
+				width: 10em;
+				height: 3.5em;
+				border-radius: 50%;
+				background: white;
+				top: 0;
+			}
+			.top::before {
+				left: 0;
+				transform: rotate(-20deg) translate(-1.2em, -1em);
+			}
+			.top::after {
+				right: 0;
+				transform: rotate(20deg) translate(1.2em, -1em);
+			}
+			.body-carriage {
+				height: 12em;
+				width: 17em;
+				border: 0.8em solid #58aadb;
+				border-radius: 0 0 100% 100%;
+				background: linear-gradient(#1b1545 50%, #c3e0f2 50%);
+				overflow: hidden;
+				display: flex;
+				justify-content: space-around;
+				position: relative;
+			}
+			.vertical-sep {
+				position: absolute;
+				height: 100%;
+				width: 0.8em;
+				background: #58aadb;
+			}
+			.vertical-sep.left {
+				left: 28%;
+			}
+			.vertical-sep.right {
+				right: 28%;
+			}
+			.horizontal-sep {
+				position: absolute;
+				width: 100%;
+				height: 0.8em;
+				background: #58aadb;
+				top: 50%;
+				transform: translateY(-50%);
+				z-index: 1;
+			}
+			.curtain-top {
+				position: absolute;
+				height: 7.5em;
+				width: 9em;
+				border-radius: 50%;
+				background: #ea5048;
+				top: 0;
+			}
+			.curtain-top.left {
+				left: 0;
+				transform: translate(-50%, -50%);
+			}
+			.curtain-top.right {
+				right: 0;
+				transform: translate(50%, -50%);
+			}
+			.curtain-bottom {
+				height: 3.4em;
+				width: 3.4em;
+				background: #ea5048;
+				border-radius: 100%;
+				position: absolute;
+				z-index: 0;
+			}
+			.curtain-bottom.left {
+				top: 25%;
+				left: 0;
+				transform: translate(-50%);
+			}
+			.curtain-bottom.right {
+				top: 25%;
+				right: 0;
+				transform: translate(50%);
+			}
+			.wheels-container {
+				width: 30em;
+				height: 10em;
+				display: flex;
+				justify-content: space-between;
+				transform: translateY(-35%);
+			}
+			.wheel {
+				height: 8.6em;
+				width: 8.6em;
+				border-radius: 50%;
+				border: 0.7em solid black;
+				display: grid;
+				place-items: center;
+				position: relative;
+				overflow: hidden;
+				animation: 1s rotation linear infinite;
+			}
+			.center {
+				height: 40%;
+				width: 40%;
+				border-radius: 50%;
+				background: radial-gradient(
+					circle at center,
+					#f4c23d 45%,
+					#c2def5 45%,
+					#c2def5 60%,
+					#a4aaaf 60%
+				);
+			}
+			.spoke {
+				height: 100%;
+				width: 0.4em;
+				position: absolute;
+				background: #a4aaaf;
+				top: 0;
+				left: 50%;
+				transform: translate(-50%) rotate(calc(var(--i) * 30deg));
+				z-index: -1;
+			}
+			@keyframes rotation {
+				from {
+					rotate: 0turn;
+				}
+				to {
+					rotate: 1turn;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="carriage">
+			<div class="crown"></div>
+			<div class="top"></div>
+			<div class="body-carriage">
+				<div class="vertical-sep left"></div>
+				<div class="vertical-sep right"></div>
+				<div class="horizontal-sep"></div>
+				<div class="curtain-top left"></div>
+				<div class="curtain-top right"></div>
+				<div class="curtain-bottom left"></div>
+				<div class="curtain-bottom right"></div>
+			</div>
+			<div class="wheels-container">
+				<div class="wheel">
+					<div class="center">
+						<div class="spoke" style="--i: 0"></div>
+						<div class="spoke" style="--i: 1"></div>
+						<div class="spoke" style="--i: 2"></div>
+						<div class="spoke" style="--i: 3"></div>
+						<div class="spoke" style="--i: 4"></div>
+						<div class="spoke" style="--i: 5"></div>
+					</div>
+				</div>
+				<div class="wheel">
+					<div class="center">
+						<div class="spoke" style="--i: 0"></div>
+						<div class="spoke" style="--i: 1"></div>
+						<div class="spoke" style="--i: 2"></div>
+						<div class="spoke" style="--i: 3"></div>
+						<div class="spoke" style="--i: 4"></div>
+						<div class="spoke" style="--i: 5"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
