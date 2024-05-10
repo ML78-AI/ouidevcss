@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #212121;
+                overflow: hidden;
+            }
+            .bmw {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border-color: white;
+                border-style: solid;
+                border-width: 10px;
+                height: 250px;
+                width: 250px;
+                border-radius: 50%;
+                position: relative;
+                justify-content: center;
+            }
+            .letter {
+                font-size: 3em;
+                font-weight: bold;
+                transform-origin: bottom;
+                font-family: Helvetica, sans-serif;
+                height: 120px;
+                width: 60px;
+                color: white;
+                text-align: center;
+                position: absolute;
+                top: 3%;
+                left: 50%;
+                translate: -50% -5%;
+            }
+            .letter.c1 {
+                rotate: -50deg;
+            }
+            .letter.c3 {
+                rotate: 50deg;
+            }
+            .internal-circle {
+                height: 140px;
+                width: 140px;
+                background: conic-gradient(
+                    #0066b0 0.25turn,
+                    white 0.25turn 0.5turn,
+                    #0066b0 0.5turn 0.75turn,
+                    white 0.75turn 1turn
+                );
+                border-radius: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="bmw">
+            <span class="letter c1">B</span>
+            <span class="letter c2">M</span>
+            <span class="letter c3">W</span>
+            <div class="internal-circle"></div>
+        </div>
+    </body>
+</html>
