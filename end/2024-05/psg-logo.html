@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			@font-face {
+				font-family: psgFont;
+				src: url("../assets/fonts/psg-2.ttf");
+			}
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: #1b2227;
+			}
+			.psg-logo {
+				height: 21em;
+				width: 21em;
+				border-radius: 50%;
+				background: radial-gradient(
+					circle,
+					#003b75 62%,
+					white 62%,
+					white 65%,
+					#003b75 65%
+				);
+				display: grid;
+				place-items: center;
+				position: relative;
+			}
+			.paris-letter {
+				position: absolute;
+				color: white;
+				height: 90%;
+				font-size: 3.5em;
+				font-family: psgFont, sans-serif;
+				font-weight: bold;
+				rotate: var(--r);
+			}
+			.eiffel-tower-container {
+				position: relative;
+				height: 10em;
+				width: 10em;
+				background: #dc3d37;
+				border: 6px solid white;
+				border-radius: 50%;
+				overflow: hidden;
+				display: grid;
+				place-items: center;
+			}
+			.eiffel-tower-container::before {
+				position: absolute;
+				content: "";
+				width: 4em;
+				height: 0.2em;
+				background: white;
+			}
+			.left-part,
+			.right-part {
+				position: absolute;
+				height: 150%;
+				width: 90%;
+				background: #003b75;
+				border: 6px solid white;
+				border-radius: 50%;
+				transform: translate(calc(var(--i) * 55%), -35%);
+			}
+			.fleur-de-lys {
+				height: 3.7em;
+				width: 3.7em;
+				border-radius: 50%;
+				background: #114581;
+				border: 5px solid white;
+				transform: translateY(90%);
+				display: grid;
+				place-items: center;
+			}
+			.lys {
+				height: 60%;
+				width: 60%;
+				border-radius: 50%;
+			}
+			.st-germain-letter {
+				position: absolute;
+				color: white;
+				height: 77%;
+				font-size: 1.3em;
+				font-family: psgFont, sans-serif;
+				rotate: var(--r);
+				display: flex;
+				align-items: end;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="psg-logo">
+			<span class="paris-letter" style="--r: -50deg">P</span>
+			<span class="paris-letter" style="--r: -28deg">A</span>
+			<span class="paris-letter" style="--r: 0deg">R</span>
+			<span class="paris-letter" style="--r: 23deg">I</span>
+			<span class="paris-letter" style="--r: 46deg">S</span>
+			<div class="eiffel-tower-container">
+				<div class="left-part" style="--i: -1"></div>
+				<div class="right-part" style="--i: 1"></div>
+				<div class="fleur-de-lys">
+					<img src="../../assets/images/psg.png" class="lys" />
+				</div>
+			</div>
+			<div class="st-germain-letter" style="--r: 52deg">S</div>
+			<div class="st-germain-letter" style="--r: 44deg">A</div>
+			<div class="st-germain-letter" style="--r: 37deg">I</div>
+			<div class="st-germain-letter" style="--r: 30deg">N</div>
+			<div class="st-germain-letter" style="--r: 20deg">T</div>
+			<div class="st-germain-letter" style="--r: 10deg">-</div>
+			<div class="st-germain-letter" style="--r: 0deg">G</div>
+			<div class="st-germain-letter" style="--r: -10deg">E</div>
+			<div class="st-germain-letter" style="--r: -20deg">R</div>
+			<div class="st-germain-letter" style="--r: -30deg">M</div>
+			<div class="st-germain-letter" style="--r: -40deg">A</div>
+			<div class="st-germain-letter" style="--r: -47deg">I</div>
+			<div class="st-germain-letter" style="--r: -54deg">N</div>
+		</div>
+	</body>
+</html>
