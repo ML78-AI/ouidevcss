@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.tictactoe {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 2em;
+			}
+			.red {
+				color: #f70000;
+			}
+			.blue {
+				color: #0000f7;
+			}
+			p {
+				margin: 0;
+				text-align: center;
+				font-family: "Lucida Sans", sans-serif;
+				font-size: 2em;
+			}
+			.grid {
+				height: 24em;
+				width: 24em;
+				background: black;
+				display: grid;
+				grid-template-columns: repeat(3, 32.1%);
+				grid-template-rows: repeat(3, 32.1%);
+				gap: 2%;
+			}
+			.case {
+				background: white;
+				cursor: pointer;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.replay {
+				height: 2.5em;
+				width: 9em;
+				border: 0;
+				cursor: pointer;
+				color: white;
+				background: #19b3ed;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="tictactoe">
+			<p class="game">
+				<span class="blue">T</span><span class="red">i</span
+				><span class="blue">c</span><span class="red">-</span
+				><span class="blue">t</span><span class="red">i</span
+				><span class="blue">c</span><span class="red">-</span
+				><span class="blue">t</span><span class="red">o</span
+				><span class="blue">e</span>
+			</p>
+			<p class="turn"></p>
+			<div class="grid">
+				<div class="case one"></div>
+				<div class="case two"></div>
+				<div class="case three"></div>
+				<div class="case four"></div>
+				<div class="case five"></div>
+				<div class="case six"></div>
+				<div class="case seven"></div>
+				<div class="case eight"></div>
+				<div class="case nine"></div>
+			</div>
+			<p class="result"></p>
+			<button class="replay">Replay</button>
+		</div>
+		<script src="tictactoe.js"></script>
+	</body>
+</html>

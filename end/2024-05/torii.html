@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				margin: 0;
+			}
+			.torii {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			.kasagi {
+				position: relative;
+				background: black;
+				width: 26.3em;
+				height: 2.2em;
+				clip-path: polygon(100% 0%, 0% 0%, 10% 100%, 90% 100%);
+			}
+			.kasagi::before {
+				position: absolute;
+				top: -85%;
+				left: 50%;
+				transform: translate(-50%);
+				content: "";
+				height: 3.1em;
+				width: 99.5%;
+				border-radius: 45%;
+				background: white;
+			}
+			.shimaki {
+				width: 20em;
+				height: 1.3em;
+				background: #e72208;
+				clip-path: polygon(100% 0%, 0% 0%, 3% 100%, 97% 100%);
+			}
+			.support {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				position: relative;
+				--gakuzuka-height: 2.8em;
+			}
+			.vertical {
+				display: flex;
+				justify-content: space-around;
+				width: 20em;
+			}
+			.hashira {
+				height: 17.5em;
+				width: 1.9em;
+				background: #e72208;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+			}
+			.hashira.left {
+				transform: skewX(-10deg);
+			}
+			.hashira.right {
+				transform: skewX(10deg);
+			}
+			.daiwa {
+				background: #e72208;
+				width: 2.7em;
+				height: 0.8em;
+			}
+			.nemaki {
+				background: black;
+				width: 150%;
+				height: 20%;
+				flex-shrink: 0;
+				border-radius: 0.6em 0.6em 0 0/0.6em 0.6em 0 0;
+			}
+			.gakuzuka {
+				height: var(--gakuzuka-height);
+				width: 1.9em;
+				background: #e72208;
+			}
+			.nuki {
+				position: absolute;
+				width: 18.8em;
+				height: 1.3em;
+				background: #e72208;
+				top: var(--gakuzuka-height);
+			}
+			.kusabi.far-left,
+			.kusabi.left,
+			.kusabi.far-right,
+			.kusabi.right {
+				position: absolute;
+				height: 0.6em;
+				width: 1.3em;
+				background: #e72208;
+			}
+			.kusabi.far-left {
+				transform: translate(1.9em, -0.4em) rotate(10deg);
+			}
+			.kusabi.left {
+				transform: translate(4.4em, -0.4em) rotate(-10deg);
+			}
+			.kusabi.right {
+				transform: translate(13.1em, -0.4em) rotate(10deg);
+			}
+			.kusabi.far-right {
+				transform: translate(15.6em, -0.4em) rotate(-10deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="torii">
+			<div class="kasagi"></div>
+			<div class="shimaki"></div>
+			<div class="support">
+				<div class="vertical">
+					<div class="hashira left">
+						<div class="daiwa"></div>
+						<div class="nemaki"></div>
+					</div>
+					<div class="gakuzuka"></div>
+					<div class="hashira right">
+						<div class="daiwa"></div>
+						<div class="nemaki"></div>
+					</div>
+				</div>
+				<div class="nuki">
+					<div class="kusabi far-left"></div>
+					<div class="kusabi left"></div>
+					<div class="kusabi far-right"></div>
+					<div class="kusabi right"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
