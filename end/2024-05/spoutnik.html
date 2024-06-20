@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+			}
+			img {
+				position: absolute;
+				height: 10em;
+				width: 10em;
+			}
+			.sputnik-container {
+				height: 25em;
+				width: 25em;
+				position: relative;
+				animation: 3s rotation linear infinite;
+			}
+			.sputnik {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%);
+			}
+			.hemisphere {
+				height: 4em;
+				width: 4em;
+				border-radius: 50%;
+				border: 3px solid black;
+				background: linear-gradient(
+					white 25%,
+					black 25%,
+					black 30%,
+					#f9b233 30%
+				);
+				position: relative;
+			}
+			.front {
+				position: absolute;
+				height: 0.5em;
+				width: 0.3em;
+				background: black;
+				top: 0;
+				left: 50%;
+				transform: translate(-50%);
+			}
+			.link {
+				position: absolute;
+				top: 45%;
+				left: 50%;
+				transform: translate(-50%);
+				width: 115%;
+				height: 15%;
+				background: #77aad4;
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				border: 3px solid black;
+				z-index: 1;
+			}
+			.square {
+				height: 0.3em;
+				width: 0.3em;
+				background: black;
+			}
+			.antenna {
+				position: absolute;
+				top: 45%;
+				width: 0.3em;
+				background: black;
+				translate: calc(var(--coeff) * 200%);
+				rotate: calc(var(--coeff) * -10deg);
+			}
+			.left {
+				left: 0;
+				height: 7em;
+			}
+			.middle {
+				height: 10em;
+				left: 50%;
+				translate: -50%;
+			}
+			.right {
+				right: 0;
+				height: 7em;
+			}
+			@keyframes rotation {
+				from {
+					rotate: 0turn;
+				}
+				to {
+					rotate: 1turn;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<img src="../../assets/images/earth.svg" alt="Earth" />
+		<div class="sputnik-container">
+			<div class="sputnik">
+				<div class="hemisphere">
+					<div class="front"></div>
+					<div class="link">
+						<div class="square"></div>
+						<div class="square"></div>
+						<div class="square"></div>
+						<div class="square"></div>
+						<div class="square"></div>
+						<div class="square"></div>
+					</div>
+					<div class="antenna left" style="--coeff: -1"></div>
+					<div class="antenna middle"></div>
+					<div class="antenna right" style="--coeff: 1"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

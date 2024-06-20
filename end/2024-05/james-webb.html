@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: #212121;
+			}
+			.james-webb {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+				height: 13em;
+				width: 15em;
+			}
+			.solar-cell {
+				position: absolute;
+				clip-path: polygon(
+					25% 0%,
+					75% 0%,
+					100% 50%,
+					75% 100%,
+					25% 100%,
+					0% 50%
+				);
+				background: #f7ce2f;
+				height: 2.5em;
+				width: 3em;
+				animation: move 1s linear forwards var(--delay);
+			}
+			@keyframes move {
+				50% {
+					translate: var(--x) 0;
+				}
+				100% {
+					translate: var(--x) var(--y);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="james-webb">
+			<div class="solar-cell" style="--x: 0%; --y: 0%; --delay: 0s"></div>
+			<div
+				class="solar-cell"
+				style="--x: -76%; --y: -51%; --delay: 1s"
+			></div>
+			<div
+				class="solar-cell"
+				style="--x: 0%; --y: -101%; --delay: 2s"
+			></div>
+			<div
+				class="solar-cell"
+				style="--x: 76%; --y: -51%; --delay: 3s"
+			></div>
+			<div
+				class="solar-cell"
+				style="--x: 76%; --y: 51%; --delay: 4s"
+			></div>
+			<div
+				class="solar-cell"
+				style="--x: 0%; --y: 101%; --delay: 5s"
+			></div>
+			<div
+				class="solar-cell"
+				style="--x: -76%; --y: 51%; --delay: 6s"
+			></div>
+			<div
+				class="solar-cell"
+				style="--x: -152%; --y: 0%; --delay: 7s"
+			></div>
+			<div
+				class="solar-cell"
+				style="--x: -152%; --y: -101%; --delay: 8s"
+			></div>
+			<div
+				class="solar-cell"
+				style="--x: -76%; --y: -152%; --delay: 9s"
+			></div>
+			<div
+				class="solar-cell"
+				style="--x: 0%; --y: -202%; --delay: 10s"
+			></div>
+			<div
+				class="solar-cell"
+				style="--x: 76%; --y: -152%; --delay: 11s"
+			></div>
+			<div
+				class="solar-cell"
+				style="--x: 152%; --y: -101%; --delay: 12s"
+			></div>
+			<div
+				class="solar-cell"
+				style="--x: 152%; --y: 0%; --delay: 13s"
+			></div>
+			<div
+				class="solar-cell"
+				style="--x: 152%; --y: 101%; --delay: 14s"
+			></div>
+			<div
+				class="solar-cell"
+				style="--x: 76%; --y: 152%; --delay: 15s"
+			></div>
+			<div
+				class="solar-cell"
+				style="--x: 0%; --y: 202%; --delay: 16s"
+			></div>
+			<div
+				class="solar-cell"
+				style="--x: -76%; --y: 152%; --delay: 17s"
+			></div>
+			<div
+				class="solar-cell"
+				style="--x: -152%; --y: 101%; --delay: 18s"
+			></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: linear-gradient(#409cdc 50%, #5b9803 50%);
+			}
+			.bee {
+				display: flex;
+				flex-direction: column;
+				width: 10em;
+				height: 10em;
+			}
+			.wings {
+				display: flex;
+				width: 100%;
+				height: 50%;
+			}
+			.wing {
+				background: white;
+				height: 100%;
+				width: 50%;
+			}
+			.left {
+				border-radius: 50% 50% 0 50%;
+			}
+			.right {
+				border-radius: 50% 50% 50% 0;
+			}
+			.body {
+				position: relative;
+				width: 100%;
+				height: 50%;
+				border-radius: 50px;
+				background: linear-gradient(
+					90deg,
+					#191919 15%,
+					#eef141 15%,
+					#eef141 21%,
+					#191919 21%,
+					#191919 39%,
+					#eef141 39%,
+					#eef141 45%,
+					#191919 45%,
+					#191919 63%,
+					#eef141 63%
+				);
+			}
+			.eye {
+				position: absolute;
+				height: 1em;
+				width: 1em;
+				background: #191919;
+				border-radius: 50%;
+				top: 23%;
+				right: 15%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="bee">
+			<div class="wings">
+				<div class="wing left"></div>
+				<div class="wing right"></div>
+			</div>
+			<div class="body">
+				<div class="eye"></div>
+			</div>
+		</div>
+	</body>
+</html>
