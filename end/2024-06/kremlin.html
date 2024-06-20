@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				margin: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.kremlin {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			.top {
+				height: 0;
+				width: 0;
+				font-size: 4em;
+				border-style: solid;
+				border-color: transparent transparent #43a048 transparent;
+				border-width: 0 0.7em 2.3em 0.7em;
+				position: relative;
+				transform: translateY(0.4em);
+			}
+			.top::before {
+				content: "";
+				height: 0.8em;
+				width: 0.8em;
+				top: 0;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				position: absolute;
+				clip-path: polygon(
+					50% 0%,
+					61% 35%,
+					98% 35%,
+					68% 57%,
+					79% 91%,
+					50% 70%,
+					21% 91%,
+					32% 57%,
+					2% 35%,
+					39% 35%
+				);
+				background: #e53935;
+			}
+			.middle {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				z-index: 1;
+			}
+			.top-fortif {
+				display: flex;
+			}
+			.top-far-fortif {
+				height: 0;
+				width: 0;
+				border-width: 0 0.7em 1.4em 0.7em;
+				border-style: solid;
+				border-color: transparent transparent #d32e2e transparent;
+			}
+			.top-middle-fortif {
+				height: 0;
+				width: 0;
+				border-width: 0 1.4em 1.4em 1.4em;
+				border-style: solid;
+				border-color: transparent transparent #d32e2e transparent;
+			}
+			.clock-container {
+				display: grid;
+				place-items: center;
+				height: 8.4em;
+				width: 8.4em;
+				background: #d32e2e;
+			}
+			.clock {
+				position: relative;
+				height: 5.5em;
+				width: 5.5em;
+				border-radius: 50%;
+				background: radial-gradient(
+					circle,
+					#ffc206,
+					#ffc206 10%,
+					#424242 10%,
+					#424242 54%,
+					#ffc206 54%
+				);
+			}
+			.hours-hand-container,
+			.minutes-hand-container {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.hours-hand-container {
+				animation: 12s rotation linear infinite;
+			}
+			.minutes-hand-container {
+				animation: 1s rotation linear infinite;
+			}
+			.hours-hand-container::before {
+				display: inline-block;
+				content: "";
+				background: #ffc206;
+				height: 1em;
+				width: 0.3em;
+				transform: translateY(50%);
+			}
+			.minutes-hand-container::before {
+				display: inline-block;
+				content: "";
+				background: #ffc206;
+				width: 1.3em;
+				height: 0.3em;
+				transform: translate(50%);
+			}
+			.complete-wall {
+				display: flex;
+				align-items: flex-end;
+			}
+			.left-wall,
+			.right-wall {
+				display: flex;
+				flex-direction: column;
+			}
+			.right-wall {
+				align-items: flex-end;
+			}
+			.bottom-left-fortif,
+			.bottom-right-fortif {
+				display: flex;
+				gap: 22px;
+			}
+			.bottom-fortif {
+				height: 0;
+				width: 0;
+				border-style: solid;
+				border-width: 1.2em 1.2em 0 1.2em;
+				border-color: transparent #d32e2e transparent #d32e2e;
+			}
+			.wall {
+				background: #d32e2e;
+				height: 9em;
+				width: 7.5em;
+				display: flex;
+			}
+			.middle-wall {
+				height: 10.5em;
+				width: 10.5em;
+				background: #e53935;
+				position: relative;
+				overflow: hidden;
+			}
+			.door {
+				position: absolute;
+				height: 10em;
+				width: 5em;
+				border-radius: 50px;
+				background: #b71c1b;
+				top: 40%;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			@keyframes rotation {
+				from {
+					rotate: 0turn;
+				}
+				to {
+					rotate: 1turn;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="kremlin">
+			<div class="top"></div>
+			<div class="middle">
+				<div class="top-fortif">
+					<div class="top-far-fortif"></div>
+					<div class="top-middle-fortif"></div>
+					<div class="top-middle-fortif"></div>
+					<div class="top-far-fortif"></div>
+				</div>
+				<div class="clock-container">
+					<div class="clock">
+						<div class="hours-hand-container"></div>
+						<div class="minutes-hand-container"></div>
+					</div>
+				</div>
+			</div>
+			<div class="complete-wall">
+				<div class="left-wall">
+					<div class="bottom-left-fortif">
+						<div class="bottom-fortif"></div>
+						<div class="bottom-fortif"></div>
+					</div>
+					<div class="wall"></div>
+				</div>
+				<div class="middle-wall">
+					<div class="door"></div>
+				</div>
+				<div class="right-wall">
+					<div class="bottom-right-fortif">
+						<div class="bottom-fortif"></div>
+						<div class="bottom-fortif"></div>
+					</div>
+					<div class="wall"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
