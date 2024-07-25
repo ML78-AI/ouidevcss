@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			*,
+			::before,
+			::after {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.git-logo-container {
+				height: 375px;
+				width: 375px;
+				border-radius: 18px;
+				position: relative;
+				backface-visibility: hidden;
+				rotate: 45deg;
+			}
+			.git-logo-clipped {
+				position: absolute;
+				display: flex;
+				clip-path: circle(100%);
+				height: 100%;
+				width: 100%;
+				transition: clip-path 0.4s ease-out;
+				border-radius: 18px;
+				background: white;
+				gap: 15px;
+			}
+			.git-logo-container:hover .git-logo-clipped {
+				clip-path: circle(0%);
+			}
+			.first-column,
+			.second-column {
+				display: flex;
+				flex-direction: column;
+				gap: 15px;
+			}
+			.red-square {
+				background: #ff8080;
+				height: 180px;
+				width: 180px;
+				border-top-left-radius: 18px;
+				border-bottom-right-radius: 18px;
+			}
+			.blue-square {
+				background: #80b3ff;
+				height: 180px;
+				width: 180px;
+				border-bottom-left-radius: 18px;
+				border-top-right-radius: 18px;
+			}
+			.green-square {
+				background: #8cd35e;
+				height: 180px;
+				width: 180px;
+				border-top-right-radius: 18px;
+				border-bottom-left-radius: 18px;
+			}
+			.yellow-square {
+				background: #ffe680;
+				height: 180px;
+				width: 180px;
+				border-top-left-radius: 18px;
+				border-bottom-right-radius: 18px;
+			}
+			.orange-git-logo {
+				height: 100%;
+				width: 100%;
+				background: #df523c;
+				border-radius: 18px;
+			}
+			.git-tree {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				background: transparent;
+				top: 0;
+				left: 0;
+			}
+			.main-branch {
+				height: 27px;
+				width: 270px;
+				background: white;
+				position: relative;
+				top: 100px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.main-branch::before,
+			.main-branch::after,
+			.last-commit {
+				display: inline-block;
+				position: absolute;
+				content: "";
+				height: 60px;
+				width: 60px;
+				border-radius: 50%;
+				background: white;
+			}
+			.main-branch::before {
+				transform: translate(-30%);
+			}
+			.main-branch::after {
+				right: -5%;
+			}
+			.child-branch {
+				left: 43%;
+				transform: rotate(45deg);
+				width: 200px;
+				height: 27px;
+				background: white;
+				position: absolute;
+				transform-origin: 0px 50%;
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+			}
+			.last-commit {
+				transform: translateX(50%);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="git-logo-container">
+			<div class="git-logo-clipped">
+				<div class="first-column">
+					<div class="red-square"></div>
+					<div class="blue-square"></div>
+				</div>
+				<div class="second-column">
+					<div class="green-square"></div>
+					<div class="yellow-square"></div>
+				</div>
+			</div>
+			<div class="orange-git-logo"></div>
+			<div class="git-tree">
+				<div class="main-branch">
+					<div class="child-branch">
+						<div class="last-commit"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
